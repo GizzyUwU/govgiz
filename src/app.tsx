@@ -20,7 +20,7 @@ export default function App() {
     <Router
       root={(props) => (
         <MetaProvider>
-          <Title>Gov Giz</Title>
+          <Title>Gizzy</Title>
           <Link rel="icon" href="/haj.svg" />
           <Link rel="stylesheet" href="/assets/govuk-frontend.min.css" />
           <header class="govuk-header" data-module="govuk-header">

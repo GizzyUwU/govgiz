@@ -1,15 +1,35 @@
+import type { UserConfig as ViteConfig } from "vite";
 import { defineConfig } from "@solidjs/start/config";
 import { viteStaticCopy } from "vite-plugin-static-copy";
-import type { UserConfig as ViteConfig } from "vite";
-import path from "path";
 import { fileURLToPath } from "url";
+import path from "path";
+//@ts-expect-error
+import pkg from "@vinxi/plugin-mdx";
+import remarkFrontmatter from "remark-frontmatter";
+import rehypeMdxCodeProps from "rehype-mdx-code-props";
+import { mdxPrism } from "./plugins/mdxPrism";
+import remarkToc from "remark-toc";
+import { postsPlugin } from "./plugins/postsPlugin";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const { default: mdx } = pkg;
 export default defineConfig({
-ssr: false,
+  ssr: false,
+  extensions: ["mdx", "md"],
   vite: {
+    build: {
+      target: 'esnext'
+    },
     plugins: [
+      mdx.withImports({})({
+        remarkPlugins: [remarkFrontmatter, remarkToc],
+        rehypePlugins: [rehypeMdxCodeProps, mdxPrism],
+        jsx: true,
+        jsxImportSource: "solid-js",
+        providerImportSource: "solid-mdx",
+      }),
+      postsPlugin(),
       viteStaticCopy({
         targets: [
           {
@@ -29,5 +49,10 @@ ssr: false,
         ],
       }),
     ],
-  } satisfies ViteConfig
+  } satisfies ViteConfig,
+  server: {
+    prerender: {
+      crawlLinks: true,
+    },
+  },
 });

@@ -21,7 +21,7 @@ export default function Home() {
     new Typed("#typed-list", {
       strings: ["programmer", "developer", "nerd", "maker"],
       typeSpeed: 50,
-      backSpeed: 50,
+      backSpeed: 70,
       loop: true,
     });
 
@@ -105,7 +105,7 @@ export default function Home() {
                   })()}{" "}
                   years old
                 </span>{" "}
-                and a <span id="typed-list"></span> based in the United Kingdom!
+                and a <span id="typed-list"></span>based in the United Kingdom!
               </p>
               <Show when={stats()}>
                 <div class="govuk-inset-text">
