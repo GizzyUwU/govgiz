@@ -52,7 +52,6 @@ const Pre: ParentComponent<{
   let ref!: HTMLPreElement;
   let divRef!: HTMLDivElement;
 
-
   const onCopy = () => {
     setCopied(true);
     navigator.clipboard.writeText(ref.innerText);
@@ -70,28 +69,47 @@ const Pre: ParentComponent<{
     <div class="govuk-tabs" data-module="govuk-tabs">
       <h2 class="govuk-tabs__title">Contents</h2>
       <ul class="govuk-tabs__list">
-        <li class={`govuk-tabs__list-item ${open() ? "govuk-tabs__list-item--selected" : ""}`}>
-          <a class="govuk-tabs__tab" style={{
-			"text-decoration": "none"
-		  }} href="#" onClick={toggle}>
+        <li
+          class={`govuk-tabs__list-item ${open() ? "govuk-tabs__list-item--selected" : ""}`}
+        >
+          <a
+            class="govuk-tabs__tab"
+            style={{
+              "text-decoration": "none",
+            }}
+            href="#"
+            onClick={toggle}
+          >
             {props.displayLang}
           </a>
         </li>
       </ul>
-      <div class="govuk-tabs__panel" ref={divRef} style={{ display: open() ? "block" : "none" }}>
-        <button type="button" onClick={onCopy}>
-          {copied() ? "Copied!" : "Copy code"}
-        </button>
+      <div class="govuk-tabs__panel " ref={divRef} style={{ display: open() ? "block" : "none" }}>
         <pre
           ref={ref}
           class={`language-${props.lang}`}
           data-line={props.lines}
           style={{
-            display: "block",
+            position: "relative",
             margin: 0,
             "overflow-x": "auto",
+            "padding-top": "3rem",
           }}
         >
+          <button
+            type="button"
+            class="govuk-button"
+            data-module="govuk-button"
+            style={{
+              position: "absolute",
+              top: "0.4rem",
+              right: "0.5rem",
+              margin: 0,
+            }}
+			onClick={onCopy}
+          >
+            {copied() ? "Copied!" : "Copy code"}
+          </button>
           {props.children}
         </pre>
       </div>
