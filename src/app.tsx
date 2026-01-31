@@ -26,6 +26,7 @@ export default function App() {
           <header class="govuk-header" data-module="govuk-header">
             <div class="govuk-header__container govuk-width-container">
               <div class="govuk-header__logo">
+                <a href="/">
                 <img
                   style={{
                     transform: "scale(1.4)",
@@ -33,6 +34,7 @@ export default function App() {
                   }}
                   src={Logo}
                 ></img>
+                </a>
               </div>
             </div>
           </header>

@@ -7,6 +7,7 @@ import { posts } from "~/data/posts";
 import { markdownComponents, PostImage } from "~/components/Markdown";
 import type { Post } from "~/types";
 import dayjs from "dayjs";
+import Giscus from "@giscus/solid";
 import "prismjs/themes/prism.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs";
@@ -65,6 +66,21 @@ const Blog = (props: RouteSectionProps<unknown>) => {
       <MDXProvider components={markdownComponents}>
         {props.children}
       </MDXProvider>
+      <Giscus
+        id="comments"
+        repo="gizzyuwu/govgiz"
+        repoId="R_kgDORD3Y5w"
+        category="General"
+        categoryId="DIC_kwDORD3Y584C1sjr"
+        mapping="pathname"
+        strict="1"
+        reactions-enabled="1"
+        emitMetadata="0"
+        inputPosition="bottom"
+        theme="catppuccin_latte"
+        lang="en"
+        loading="lazy"
+      />
     </div>
   );
 };
