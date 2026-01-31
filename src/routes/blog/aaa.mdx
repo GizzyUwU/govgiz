@@ -1,3 +1,43 @@
+---
+title: TAAAAAAAAA
+description: Bleh
+date: 2025-01-31
+featuredImage: https://assets.solidjs.com/banner?type=SSG%20%2b%20MDX%20blog%20setup&background=tiles&project=%20
+featuredImageDesc: SolidJS banner
+tags:
+  - solidjs
+  - solid-start
+  - mdx
+  - markdown
+---
+
+import { Aside, PostImage } from "~/components/Markdown";
+
+Bleh i need to test posts system
+
+<Aside>
+
+I assume you're already familiar with how SolidStart works, especially the file-based router.
+
+If you're not, [the official docs](https://docs.solidjs.com/solid-start/building-your-application/routing) do a better job at explaining it than I could.
+
+</Aside>
+
+
+> I'm not good at keeping things short so look through the contents if you're only interested in one particular thing
+
+## Contents
+
+<hr />
+
+## AAAA
+
+AAAA
+
+### bLH
+
+BLEHHH 
+```js lang="javascript" displayLang="JavaScript"
 import {
   type Component,
   createMemo,
@@ -13,19 +53,22 @@ const P: ParentComponent = (props) => (
 );
 
 const Ol: ParentComponent = (props) => (
-  <ol class="govuk-list govuk-list--number">{props.children}</ol>
+  <ol class="list-decimal [&>li]:ml-3h">{props.children}</ol>
 );
 const Ul: ParentComponent = (props) => (
-  <ul class="govuk-list govuk-list--bullet">{props.children}</ul>
+  <ul class="list-square [&>li]:ml-2h">{props.children}</ul>
 );
 
-const Li: ParentComponent = (props) => <li class="govuk-link">{props.children}</li>;
+const Li: ParentComponent = (props) => <li class="">{props.children}</li>;
 
 export const Blockquote: ParentComponent = (props) => {
   let ref!: HTMLDivElement;
 
   onMount(() => {
     ref.querySelectorAll<HTMLParagraphElement>("p.govuk-body").forEach((p) => {
+      p.classList.remove("govuk-body");
+      p.classList.add("govuk-body-s");
+      p.classList.add("govuk-body-s");
       p.style.fontStyle = "italic";
       p.style.paddingLeft = "0.75rem";
       if (!p.textContent?.trim().startsWith(">")) {
@@ -39,15 +82,12 @@ export const Blockquote: ParentComponent = (props) => {
 
 const Pre: ParentComponent<{
   lang: string;
-  displayLang: string;
   lines?: string;
   file?: string;
   children: JSXElement;
 }> = (props) => {
   const [copied, setCopied] = createSignal(false);
-  const [open, setOpen] = createSignal<boolean>(false);
   let ref!: HTMLPreElement;
-  let divRef!: HTMLDivElement;
 
   const onCopy = () => {
     setCopied(true);
@@ -56,70 +96,34 @@ const Pre: ParentComponent<{
       setCopied(false);
     }, 1500);
   };
-
-  const toggle = (e: MouseEvent) => {
-    e.preventDefault();
-    setOpen(!open());
-  };
+  console.log({ ...props });
 
   return (
     <div class="govuk-tabs" data-module="govuk-tabs">
       <h2 class="govuk-tabs__title">Contents</h2>
       <ul class="govuk-tabs__list">
-        <li
-          class={`govuk-tabs__list-item ${open() ? "govuk-tabs__list-item--selected" : ""}`}
-          style={{
-            ...(open()
-              ? {}
-              : {
-                  border: "1px solid #b1b4b6",
-                  "border-bottom": "none",
-                }),
-          }}
-        >
-          <a
-            class="govuk-tabs__tab"
-            style={{
-              "text-decoration": "none",
-            }}
-            href="#"
-            onClick={toggle}
-          >
-            {props.displayLang}
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#past-day">
+            {props.lang}
           </a>
         </li>
       </ul>
-      <div
-        class="govuk-tabs__panel "
-        ref={divRef}
-        style={{ display: open() ? "block" : "none" }}
-      >
-        <pre
-          ref={ref}
-          class={`language-${props.lang}`}
-          data-line={props.lines}
-          style={{
-            position: "relative",
-            margin: 0,
-            "overflow-x": "auto",
-            "padding-top": "3rem",
-          }}
-        >
-          <button
-            type="button"
-            class="govuk-button"
-            data-module="govuk-button"
-            style={{
-              position: "absolute",
-              top: "0.4rem",
-              right: "0.5rem",
-              margin: 0,
-            }}
-            onClick={onCopy}
-          >
+      <div class="govuk-tabs__panel" id="past-day">
+          <button type="button" onClick={onCopy}>
             {copied() ? "Copied!" : "Copy code"}
           </button>
-          {props.children}
+        <pre
+          ref={ref}
+		         class={`language-${props.lang}`}
+          data-line={props.lines}
+          style={{
+            display: "block",
+            margin: 0,
+            "overflow-x": "auto",
+          }}
+        >
+
+            {props.children}
         </pre>
       </div>
     </div>
@@ -130,13 +134,13 @@ const headingLink = (children: JSXElement) =>
   children?.toString().toLowerCase().replaceAll(" ", "-").replaceAll(",", "");
 
 const HeadlineLink: Component<{ link: string; class: string }> = (props) => {
-  return <a href={props.link} class="govuk-link"></a>;
+  return <a href={props.link} class="relative top-[1px]"></a>;
 };
 
 const H2: ParentComponent = (props) => (
   <h2
     id={headingLink(props.children)}
-    class="govuk-heading-m"
+    class="text-2xl leading-2 font-bold mt-2v mb-1v flex items-center gap-1h scroll-mt-2v"
   >
     {props.children}
     <HeadlineLink class="w-5 h-5" link={`#${headingLink(props.children)}`} />
@@ -146,7 +150,7 @@ const H2: ParentComponent = (props) => (
 const H3: ParentComponent = (props) => (
   <h3
     id={headingLink(props.children)}
-    class="govuk-heading-s"
+    class="text-xl leading-2 font-bold mt-2v mb-1v flex items-center gap-1h scroll-mt-2v"
   >
     {props.children}
     <HeadlineLink class="w-4 h-4" link={`#${headingLink(props.children)}`} />
@@ -156,7 +160,7 @@ const H3: ParentComponent = (props) => (
 const H4: ParentComponent = (props) => (
   <h4
     id={headingLink(props.children)}
-    class="govuk-heading-s"
+    class="text-lg leading-1 font-bold mt-2v mb-1v flex items-center gap-1h scroll-mt-2v"
   >
     {props.children}
     <HeadlineLink class="w-3 h-3" link={`#${headingLink(props.children)}`} />
@@ -169,7 +173,11 @@ const A: ParentComponent<{ href: string }> = (props) => {
   );
 
   return (
-    <a href={props.href} target={isLocal() ? "" : "_blank"} class="govuk-link">
+    <a
+      href={props.href}
+      target={isLocal() ? "" : "_blank"}
+      class="underline underline-offset-2"
+    >
       {props.children}
     </a>
   );
@@ -219,10 +227,7 @@ export const PostImage: Component<{
         ref={ref}
         src={props.src}
         alt={props.alt}
-        style={{
-          "max-width": "1020px",
-		  "width": "100%"
-        }}
+        class="w-full"
         classList={{ [props.class || ""]: !!props.class }}
       />
       {props.attr}
@@ -235,6 +240,8 @@ export const Aside: ParentComponent = (props) => {
 
   onMount(() => {
     ref.querySelectorAll("p.govuk-body").forEach((p) => {
+      p.classList.remove("govuk-body");
+      p.classList.add("govuk-body-s");
       p.classList.add("govuk-!-margin-bottom-0");
     });
   });
@@ -258,3 +265,33 @@ export const markdownComponents = {
   h3: H3,
   h4: H4,
 };
+
+```
+
+{/* <Tree tree={{
+  l: "/andi.dev",
+  c: [
+    {
+    l: "src",
+    c: [{
+      l: "routes", 
+      c: [
+        {
+          l: "blog",
+          c: [
+            "post-1.mdx",
+            "post-2.mdx",
+            "post-3.mdx",
+          ]
+        }
+      ]},
+      "(home).tsx"
+    ]
+  }]
+}} /> */}
+
+## Kladsgj
+
+- a
+- b
+- c

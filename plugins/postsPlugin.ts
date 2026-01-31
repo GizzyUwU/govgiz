@@ -37,7 +37,8 @@ export const postsPlugin = (): Plugin => {
 		configureServer(server) {
 			server.watcher.on("change", (filePath) => {
 				if (
-					!filePath.includes("/src/routes/blog")
+					!filePath.includes("/src/routes/blog") &&
+					!filePath.includes("/src/plugins/postsPlugin.ts")
 				)
 					return;
 

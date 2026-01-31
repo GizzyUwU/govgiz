@@ -1,8 +1,22 @@
 [
   {
+    "title": "TAAAAAAAAA",
+    "description": "Bleh",
+    "date": "2025-01-31",
+    "featuredImage": "https://assets.solidjs.com/banner?type=SSG%20%2b%20MDX%20blog%20setup&background=tiles&project=%20",
+    "featuredImageDesc": "SolidJS banner",
+    "tags": [
+      "solidjs",
+      "solid-start",
+      "mdx",
+      "markdown"
+    ],
+    "slug": "aaa"
+  },
+  {
     "title": "Test",
     "description": "Bleh",
-    "date": "2025-30-01",
+    "date": "2025-01-30",
     "featuredImage": "https://assets.solidjs.com/banner?type=SSG%20%2b%20MDX%20blog%20setup&background=tiles&project=%20",
     "featuredImageDesc": "SolidJS banner",
     "tags": [
