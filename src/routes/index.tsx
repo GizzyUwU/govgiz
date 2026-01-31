@@ -79,8 +79,6 @@ export default function Home() {
   });
 
   return (
-    <main>
-      <div class="govuk-width-container">
         <main class="govuk-main-wrapper">
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
@@ -119,7 +117,5 @@ export default function Home() {
             </div>
           </div>
         </main>
-      </div>
-    </main>
   );
 }

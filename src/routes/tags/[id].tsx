@@ -9,19 +9,7 @@ const TagId: Component<RouteSectionProps<{ params: { id: string } }>> = (
 ) => {
   const tag = () => (props.params.id ? tags[props.params.id] : undefined);
   return (
-    <div class="govuk-width-container govuk-!-text-break-word">
       <Show when={tag()} fallback={<div>No posts with that tag</div>}>
-          <a
-            onClick={() => {
-              history.back();
-            }}
-            class="govuk-back-link"
-            style={{
-              cursor: "pointer",
-            }}
-          >
-            Back
-          </a>
           <h2 class="govuk-heading-m">Tag: {tag()?.id}</h2>
           <ul class="govuk-list govuk-list--bullet">
             <For each={tag()?.posts.map((i) => posts[i]) ?? []}>
@@ -39,7 +27,6 @@ const TagId: Component<RouteSectionProps<{ params: { id: string } }>> = (
             </For>
           </ul>
       </Show>
-    </div>
   );
 };
 

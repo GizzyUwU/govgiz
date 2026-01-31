@@ -3,6 +3,7 @@ import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { Suspense, onMount } from "solid-js";
 import Logo from "/logo.svg";
+import { Breadcrumb } from "./components/Breadcrumb";
 
 export default function App() {
   onMount(async () => {
@@ -27,18 +28,23 @@ export default function App() {
             <div class="govuk-header__container govuk-width-container">
               <div class="govuk-header__logo">
                 <a href="/">
-                <img
-                  style={{
-                    transform: "scale(1.4)",
-                    "transform-origin": "left center",
-                  }}
-                  src={Logo}
-                ></img>
+                  <img
+                    style={{
+                      transform: "scale(1.4)",
+                      "transform-origin": "left center",
+                    }}
+                    src={Logo}
+                  ></img>
                 </a>
               </div>
             </div>
           </header>
-          <Suspense>{props.children}</Suspense>
+          <Suspense>
+            <div class="govuk-width-container govuk-!-text-break-word">
+                <Breadcrumb />
+                {props.children}
+            </div>
+          </Suspense>
         </MetaProvider>
       )}
     >

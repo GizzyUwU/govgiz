@@ -7,14 +7,14 @@ import { exec } from "node:child_process";
 
 const processFiles = () => {
 	const outputFile = resolve("src/data/posts.json");
-	const blogDir = resolve("src/routes/blog");
+	const blogDir = resolve("src/routes/blog/posts");
 	const files = readdirSync(blogDir);
 	const blogPosts = files
 		.filter(
 			(file) => statSync(join(blogDir, file)).isFile() && file.endsWith(".mdx"),
 		)
 		.map((file) => {
-			const f = readSync(resolve("src/routes/blog", file));
+			const f = readSync(resolve("src/routes/blog/posts", file));
 			matter(f);
 			return {
 				...(f.data.matter as object),
@@ -37,7 +37,7 @@ export const postsPlugin = (): Plugin => {
 		configureServer(server) {
 			server.watcher.on("change", (filePath) => {
 				if (
-					!filePath.includes("/src/routes/blog") &&
+					!filePath.includes("/src/routes/blog/posts") &&
 					!filePath.includes("/src/plugins/postsPlugin.ts")
 				)
 					return;

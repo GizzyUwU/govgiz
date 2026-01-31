@@ -1,5 +1,5 @@
 import type { RouteSectionProps } from "@solidjs/router";
-import { For, Show } from "solid-js";
+import { For, Show, lazy, Suspense } from "solid-js";
 import { Meta, Title } from "@solidjs/meta";
 // @ts-expect-error
 import { MDXProvider } from "solid-mdx";
@@ -12,18 +12,15 @@ import "prismjs/themes/prism.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs";
 
-const Blog = (props: RouteSectionProps<unknown>) => {
-  const meta = () =>
-    posts.find((p) => props.location.pathname.endsWith(p.slug)) as Post;
-  console.log(meta());
-  const index = () => posts.indexOf(meta());
+const loadPost = (slug: string) =>
+  lazy(() => import(`~/routes/blog/posts/${slug}.mdx`));
 
-  const prevMeta = () =>
-    index() === posts.length - 1 ? undefined : posts[index() + 1];
-  const nextMeta = () => (index() === 0 ? undefined : posts[index() - 1]);
+const Blog = (props: RouteSectionProps<{ params: { id: string } }>) => {
+  const meta = () => posts.find((p) => p.slug === props.params.id) as Post;
+  const PostContent = loadPost(meta()?.slug || "");
 
   return (
-    <div class="govuk-width-container govuk-!-text-break-word">
+    <>
       <Title>Gizzy - {meta()?.title}</Title>
       <Meta name="og:title" content={meta().title} />
       <Meta name="description" content={meta().description} />
@@ -36,17 +33,6 @@ const Blog = (props: RouteSectionProps<unknown>) => {
         />
       </Show>
       <br />
-      <a
-        onClick={() => {
-          history.back();
-        }}
-        class="govuk-back-link"
-        style={{
-          cursor: "pointer",
-        }}
-      >
-        Back
-      </a>
       <h1 class="govuk-heading-l govuk-!-margin-bottom-0">{meta().title}</h1>
       <p class="govuk-body-s govuk-!-margin-top-2">
         {dayjs(meta().date).format("D MM YYYY")}
@@ -63,9 +49,11 @@ const Blog = (props: RouteSectionProps<unknown>) => {
         </For>
       </p>
       <div class="govuk-visibility-hidden govuk-!-margin-top-2"></div>
-      <MDXProvider components={markdownComponents}>
-        {props.children}
-      </MDXProvider>
+      <Suspense fallback={<p>Loading post...</p>}>
+        <MDXProvider components={markdownComponents}>
+          <PostContent />
+        </MDXProvider>
+      </Suspense>
       <Giscus
         id="comments"
         repo="gizzyuwu/govgiz"
@@ -81,7 +69,7 @@ const Blog = (props: RouteSectionProps<unknown>) => {
         lang="en"
         loading="lazy"
       />
-    </div>
+    </>
   );
 };
 export default Blog;
