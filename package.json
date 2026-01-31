@@ -34,7 +34,8 @@
     "typed.js": "^3.0.0",
     "unist-util-visit": "^5.1.0",
     "vfile-matter": "^5.0.1",
-    "vinxi": "^0.5.7"
+    "vinxi": "^0.5.7",
+    "vite-plugin-prismjs": "^0.0.11"
   },
   "engines": {
     "node": ">=22"

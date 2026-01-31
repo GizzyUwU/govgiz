@@ -7,7 +7,9 @@ import { posts } from "~/data/posts";
 import { markdownComponents, PostImage } from "~/components/Markdown";
 import type { Post } from "~/types";
 import dayjs from "dayjs";
-import "../../public/prism.css"
+import 'prismjs/themes/prism.css';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import 'prismjs';
 
 const Blog = (props: RouteSectionProps<unknown>) => {
 	const meta = () =>

@@ -8,6 +8,7 @@ import pkg from "@vinxi/plugin-mdx";
 import remarkFrontmatter from "remark-frontmatter";
 import rehypeMdxCodeProps from "rehype-mdx-code-props";
 import { mdxPrism } from "./plugins/mdxPrism";
+import prismjs from "vite-plugin-prismjs";
 import remarkToc from "remark-toc";
 import { postsPlugin } from "./plugins/postsPlugin";
 const __filename = fileURLToPath(import.meta.url);
@@ -19,9 +20,14 @@ export default defineConfig({
   extensions: ["mdx", "md"],
   vite: {
     build: {
-      target: 'esnext'
+      target: "esnext",
     },
     plugins: [
+      prismjs({
+        languages: "all",
+        plugins: ["line-numbers"],
+        css: true,
+      }),
       mdx.withImports({})({
         remarkPlugins: [remarkFrontmatter, remarkToc],
         rehypePlugins: [rehypeMdxCodeProps, mdxPrism],
