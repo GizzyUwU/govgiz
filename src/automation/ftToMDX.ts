@@ -111,7 +111,7 @@ for (const project of projects) {
     `title: "${title}"\n` +
     `description: "${project.description ?? ""}"\n` +
     `date: "${date}"\n` +
-    `tag:\n${tags.map((t) => `  - ${t}`).join("\n")}\n` +
+    `tags:\n${tags.map((t) => `  - ${t}`).join("\n")}\n` +
     `---\n`;
 
   const finalContent =
