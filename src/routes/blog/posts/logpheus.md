@@ -5,30 +5,8 @@ date: '2025-12-24'
 tag:
   - flavourtown
   - flavortown
-  - project
+  - projects
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Devlog 2214 • 2025-12-24
 
