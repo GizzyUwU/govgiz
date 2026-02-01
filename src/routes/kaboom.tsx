@@ -1,7 +1,6 @@
 import { Title } from "@solidjs/meta";
-import { HttpStatusCode } from "@solidjs/start";
 
-export default function NotFound() {
+export default function Explode() {
   return (
     <main
       class="govuk-main-wrapper govuk-main-wrapper--l"
@@ -9,7 +8,6 @@ export default function NotFound() {
       role="main"
     >
       <Title>Gizzy - 404</Title>
-      <HttpStatusCode code={404} />
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-l">Page not found</h1>

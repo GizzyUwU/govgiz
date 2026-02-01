@@ -37,7 +37,7 @@ jobs:
         run: touch .output/public/.nojekyll
 
       - name: Fix Routes Returning 404 because GH Pages
-        run: cp .output/public/fourofour.html .output/public/404.html
+        run: cp .output/public/kaboom/index.html .output/public/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4

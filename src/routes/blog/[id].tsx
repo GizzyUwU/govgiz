@@ -73,7 +73,7 @@ const Blog = (props: RouteSectionProps<{ params: { id: string } }>) => {
           </For>
         </Show>
       </p>
-      <div class="govuk-visibility-hidden govuk-!-margin-top-2"></div>
+      <div class="govuk-!-margin-top-2"></div>
       <Suspense
         fallback={
           <div
