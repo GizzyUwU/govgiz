@@ -28,3 +28,4 @@ gitignore
 Thumbs.db
 
 public/assets/
+src/data/posts.json
