@@ -175,11 +175,12 @@ export default function Home() {
             </li>
           </ul>
         </div>
+        <Show when={posts && posts?.filter((post) => post.tags?.includes("projects")).length > 0}>
         <h2 class="govuk-heading-m">Latest Projects</h2>
         <ul class="govuk-task-list">
           <For
             each={posts
-              .filter((post) => post.tags.includes("projects"))
+              .filter((post) => (post.tags?.includes("projects") || post.tag?.includes("projects")))
               .sort(
                 (a, b) =>
                   new Date(b.date).getTime() - new Date(a.date).getTime(),
@@ -202,6 +203,7 @@ export default function Home() {
             )}
           </For>
         </ul>
+        </Show>
       </div>
     </main>
   );

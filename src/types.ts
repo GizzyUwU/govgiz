@@ -2,7 +2,9 @@ export type Post = {
   title: string;
   date: Date;
   slug: string;
-  tags: string[];
+  tags?: string[];
+  tag?: string[];
+
   series?: string;
   featuredImage?: string;
   featuredImageDesc?: string;

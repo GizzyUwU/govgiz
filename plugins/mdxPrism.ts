@@ -5,7 +5,7 @@ import tsx from "refractor/tsx";
 
 refractor.register(tsx);
 
-export const mdxPrism = () => {
+export default function mdxPrism() {
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 	return (tree: any) => {
 		// biome-ignore lint/suspicious/noExplicitAny: <explanation>

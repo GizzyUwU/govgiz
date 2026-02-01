@@ -7,16 +7,15 @@ import path from "path";
 import pkg from "@vinxi/plugin-mdx";
 import remarkFrontmatter from "remark-frontmatter";
 import rehypeMdxCodeProps from "rehype-mdx-code-props";
-import { mdxPrism } from "./plugins/mdxPrism";
+import mdxPrism from "./plugins/mdxPrism";
 import prismjs from "vite-plugin-prismjs";
 import remarkToc from "remark-toc";
-import { postsPlugin } from "./plugins/postsPlugin";
+import postsPlugin from "./plugins/postsPlugin";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const { default: mdx } = pkg;
 export default defineConfig({
-  ssr: false,
   extensions: ["mdx", "md"],
   vite: {
     build: {
@@ -43,7 +42,7 @@ export default defineConfig({
               __dirname,
               "node_modules/govuk-frontend/dist/govuk/assets",
             ),
-            dest: "assets",
+            dest: "assets"
           },
           {
             src: path.resolve(
@@ -57,8 +56,9 @@ export default defineConfig({
     ],
   } satisfies ViteConfig,
   server: {
+    preset: "static",
     prerender: {
-      crawlLinks: true,
-    },
+      crawlLinks: true
+    }
   },
 });

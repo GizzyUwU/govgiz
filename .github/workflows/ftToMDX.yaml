@@ -27,3 +27,5 @@ jobs:
         run: bun src/automation/ftToMDX.ts
 
       - uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "Update MDX posts"

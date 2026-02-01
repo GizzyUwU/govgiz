@@ -28,7 +28,7 @@ const processFiles = () => {
 	exec("bunx @biomejs/biome format --write ./src/data/posts.json");
 };
 
-export const postsPlugin = (): Plugin => {
+export default function postPlugin(): Plugin {
 	return {
 		name: "posts-gen",
 		buildEnd() {

@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "vinxi dev --host",
-    "build": "vinxi build",
+    "build": "mkdir -p public/assets && cp node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.css public/assets/ && vinxi build",
     "start": "vinxi start",
     "version": "vinxi version"
   },

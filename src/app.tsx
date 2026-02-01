@@ -1,11 +1,12 @@
 import { Link, MetaProvider, Title } from "@solidjs/meta";
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
-import { Suspense, onMount } from "solid-js";
-import Logo from "/logo.svg";
+import { Suspense, onMount, createSignal } from "solid-js";
 import { Breadcrumb } from "./components/Breadcrumb";
 
 export default function App() {
+  const [ready, setReady] = createSignal(false);
+
   onMount(async () => {
     document.body.className +=
       "govuk-template__body js-enabled" +
@@ -15,37 +16,71 @@ export default function App() {
     // @ts-ignore
     const govuk = await import("govuk-frontend");
     govuk.initAll();
+    setReady(true);
   });
 
   return (
     <Router
       root={(props) => (
-        <MetaProvider>
-          <Title>Gizzy</Title>
-          <Link rel="icon" href="/haj.svg" />
-          <Link rel="stylesheet" href="/assets/govuk-frontend.min.css" />
-          <header class="govuk-header" data-module="govuk-header">
-            <div class="govuk-header__container govuk-width-container">
-              <div class="govuk-header__logo">
-                <a href="/">
-                  <img
+        <Suspense
+          fallback={
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                "background-color": "black",
+              }}
+            >
+              Loading...
+            </div>
+          }
+        >
+          <MetaProvider>
+            <Title>Gizzy</Title>
+            <Link rel="icon" href="/haj.svg" />
+            <Link rel="stylesheet" href="/assets/govuk-frontend.min.css" />
+            <div
+              style={{
+                display: ready() ? "block" : "none",
+                width: "100%",
+              }}
+            >
+              <header class="govuk-header" data-module="govuk-header">
+                <div class="govuk-header__container govuk-width-container">
+                  <div class="govuk-header__logo">
+                    <a href="/">
+                      <img
+                        style={{
+                          transform: "scale(1.4)",
+                          "transform-origin": "left center",
+                        }}
+                        src="/logo.svg"
+                      ></img>
+                    </a>
+                  </div>
+                </div>
+              </header>
+              <Suspense
+                fallback={
+                  <div
                     style={{
-                      transform: "scale(1.4)",
-                      "transform-origin": "left center",
+                      width: "100%",
+                      height: "100%",
+                      "background-color": "black",
                     }}
-                    src={Logo}
-                  ></img>
-                </a>
-              </div>
+                  >
+                    Loading...
+                  </div>
+                }
+              >
+                <div class="govuk-width-container govuk-!-text-break-word">
+                  <Breadcrumb />
+                  {props.children}
+                </div>
+              </Suspense>
             </div>
-          </header>
-          <Suspense>
-            <div class="govuk-width-container govuk-!-text-break-word">
-                <Breadcrumb />
-                {props.children}
-            </div>
-          </Suspense>
-        </MetaProvider>
+          </MetaProvider>
+        </Suspense>
       )}
     >
       <FileRoutes />
