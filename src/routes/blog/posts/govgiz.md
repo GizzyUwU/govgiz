@@ -103,3 +103,18 @@ i DID SOME THINGS
 
 0 likes • 206 min
 
+## Devlog 18662 • 2026-02-01
+
+KABOOM WE DO UPDATE YIPEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+![3-blahaj-spinning](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3-blahaj-spinning%2F3814527118f8ddd7.gif&w=30&h=30&fit=contain&n=-1) 
+- 404 fixed i think on prod it works in dev
+- DETAILS PAGE ABOUT ME ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+- Sum other stuff i forgor
+
+### Changelog
+- [fix: 404 exploding bleh](https://api.github.com/repos/GizzyUwU/govgiz/commits/04992389ebbb216020b9f2102cb9e3c53b31139a)
+- [feat: fix 404 on github, 88x31 for this site, github follower count and star count i stole from cyteon, details page](https://api.github.com/repos/GizzyUwU/govgiz/commits/f4fbc7f37ad4baa27692f9d5a6df0e8f1421487b)
+
+
+0 likes • 101 min
+
