@@ -1,35 +1,35 @@
 [
-  {
-    "title": "GovGiz",
-    "description": "Literally remaking my personal site in solidjs with solid-start but using the uk govs styling components :3c",
-    "date": "2026-01-28",
-    "tags": [
-      "flavourtown",
-      "flavortown",
-      "projects"
-    ],
-    "slug": "govgiz"
-  },
-  {
-    "title": "Logpheus",
-    "description": "Basic Slack Bot that makes use of FT API to query for new devlogs and posts it to personal channels (for each personal channel you will have to provide your own api key i aint hitting ratelimit on my own api key for yall smh)",
-    "date": "2025-12-24",
-    "tags": [
-      "flavourtown",
-      "flavortown",
-      "projects"
-    ],
-    "slug": "logpheus"
-  },
-  {
-    "title": "Suri",
-    "description": "Do you hate slack desktop? Is it really slow for you like it is for me? Well fuck it I hate slack desktop and it's lag so I'm making it myself.",
-    "date": "2025-12-18",
-    "tags": [
-      "flavourtown",
-      "flavortown",
-      "projects"
-    ],
-    "slug": "suri"
-  }
+    {
+        "title": "GovGiz",
+        "description": "Literally remaking my personal site in solidjs with solid-start but using the uk govs styling components :3c",
+        "date": "2026-01-28",
+        "tags": [
+            "flavourtown",
+            "flavortown",
+            "projects"
+        ],
+        "slug": "govgiz"
+    },
+    {
+        "title": "Logpheus",
+        "description": "Basic Slack Bot that makes use of FT API to query for new devlogs and posts it to personal channels (for each personal channel you will have to provide your own api key i aint hitting ratelimit on my own api key for yall smh)",
+        "date": "2025-12-24",
+        "tags": [
+            "flavourtown",
+            "flavortown",
+            "projects"
+        ],
+        "slug": "logpheus"
+    },
+    {
+        "title": "Suri",
+        "description": "Do you hate slack desktop? Is it really slow for you like it is for me? Well fuck it I hate slack desktop and it's lag so I'm making it myself.",
+        "date": "2025-12-18",
+        "tags": [
+            "flavourtown",
+            "flavortown",
+            "projects"
+        ],
+        "slug": "suri"
+    }
 ]
