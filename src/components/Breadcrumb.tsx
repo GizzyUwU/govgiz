@@ -5,7 +5,7 @@ const capitalize = (s: string) =>
   s.length > 0 ? s[0].toUpperCase() + s.slice(1) : "";
 
 export const Breadcrumb: Component = () => {
-  const location = useLocation(); // reactive location
+  const location = useLocation();
 
   const segments = () => location.pathname.split("/").filter(Boolean);
   const paths = () =>

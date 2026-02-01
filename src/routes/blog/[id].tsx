@@ -30,13 +30,14 @@ const Blog = (props: RouteSectionProps<{ params: { id: string } }>) => {
           class="govuk-!-margin-top-2"
           src={meta().featuredImage || ""}
           alt={meta().featuredImageDesc || ""}
+          bgColor={meta()?.featuredImageBGColor}
         />
       </Show>
       <br />
       <h1 class="govuk-heading-l govuk-!-margin-bottom-0">{meta().title}</h1>
       <p class="govuk-body-s govuk-!-margin-top-2">
-        {dayjs(meta().date).format("D MM YYYY")}
-        {" — "}
+        {dayjs(meta().date).format("D MMMM YYYY")}
+        {" - "}
         <For each={meta().tags}>
           {(tag, index) => (
             <>

@@ -1,0 +1,25 @@
+name: Run ftToMDX every 10 minutes
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  run-bun-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Bun
+        uses: oven-sh/bun@v1
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run ftToMDX script
+        run: bun src/automation/ftToMDX.ts

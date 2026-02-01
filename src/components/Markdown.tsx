@@ -19,7 +19,9 @@ const Ul: ParentComponent = (props) => (
   <ul class="govuk-list govuk-list--bullet">{props.children}</ul>
 );
 
-const Li: ParentComponent = (props) => <li class="govuk-link">{props.children}</li>;
+const Li: ParentComponent = (props) => (
+  <li>{props.children}</li>
+);
 
 export const Blockquote: ParentComponent = (props) => {
   let ref!: HTMLDivElement;
@@ -134,30 +136,21 @@ const HeadlineLink: Component<{ link: string; class: string }> = (props) => {
 };
 
 const H2: ParentComponent = (props) => (
-  <h2
-    id={headingLink(props.children)}
-    class="govuk-heading-m"
-  >
+  <h2 id={headingLink(props.children)} class="govuk-heading-m">
     {props.children}
     <HeadlineLink class="w-5 h-5" link={`#${headingLink(props.children)}`} />
   </h2>
 );
 
 const H3: ParentComponent = (props) => (
-  <h3
-    id={headingLink(props.children)}
-    class="govuk-heading-s"
-  >
+  <h3 id={headingLink(props.children)} class="govuk-heading-s">
     {props.children}
     <HeadlineLink class="w-4 h-4" link={`#${headingLink(props.children)}`} />
   </h3>
 );
 
 const H4: ParentComponent = (props) => (
-  <h4
-    id={headingLink(props.children)}
-    class="govuk-heading-s"
-  >
+  <h4 id={headingLink(props.children)} class="govuk-heading-s">
     {props.children}
     <HeadlineLink class="w-3 h-3" link={`#${headingLink(props.children)}`} />
   </h4>
@@ -191,6 +184,7 @@ export const PostImage: Component<{
   alt: string;
   attr?: JSXElement;
   class?: string;
+  bgColor?: string;
 }> = (props) => {
   let ref!: HTMLImageElement;
 
@@ -202,6 +196,7 @@ export const PostImage: Component<{
       const realHeight = rect.width / ratio;
       const diff = cell.height - (realHeight % cell.height);
       ref.style.setProperty("padding-bottom", `${diff}px`);
+      ref.style.backgroundColor = props.bgColor || "transparent";
     }
 
     if (ref.complete) {
@@ -221,7 +216,7 @@ export const PostImage: Component<{
         alt={props.alt}
         style={{
           "max-width": "1020px",
-		  "width": "100%"
+          width: "100%",
         }}
         classList={{ [props.class || ""]: !!props.class }}
       />

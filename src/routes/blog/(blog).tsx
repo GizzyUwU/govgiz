@@ -1,6 +1,5 @@
 import { For } from "solid-js";
 import { posts } from "~/data/posts";
-import { markdownComponents } from "~/components/Markdown";
 import { Title } from "@solidjs/meta";
 
 export default function Blogs() {
