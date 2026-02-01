@@ -2,7 +2,7 @@
 title: GovGiz
 description: Literally remaking my personal site in solidjs with solid-start but using the uk govs styling components :3c
 date: '2026-01-28'
-tag:
+tags:
   - flavourtown
   - flavortown
   - projects

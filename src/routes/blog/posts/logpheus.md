@@ -2,7 +2,7 @@
 title: Logpheus
 description: Basic Slack Bot that makes use of FT API to query for new devlogs and posts it to personal channels (for each personal channel you will have to provide your own api key i aint hitting ratelimit on my own api key for yall smh)
 date: '2025-12-24'
-tag:
+tags:
   - flavourtown
   - flavortown
   - projects
