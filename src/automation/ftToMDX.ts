@@ -55,7 +55,7 @@ for (const project of projects) {
   const slug = slugify(title);
 
   const date = new Date(project.created_at).toISOString().slice(0, 10);
-  const tags = ["flavourtown", "flavortown", "project"];
+  const tags = ["flavourtown", "flavortown", "projects"];
 
   let postExists = posts.find((p) => p.slug === slug);
   if (!postExists) {
@@ -112,7 +112,7 @@ for (const project of projects) {
     `description: "${project.description ?? ""}"\n` +
     `date: "${date}"\n` +
     `tag:\n${tags.map((t) => `  - ${t}`).join("\n")}\n` +
-    `---\n\n`;
+    `---\n`;
 
   const finalContent =
     frontmatterContent +
@@ -134,8 +134,12 @@ posts.forEach((post: Post, index: number) => {
   const fmData = yaml.load(fmMatch[1]) as Record<string, any>;
 
   const updatedYaml = yaml.dump(fmData, { lineWidth: -1 }).trim();
-  const afterFrontmatter = content.slice(fmMatch[0].length);
-  const updatedContent = `---\n${updatedYaml}\n---` + afterFrontmatter;
+  const afterFrontmatter = content
+  .slice(fmMatch[0].length)
+  .replace(/^\s*\n+/, "\n\n");
+
+  const updatedContent =
+  `---\n${updatedYaml}\n---\n\n` + afterFrontmatter.trimStart();
 
   fs.writeFileSync(mdxPath, updatedContent, "utf8");
 });

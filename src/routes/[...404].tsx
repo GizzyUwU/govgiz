@@ -3,17 +3,31 @@ import { HttpStatusCode } from "@solidjs/start";
 
 export default function NotFound() {
   return (
-    <main>
-      <Title>Not Found</Title>
+    <main
+      class="govuk-main-wrapper govuk-main-wrapper--l"
+      id="main-content"
+      role="main"
+    >
+      <Title>Gizzy - 404</Title>
       <HttpStatusCode code={404} />
-      <h1>Page Not Found</h1>
-      <p>
-        Visit{" "}
-        <a href="https://start.solidjs.com" target="_blank">
-          start.solidjs.com
-        </a>{" "}
-        to learn how to build SolidStart apps.
-      </p>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">Page not found</h1>
+          <p class="govuk-body">
+            If you typed the web address, check it is correct.
+          </p>
+          <p class="govuk-body">
+            If you pasted the web address, check you copied the entire address.
+          </p>
+          <p class="govuk-body">
+            If the web address is correct or you selected a link or button, then
+            this page no longer exists!{" "}
+            <a class="govuk-link" href="/">
+             Redirect to the homepage!
+            </a>
+          </p>
+        </div>
+      </div>
     </main>
   );
 }

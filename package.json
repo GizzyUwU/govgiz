@@ -30,6 +30,7 @@
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.1",
     "remark-toc": "^9.0.0",
+    "solid-icons": "^1.2.0",
     "solid-js": "^1.9.5",
     "solid-jsx": "^1.1.4",
     "solid-mdx": "^0.0.7",

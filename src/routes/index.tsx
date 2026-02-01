@@ -1,4 +1,5 @@
 import { onMount, onCleanup, createResource, Show, For } from "solid-js";
+import { FaSolidArrowRight } from "solid-icons/fa";
 import { posts } from "~/data/posts";
 import Typed from "typed.js";
 
@@ -82,59 +83,125 @@ export default function Home() {
   return (
     <main class="govuk-main-wrapper">
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <h1 id="header" class="govuk-heading-l">
-            Hey! I'm Gizzy
-          </h1>
-          <p class="govuk-body">
-            I'm{" "}
-            <span>
-              {(() => {
-                const birth = new Date("2010-02-15");
-                const today = new Date();
-                let years = today.getFullYear() - birth.getFullYear();
-                if (
-                  today.getMonth() < birth.getMonth() ||
-                  (today.getMonth() === birth.getMonth() &&
-                    today.getDate() < birth.getDate())
-                ) {
-                  years--;
-                }
-                return years;
-              })()}{" "}
-              years old
-            </span>{" "}
-            and a <span id="typed-list"></span>based in the United Kingdom!
-          </p>
-          <Show when={stats()}>
-            <div class="govuk-inset-text">
-              <span id="typed-time"></span> -{" "}
-              {stats().data?.human_readable_total
-                ? stats().data.human_readable_total.replace(/\s*\d+s/, "")
-                : "0m"}{" "}
-              coded today!
-            </div>
-          </Show>
-          <h2 class="govuk-heading-m">Projects</h2>
-          <ul class="govuk-task-list">
-            <For each={posts.filter((post) => post.tags.includes("project"))}>
-              {(post) => (
-                <li class="govuk-task-list__item govuk-task-list__item--with-link">
-                  <div class="govuk-task-list__name-and-hint">
-                    <a
-                      class="govuk-link govuk-task-list__link"
-                      href={`/blog/${post.slug}`}
-                      aria-describedby="company-details-1-status"
-                    >
-                      {post.title}
-                    </a>
-                    <div class="govuk-task-list__hint">{post.description}</div>
-                  </div>
-                </li>
-              )}
-            </For>
+        <h1 id="header" class="govuk-heading-l">
+          Hey! I'm Gizzy
+        </h1>
+        <p class="govuk-body">
+          I'm{" "}
+          <span>
+            {(() => {
+              const birth = new Date("2010-02-15");
+              const today = new Date();
+              let years = today.getFullYear() - birth.getFullYear();
+              if (
+                today.getMonth() < birth.getMonth() ||
+                (today.getMonth() === birth.getMonth() &&
+                  today.getDate() < birth.getDate())
+              ) {
+                years--;
+              }
+              return years;
+            })()}{" "}
+            years old
+          </span>{" "}
+          and a <span id="typed-list"></span>based in the United Kingdom!
+        </p>
+        <Show when={stats()}>
+          <div class="govuk-inset-text">
+            <span id="typed-time"></span> -{" "}
+            {stats().data?.human_readable_total
+              ? stats().data.human_readable_total.replace(/\s*\d+s/, "")
+              : "0m"}{" "}
+            spent writing code.
+          </div>
+        </Show>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
+        <div class="govuk-grid-column-one-thrd-from-desktop govuk-!-margin-bottom-0">
+          <h2 class="govuk-heading-m">Page Navigation</h2>
+          <ul class="govuk-list govuk-grid-row">
+            <li
+              class="govuk-grid-column-one-third"
+              style={{
+                display: "flex",
+                "align-items": "center",
+                gap: "0.6rem",
+              }}
+            >
+              <FaSolidArrowRight size="16" />
+              <a class="govuk-link" href="/details">
+                Details
+              </a>
+            </li>
+            <li
+              class="govuk-grid-column-one-third"
+              style={{
+                display: "flex",
+                "align-items": "center",
+                gap: "0.6rem",
+              }}
+            >
+              <FaSolidArrowRight size="16" />
+              <a class="govuk-link" href="/tags/projects">
+                Projects
+              </a>
+            </li>
+
+            <li
+              class="govuk-grid-column-one-third"
+              style={{
+                display: "flex",
+                "align-items": "center",
+                gap: "0.6rem",
+              }}
+            >
+              <FaSolidArrowRight size="16" />
+              <a class="govuk-link" href="/blog">
+                Blog Posts
+              </a>
+            </li>
+
+            <li
+              class="govuk-grid-column-one-third"
+              style={{
+                display: "flex",
+                "align-items": "center",
+                gap: "0.6rem",
+              }}
+            >
+              <FaSolidArrowRight size="16" />
+              <a class="govuk-link" href="/88x31">
+                88x31
+              </a>
+            </li>
           </ul>
         </div>
+        <h2 class="govuk-heading-m">Latest Projects</h2>
+        <ul class="govuk-task-list">
+          <For
+            each={posts
+              .filter((post) => post.tags.includes("projects"))
+              .sort(
+                (a, b) =>
+                  new Date(b.date).getTime() - new Date(a.date).getTime(),
+              )
+              .slice(0, 3)}
+          >
+            {(post) => (
+              <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                <div class="govuk-task-list__name-and-hint">
+                  <a
+                    class="govuk-link govuk-task-list__link"
+                    href={`/blog/${post.slug}`}
+                    aria-describedby="company-details-1-status"
+                  >
+                    {post.title}
+                  </a>
+                  <div class="govuk-task-list__hint">{post.description}</div>
+                </div>
+              </li>
+            )}
+          </For>
+        </ul>
       </div>
     </main>
   );
