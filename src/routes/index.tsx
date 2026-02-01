@@ -110,6 +110,71 @@ export default function Home() {
 
     const interval = setInterval(updateTime, 1000);
     onCleanup(() => clearInterval(interval));
+
+    const birthdayEl = document.querySelector("#birthday-count") as HTMLElement;
+    let previousBirthday = "";
+
+    let typedBirthday: Typed | null = null;
+    const birth = new Date("2010-02-15");
+
+    const updateBirthday = () => {
+      const today = new Date();
+      let years = today.getFullYear() - birth.getFullYear();
+      if (
+        today.getMonth() < birth.getMonth() ||
+        (today.getMonth() === birth.getMonth() &&
+          today.getDate() < birth.getDate())
+      ) {
+        years--;
+      }
+
+      let output = `${years} years old so far`;
+
+      if (today.getMonth() === birth.getMonth()) {
+        const birthdayThisYear = new Date(
+          today.getFullYear(),
+          birth.getMonth(),
+          birth.getDate(),
+        );
+        const msLeft = birthdayThisYear.getTime() - today.getTime();
+
+        if (msLeft > 0) {
+          const days = Math.floor(msLeft / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((msLeft / (1000 * 60 * 60)) % 24);
+          const minutes = Math.floor((msLeft / (1000 * 60)) % 60);
+
+          output = `${years} years old so far, and I'm gonna have survived ${years + 1} in ${days}d ${hours}h ${minutes}m`;
+        }
+      }
+
+      let firstChangedIndex = 0;
+      while (
+        firstChangedIndex < output.length &&
+        previousBirthday[firstChangedIndex] === output[firstChangedIndex]
+      ) {
+        firstChangedIndex++;
+      }
+
+      if (firstChangedIndex < output.length) {
+        const unchanged = output.slice(0, firstChangedIndex);
+        const changed = output.slice(firstChangedIndex);
+
+        if (typedBirthday) typedBirthday.destroy();
+        birthdayEl.textContent = unchanged;
+        typedBirthday = new Typed(birthdayEl, {
+          strings: [unchanged + changed],
+          typeSpeed: 50,
+          backSpeed: 50,
+          onComplete: (self) => self.cursor.remove(),
+        });
+      }
+
+      previousBirthday = output;
+    };
+
+    updateBirthday();
+    const birthdayInterval = setInterval(updateBirthday, 1000);
+    onCleanup(() => clearInterval(birthdayInterval));
   });
 
   return (
@@ -118,38 +183,23 @@ export default function Home() {
         <h1 id="header" class="govuk-heading-l">
           Hey! I'm Gizzy
         </h1>
+        <p class="govuk-body govuk-!-margin-bottom-0">
+          I've survived <span id="birthday-count"></span>
+        </p>
         <p class="govuk-body">
-          I'm{" "}
-          <span>
-            {(() => {
-              const birth = new Date("2010-02-15");
-              const today = new Date();
-              let years = today.getFullYear() - birth.getFullYear();
-              if (
-                today.getMonth() < birth.getMonth() ||
-                (today.getMonth() === birth.getMonth() &&
-                  today.getDate() < birth.getDate())
-              ) {
-                years--;
-              }
-              return years;
-            })()}{" "}
-            years old
-          </span>{" "}
-          and a <span id="typed-list"></span>based in the United Kingdom!
+          I'm a <span id="typed-list"></span>based in the United Kingdom!
         </p>
         <Show when={stats()}>
           <div class="govuk-inset-text govuk-!-margin-bottom-2">
             <p class="govuk-body-s">
-            <span id="typed-time"></span> -{" "}
-            {stats().data?.human_readable_total
-              ? stats().data.human_readable_total.replace(/\s*\d+s/, "")
-              : "0m"}{" "}
-            spent writing code -{" "}
-            <Show when={!github()?.error}>
-                {github()?.followers} followers and {stars()} stars on
-                github!
-            </Show>
+              <span id="typed-time"></span> -{" "}
+              {stats().data?.human_readable_total
+                ? stats().data.human_readable_total.replace(/\s*\d+s/, "")
+                : "0m"}{" "}
+              spent writing code -{" "}
+              <Show when={!github()?.error}>
+                {github()?.followers} followers and {stars()} stars on github!
+              </Show>
             </p>
           </div>
         </Show>
