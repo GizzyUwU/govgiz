@@ -13,12 +13,44 @@ const fetchStats = async () => {
 
     return res.json();
   } catch (error) {
-    return { error: "Failed to fetch" };
+    return { error: "Failed to fetch hackatime stats" };
+  }
+};
+
+const fetchGithub = async (): Promise<{
+  public_repos?: number;
+  followers?: number;
+  error?: string;
+}> => {
+  try {
+    const res = await fetch("https://api.github.com/users/gizzyuwu");
+    return res.json();
+  } catch (error) {
+    return { error: "Failed to fetch github" };
+  }
+};
+
+const fetchStarsFrom100 = async (): Promise<number> => {
+  try {
+    const res = await fetch(
+      "https://api.github.com/users/gizzyuwu/repos?per_page=100",
+    );
+
+    const data = (await res.json()) as Record<string, any>[];
+    return data.reduce(
+      (acc: number, repo: any) => acc + repo.stargazers_count,
+      0,
+    );
+  } catch (error) {
+    return 0;
   }
 };
 
 export default function Home() {
   const [stats] = createResource(fetchStats);
+  const [github] = createResource(fetchGithub);
+  const [stars] = createResource(fetchStarsFrom100);
+
   onMount(() => {
     new Typed("#typed-list", {
       strings: ["programmer", "developer", "nerd", "maker"],
@@ -107,12 +139,18 @@ export default function Home() {
           and a <span id="typed-list"></span>based in the United Kingdom!
         </p>
         <Show when={stats()}>
-          <div class="govuk-inset-text">
+          <div class="govuk-inset-text govuk-!-margin-bottom-2">
+            <p class="govuk-body-s">
             <span id="typed-time"></span> -{" "}
             {stats().data?.human_readable_total
               ? stats().data.human_readable_total.replace(/\s*\d+s/, "")
               : "0m"}{" "}
-            spent writing code.
+            spent writing code -{" "}
+            <Show when={!github()?.error}>
+                {github()?.followers} followers and {stars()} stars on
+                github!
+            </Show>
+            </p>
           </div>
         </Show>
         <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" />
@@ -175,34 +213,43 @@ export default function Home() {
             </li>
           </ul>
         </div>
-        <Show when={posts && posts?.filter((post) => post.tags?.includes("projects")).length > 0}>
-        <h2 class="govuk-heading-m">Latest Projects</h2>
-        <ul class="govuk-task-list">
-          <For
-            each={posts
-              .filter((post) => (post.tags?.includes("projects") || post.tag?.includes("projects")))
-              .sort(
-                (a, b) =>
-                  new Date(b.date).getTime() - new Date(a.date).getTime(),
-              )
-              .slice(0, 3)}
-          >
-            {(post) => (
-              <li class="govuk-task-list__item govuk-task-list__item--with-link">
-                <div class="govuk-task-list__name-and-hint">
-                  <a
-                    class="govuk-link govuk-task-list__link"
-                    href={`/blog/${post.slug}`}
-                    aria-describedby="company-details-1-status"
-                  >
-                    {post.title}
-                  </a>
-                  <div class="govuk-task-list__hint">{post.description}</div>
-                </div>
-              </li>
-            )}
-          </For>
-        </ul>
+        <Show
+          when={
+            posts &&
+            posts?.filter((post) => post.tags?.includes("projects")).length > 0
+          }
+        >
+          <h2 class="govuk-heading-m">Latest Projects</h2>
+          <ul class="govuk-task-list">
+            <For
+              each={posts
+                .filter(
+                  (post) =>
+                    post.tags?.includes("projects") ||
+                    post.tag?.includes("projects"),
+                )
+                .sort(
+                  (a, b) =>
+                    new Date(b.date).getTime() - new Date(a.date).getTime(),
+                )
+                .slice(0, 3)}
+            >
+              {(post) => (
+                <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                  <div class="govuk-task-list__name-and-hint">
+                    <a
+                      class="govuk-link govuk-task-list__link"
+                      href={`/blog/${post.slug}`}
+                      aria-describedby="company-details-1-status"
+                    >
+                      {post.title}
+                    </a>
+                    <div class="govuk-task-list__hint">{post.description}</div>
+                  </div>
+                </li>
+              )}
+            </For>
+          </ul>
         </Show>
       </div>
     </main>

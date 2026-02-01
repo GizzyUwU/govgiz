@@ -37,6 +37,7 @@ export default function App() {
         >
           <MetaProvider>
             <Title>Gizzy</Title>
+            <link rel="icon" sizes="88x31" href="/88x31.svg" />
             <Link rel="icon" href="/haj.svg" />
             <Link rel="stylesheet" href="/assets/govuk-frontend.min.css" />
             <div
