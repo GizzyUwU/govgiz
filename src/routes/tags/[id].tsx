@@ -8,10 +8,7 @@ import { FaSolidMagnifyingGlass } from "solid-icons/fa";
 const TagId: Component<RouteSectionProps<{ params: { id: string } }>> = (
   props,
 ) => {
-  const tag = () => {
-    const t = tags || tag;
-    return props.params.id ? t[props.params.id] : undefined;
-  };
+  const tag = () => props.params.id ? tags[props.params.id] : undefined;
   const [searchInput, setSearchInput] = createSignal("");
   const filteredPosts = createMemo(() => {
     const q = searchInput().toLowerCase();
