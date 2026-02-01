@@ -26,6 +26,8 @@ tag:
 
 
 
+
+
 ## Devlog 2214 • 2025-12-24
 
 I need a devlog to test so uhm past hour and half i well made lib file for ft its a class file so i can use it in other projects if i want to too then using that i made it pull projects then pull devlogs if no cache file exists it adds all devlogs of project id which is in apiKeys.json which stores project id as key then under it the api key and channel to post it to
@@ -231,4 +233,23 @@ Mreowwwww! I'm literally just improving logpheus handling of issues to use bugsi
 uhm pushed to prod the changes i madeto table etc fixed sum stuff took down prod for like half and hour as u do so fixed that because of dumb migration issues bleh but it does make use of new tables now for data not all data in new tables tho like last devlog timestamp or the store of user ids so i need to manually add uids in for users previous to the update but also change it so it stores and uses last devlog timestamp as main check and fallback to id check if need be
 
 0 likes • 71 min
+
+## Devlog 15051 • 2026-01-23
+
+Well uhm this was a crazy one, a self hosted instance caused offical to die because of how slack handles slash commands its extremely secure setup allows other bots to overwrite the slash commnads you have to their own and dw it does the exact opposite of telling user this it still shows that the command you are about to run is from the offical bot so i had to modify it so self hosted instances now use user id and bot user as prefix to fix it also updating schema to work more efficiently then and clean up code
+
+0 likes • 222 min
+
+## Devlog 15243 • 2026-01-24
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+I work on moving schema :3c and also cleaning up the codebase so its more readable as ts confusing also improved schema migration by learning how to actually use drizzle frfr
+
+0 likes • 87 min
+
+## Devlog 15281 • 2026-01-24
+
+bleh more time for me! I did sum cleaning moving devlog check to sept file and no longer rely on loadApiKeys which is super overkill for 1 function using it since func was legacy code used a lot before changing to drizzle etc
+
+0 likes • 54 min
 
