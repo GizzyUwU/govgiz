@@ -80,40 +80,48 @@ for (const project of projects) {
       new Date(a.created_at).getTime() - new Date(b.created_at).getTime(),
   );
 
-  const devlogContent = devlogs
+  const filePath = path.join(POSTS_DIR, `${slug}.mdx`);
+  let existingContent = "";
+  if (fs.existsSync(filePath)) {
+    existingContent = fs.readFileSync(filePath, "utf8");
+  }
+
+  const fmMatch = existingContent.match(/^---\s*([\s\S]*?)\s*---/);
+  let body = existingContent;
+  if (fmMatch) body = existingContent.slice(fmMatch[0].length);
+
+  const existingDevlogIds = Array.from(body.matchAll(/^## Devlog (\d+)/gm)).map(
+    (m) => m[1],
+  );
+
+  const newDevlogs = devlogs
+    .filter((d) => !existingDevlogIds.includes(d.id.toString()))
     .map(
       (d) =>
         `## Devlog ${d.id} • ${new Date(d.created_at).toISOString().slice(0, 10)}\n\n` +
-        `${d.body}\n\n` +
-        `${d.likes_count} likes • ${Math.round(d.duration_seconds / 60)} min\n\n`,
-    )
-    .join("\n");
+        `${d.body}\n\n${d.likes_count} likes • ${Math.round(d.duration_seconds / 60)} min\n\n`,
+    );
 
-  const filePath = path.join(POSTS_DIR, `${slug}.mdx`);
+  const preDevlogContent = body.split(/^\s*## Devlog/m)[0];
 
-  const frontmatter =
+  const existingDevlogContent = body.slice(preDevlogContent.length);
+
+  const frontmatterContent =
     `---\n` +
     `title: "${title}"\n` +
     `description: "${project.description ?? ""}"\n` +
     `date: "${date}"\n` +
     `tag:\n${tags.map((t) => `  - ${t}`).join("\n")}\n` +
-    `---\n\n` +
-    `${project.description ?? ""}\n\n` +
-    `${project.repo_url ? `- **Repo:** [${project.repo_url}](${project.repo_url})\n` : ""}` +
-    `${project.demo_url ? `- **Demo:** [${project.demo_url}](${project.demo_url})\n` : ""}` +
-    `${project.readme_url ? `- **Readme:** [${project.readme_url}](${project.readme_url})\n` : ""}\n\n` +
-    `## Contents\n` +
-    `${devlogContent}`;
+    `---\n\n`;
 
-  fs.writeFileSync(filePath, frontmatter, "utf-8");
+  const finalContent =
+    frontmatterContent +
+    preDevlogContent +
+    existingDevlogContent +
+    newDevlogs.join("");
+  fs.writeFileSync(filePath, finalContent, "utf8");
 }
 fs.writeFileSync(POSTS_JSON, JSON.stringify(posts, null, 4), "utf-8");
-
-function getNavSlugs(index: number) {
-  const prev = posts[(index - 1 + posts.length) % posts.length].slug;
-  const next = posts[(index + 1) % posts.length].slug;
-  return { prev, next };
-}
 
 posts.forEach((post: Post, index: number) => {
   const mdxPath = path.join(POSTS_DIR, `${post.slug}.mdx`);
@@ -124,14 +132,10 @@ posts.forEach((post: Post, index: number) => {
   if (!fmMatch) return;
 
   const fmData = yaml.load(fmMatch[1]) as Record<string, any>;
-  const { prev, next } = getNavSlugs(index);
-
-  fmData.prev = prev;
-  fmData.next = next;
 
   const updatedYaml = yaml.dump(fmData, { lineWidth: -1 }).trim();
-  const updatedContent =
-    `---\n${updatedYaml}\n---\n` + content.slice(fmMatch[0].length).trimStart();
+  const afterFrontmatter = content.slice(fmMatch[0].length);
+  const updatedContent = `---\n${updatedYaml}\n---` + afterFrontmatter;
 
   fs.writeFileSync(mdxPath, updatedContent, "utf8");
 });
