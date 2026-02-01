@@ -22,6 +22,8 @@ tag:
 
 
 
+
+
 ## Devlog 2214 • 2025-12-24
 
 I need a devlog to test so uhm past hour and half i well made lib file for ft its a class file so i can use it in other projects if i want to too then using that i made it pull projects then pull devlogs if no cache file exists it adds all devlogs of project id which is in apiKeys.json which stores project id as key then under it the api key and channel to post it to
@@ -221,4 +223,10 @@ Fixed bugs!
 Mreowwwww! I'm literally just improving logpheus handling of issues to use bugsink to post errors so I can read but also handle 401 errors better so I'm not being spammed with errors because you guys being annoying with your api keys
 
 1 likes • 105 min
+
+## Devlog 15325 • 2026-01-24
+
+uhm pushed to prod the changes i madeto table etc fixed sum stuff took down prod for like half and hour as u do so fixed that because of dumb migration issues bleh but it does make use of new tables now for data not all data in new tables tho like last devlog timestamp or the store of user ids so i need to manually add uids in for users previous to the update but also change it so it stores and uses last devlog timestamp as main check and fallback to id check if need be
+
+0 likes • 71 min
 
