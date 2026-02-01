@@ -13,8 +13,12 @@ import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs";
 
 const loadPost = (slug: string) =>
-  lazy(() => import(`~/routes/blog/posts/${slug}.mdx`));
-
+  lazy(() =>
+    import(`~/routes/blog/posts/${slug}.mdx`).catch(() =>
+      import(`~/routes/blog/posts/${slug}.md`)
+    )
+  );
+  
 const Blog = (props: RouteSectionProps<{ params: { id: string } }>) => {
   const meta = () => posts.find((p) => p.slug === props.params.id) as Post;
   const PostContent = loadPost(meta()?.slug || "");

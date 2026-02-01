@@ -8,14 +8,13 @@ tag:
   - project
 ---
 
+## Devlog 17136 • 2026-01-29
 
-Literally remaking my personal site in solidjs with solid-start but using the uk govs styling components :3c
-
-- **Repo:** [https://github.com/GizzyUwU/govgiz](https://github.com/GizzyUwU/govgiz)
-- **Readme:** [https://raw.githubusercontent.com/GizzyUwU/govgiz/main/README.md](https://raw.githubusercontent.com/GizzyUwU/govgiz/main/README.md)
+Blehhhh ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) so new project first devlog i spent most of time fighitng to get it to work with solidjs but it works AND LOOKS SEXY i also wiped up custom logo in figma balls
 
 
-## Contents
+0 likes • 87 min
+
 ## Devlog 17146 • 2026-01-29
 
 Im eepy its 1 am but gotta devlog so yipeeeeeeeeeeeeeeeeee
@@ -76,4 +75,13 @@ This wasnt much but yipeee
 BLEHHH IM BACK AGAIN ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) since it has a blog now i gotta do the natural thing of being lazy! I made a github action to generate an mdx from these FT devlogs and projects and add it to the website mdx ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) i also did sum other stuff but thats not really important compared to that
 
 0 likes • 162 min
+
+## Devlog 18312 • 2026-02-01
+
+bleh i had to fix script and aciton that was painfal its 1 am im eepy but update
+- github action runs update every 10m now correctly
+- it prevents xss now from mdx bleh
+- IM TIRIED
+
+0 likes • 45 min
 

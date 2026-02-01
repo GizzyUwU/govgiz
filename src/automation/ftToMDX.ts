@@ -50,11 +50,6 @@ for (const id of me.project_ids) {
   }
 }
 
-const escapeText = (text?: string) => {
-  if (!text) return "";
-  return text.replace(/\$\{([^}]+)\}/g, "`$${$1}`");
-};
-
 for (const project of projects) {
   const title = project.title;
   const slug = slugify(title);
@@ -85,7 +80,7 @@ for (const project of projects) {
       new Date(a.created_at).getTime() - new Date(b.created_at).getTime(),
   );
 
-  const filePath = path.join(POSTS_DIR, `${slug}.mdx`);
+  const filePath = path.join(POSTS_DIR, `${slug}.md`);
   let existingContent = "";
   if (fs.existsSync(filePath)) {
     existingContent = fs.readFileSync(filePath, "utf8");
@@ -104,7 +99,7 @@ for (const project of projects) {
     .map(
       (d) =>
         `## Devlog ${d.id} • ${new Date(d.created_at).toISOString().slice(0, 10)}\n\n` +
-        `${escapeText(d.body)}\n\n${d.likes_count} likes • ${Math.round(d.duration_seconds / 60)} min\n\n`,
+        `${d.body}\n\n${d.likes_count} likes • ${Math.round(d.duration_seconds / 60)} min\n\n`,
     );
 
   const preDevlogContent = body.split(/^\s*## Devlog/m)[0];
@@ -129,7 +124,7 @@ for (const project of projects) {
 fs.writeFileSync(POSTS_JSON, JSON.stringify(posts, null, 4), "utf-8");
 
 posts.forEach((post: Post, index: number) => {
-  const mdxPath = path.join(POSTS_DIR, `${post.slug}.mdx`);
+  const mdxPath = path.join(POSTS_DIR, `${post.slug}.md`);
   if (!fs.existsSync(mdxPath)) return;
 
   const content = fs.readFileSync(mdxPath, "utf8");

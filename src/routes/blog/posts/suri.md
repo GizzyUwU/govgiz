@@ -8,20 +8,11 @@ tag:
   - project
 ---
 
-
-Do you hate slack desktop? Is it really slow for you like it is for me? Well fuck it I hate slack desktop and it's lag so I'm making it myself.
-
-- **Repo:** [https://github.com/GizzyUwU/suri](https://github.com/GizzyUwU/suri)
-- **Readme:** [https://raw.githubusercontent.com/GizzyUwU/suri/main/README.md](https://raw.githubusercontent.com/GizzyUwU/suri/main/README.md)
-
-
-## Contents
 ## Devlog 358 • 2025-12-20
 
 Yes I am 1h 48m in to this and I have made barely any progress. Blame slack for that I spent all this time just trying to get convo history to work :hs:
 
 0 likes • 111 min
-
 
 ## Devlog 685 • 2025-12-21
 
@@ -29,13 +20,11 @@ I spent most of the 2h 33m trying and debugging just to get a single d cookie th
 
 0 likes • 152 min
 
-
 ## Devlog 1029 • 2025-12-22
 
 Well this one is a long one. I literally spent 4 hours and the feature isn't done yet. I can confirm that I hate slack, I have gained more hate for tauri and more love for tauri. I tried first to make the request for data i need manually which for some god known reason refused to work and kept 404ing aka i hate slack, i then spent my time trying to grab data from session storage before slack wiped it which that didnt work out then I realised it moves the data to localStorage which is well weird and I wrote rust code to grab that then I spent more time just trying to get that data from webview to frontend code and FINALLY I GOT THE DATA login still not done tho now take a picturee of my shit code
 
 0 likes • 242 min
-
 
 ## Devlog 1054 • 2025-12-22
 
@@ -43,13 +32,11 @@ Well this one is a long one. I literally spent 4 hours and the feature isn't don
 
 0 likes • 31 min
 
-
 ## Devlog 1903 • 2025-12-23
 
 Well this was semi painful but WEBSOCKET mhm yes we got slack websocket in it now and because slack sends so much data even on channels your not currently looking at you could multiple channels at once on it :uuh: mhm yes you can see people typing, that someone joined someone sent a message while not being in that channel very sigma must say but this was pain to get to work
 
 0 likes • 143 min
-
 
 ## Devlog 2160 • 2025-12-24
 
@@ -57,13 +44,11 @@ More modifications to auth! This time not because slack sucks but because I want
 
 0 likes • 125 min
 
-
 ## Devlog 5676 • 2026-01-03
 
 I forgor to make a devlog qwp. ANYWAY 10 days past and i did some stuff :3 I tried to get tauri to shutup about "couldnn't find callback id" because it sucks at cleaning up its own resources with its plugins that took a while until i just made console.warn filter it out of console to shut it up instead it aint my job to fix tauris shit,  I also made a bit of a ui for it and real time messages from the websocket and ability to post messages! (dont mind the random person on the right i stole the ui from flowbite :3c)
 
 0 likes • 318 min
-
 
 ## Devlog 5720 • 2026-01-03
 
@@ -71,13 +56,11 @@ Yeah my previous fix to shutup couldnt find callback id annoyed me so i spent th
 
 0 likes • 99 min
 
-
 ## Devlog 5979 • 2026-01-04
 
 Names! Yes this could of been done in like 30 minutes but im a twat i made a stupid mistake causing me to not match the user id to the gotten ids for the channel because i used channel: channelId in the body not channels: [channelId] causing slack to throw workspace users not channel users. I also moved chat to its own file instead of just in the index.tsx file
 
 0 likes • 131 min
-
 
 ## Devlog 6086 • 2026-01-04
 
@@ -85,13 +68,11 @@ A bit better message parsing :3c it now has semi good image support setup image 
 
 0 likes • 60 min
 
-
 ## Devlog 6260 • 2026-01-05
 
 Better parsing of rich text blocks :3c not completely dont yet tho
 
 1 likes • 41 min
-
 
 ## Devlog 6298 • 2026-01-05
 
