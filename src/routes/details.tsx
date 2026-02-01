@@ -32,7 +32,7 @@ export default function Details() {
               ELT2ICal{" "}
             </a>{" "}
             - It's a server that makes use of the EdulinkOne API to convert the
-            lesson timetable to a ICalendar file so I could use google calendars
+            lesson timetable to a ICalendar file so I could use google calendar
             to alert me of what room I am in for my next lesson. EdulinkOne does
             kind of already have this feature but I built this because it
             stopped working after a while which was annoying so I came up with
