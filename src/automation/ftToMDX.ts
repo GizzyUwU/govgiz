@@ -102,6 +102,8 @@ for (const project of projects) {
         `${d.body}\n\n${d.likes_count} likes • ${Math.round(d.duration_seconds / 60)} min\n\n`,
     );
 
+  if(newDevlogs.length > 0) console.log("Woah new devlogs for", project.id)
+
   const preDevlogContent = body.split(/^\s*## Devlog/m)[0];
 
   const existingDevlogContent = body.slice(preDevlogContent.length);

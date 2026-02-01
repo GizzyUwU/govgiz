@@ -85,3 +85,21 @@ bleh i had to fix script and aciton that was painfal its 1 am im eepy but update
 
 0 likes • 45 min
 
+## Devlog 18619 • 2026-02-01
+
+Okay i apparentally forgot to hit post so let me write this again. HAIIIIIIIIIII ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+i DID SOME THINGS
+- Prod setup exists on github pages?! [https://gizzy.gay](https://gizzy.gay)
+- Swap replacing stuff to prevent execution with just using .md instead of mdx
+- Updated breadcrump to show current page too
+- Fix ftToMDX to stop spamming new lines and changing tags to tag
+- 404 Page now
+- Search for projects or tags
+- Fixed postsPlugin to not explode when md
+- Page navigation section
+- Some other things i cant rememebber  ![bleh](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fbleh%2F8be6dc6939de105f.png&w=30&h=30&fit=contain&n=-1) 
+- No longer shows posts with tag projects on blog posts page
+- Made tags and blog posts page more sexy
+
+0 likes • 206 min
+
