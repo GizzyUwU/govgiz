@@ -117,7 +117,7 @@ export default function Home() {
           </Show>
           <h2 class="govuk-heading-m">Projects</h2>
           <ul class="govuk-task-list">
-            <For each={posts.filter((post) => post.tags.includes("projects"))}>
+            <For each={posts.filter((post) => post.tags.includes("project"))}>
               {(post) => (
                 <li class="govuk-task-list__item govuk-task-list__item--with-link">
                   <div class="govuk-task-list__name-and-hint">
