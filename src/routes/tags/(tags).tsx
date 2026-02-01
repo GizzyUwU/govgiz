@@ -1,4 +1,4 @@
-import { For, createSignal, createMemo } from "solid-js";
+import { For, createSignal, createMemo, Show } from "solid-js";
 import { tags } from "~/data/tags";
 import { FaSolidMagnifyingGlass } from "solid-icons/fa";
 
@@ -12,7 +12,9 @@ const Tags = () => {
     if (!q) return Object.values(tags);
 
     return Object.values(tags).filter(
-      (tag) => tag.id.toLowerCase().includes(q) || String(tag.posts.length).includes(q)
+      (tag) =>
+        tag.id.toLowerCase().includes(q) ||
+        String(tag.posts.length).includes(q),
     );
   });
 
@@ -43,6 +45,9 @@ const Tags = () => {
           </div>
         </div>
       </div>
+      <Show when={filteredTags().length == 0}>
+        <p class="govuk-body">No tags have been used yet.</p>
+      </Show>
       <ul class="govuk-task-list">
         <For each={filteredTags()}>
           {(tag) => (
