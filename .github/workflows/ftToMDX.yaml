@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      FT_API_KEY: ${{ secrets.FT_API_KEY }}
     steps:
       - uses: actions/checkout@v5
         with:
