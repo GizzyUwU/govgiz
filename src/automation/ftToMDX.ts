@@ -77,7 +77,7 @@ for (const project of projects) {
 
   devlogs.sort(
     (a, b) =>
-      new Date(a.created_at).getTime() - new Date(b.created_at).getTime(),
+      new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
   );
 
   const filePath = path.join(POSTS_DIR, `${slug}.md`);
@@ -102,7 +102,7 @@ for (const project of projects) {
         `${d.body}\n\n${d.likes_count} likes • ${Math.round(d.duration_seconds / 60)} min\n\n`,
     );
 
-  if(newDevlogs.length > 0) console.log("Woah new devlogs for", project.id)
+  if (newDevlogs.length > 0) console.log("Woah new devlogs for", project.id);
 
   const preDevlogContent = body.split(/^\s*## Devlog/m)[0];
 
@@ -123,6 +123,9 @@ for (const project of projects) {
     newDevlogs.join("");
   fs.writeFileSync(filePath, finalContent, "utf8");
 }
+
+posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
 fs.writeFileSync(POSTS_JSON, JSON.stringify(posts, null, 4), "utf-8");
 
 posts.forEach((post: Post, index: number) => {
@@ -137,11 +140,11 @@ posts.forEach((post: Post, index: number) => {
 
   const updatedYaml = yaml.dump(fmData, { lineWidth: -1 }).trim();
   const afterFrontmatter = content
-  .slice(fmMatch[0].length)
-  .replace(/^\s*\n+/, "\n\n");
+    .slice(fmMatch[0].length)
+    .replace(/^\s*\n+/, "\n\n");
 
   const updatedContent =
-  `---\n${updatedYaml}\n---\n\n` + afterFrontmatter.trimStart();
+    `---\n${updatedYaml}\n---\n\n` + afterFrontmatter.trimStart();
 
   fs.writeFileSync(mdxPath, updatedContent, "utf8");
 });

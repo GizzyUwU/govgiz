@@ -193,8 +193,8 @@ export default function Home() {
         I'm a <span id="typed-list"></span>based in the United Kingdom!
       </p>
       <Show when={stats()}>
-        <div class="govuk-inset-text govuk-!-margin-bottom-2">
-          <p class="govuk-body-s">
+        <div class="govuk-inset-text govuk-!-margin-bottom-2 govuk-!-margin-top-0">
+          <p class="govuk-body">
             <span id="typed-time"></span> -{" "}
             {stats().data?.human_readable_total
               ? stats().data.human_readable_total.replace(/\s*\d+s/, "")
