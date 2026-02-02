@@ -79,6 +79,88 @@ Mreowwwww! I'm literally just improving logpheus handling of issues to use bugsi
 
 1 likes • 105 min
 
+## Devlog 13586 • 2026-01-19
+
+Bleh not devlogged this in a while but i got time so might aswell
+Fixed bugs!
+- You can now add multiple projects to one api key as fixed bug preventing this
+- you can no longer be a stinky and try add the same project twice under a api key
+
+0 likes • 46 min
+
+## Devlog 4960 • 2026-01-01
+
+Nvm i hate code! 16m of more bug fixing to get it to stop spamming qwp
+
+0 likes • 16 min
+
+## Devlog 4952 • 2026-01-01
+
+I'm logging this cuz free time! Logpheus felt like going on a spamming spree because of a bug in my code. Every minute a check ran and my dumbass made it update db to the value of the check so every 2 minutes it would change value back to one that causes shipped message to post causing spam hopefully this should be fixed tho
+
+0 likes • 29 min
+
+## Devlog 4943 • 2025-12-31
+
+WOOOOOOO just took down prod for 10 minutes because im dumb! I spent this time fixing my dumb mistakes, adding support to use full postgres in prod so I only need pglite in dev making my life easier in both cases and adding validation of api keys when added!
+
+0 likes • 124 min
+
+## Devlog 4899 • 2025-12-31
+
+This whole devlog time was spent on another migration because I found out about pglite (postgres in wasm) and drizzle supported it so I migrated over to that instead because drizzle makes my life way more convienent especially working on logpheus it just took so long to setup as it was my first time using drizzle and i had to also create migration from sqlite and json to pglite to ensure no data loss.
+
+0 likes • 290 min
+
+## Devlog 4394 • 2025-12-30
+
+# Migration!
+Using json was really annoying especially for every project using their own cache json file for devlogs so instead i swapped to SQL which is using bun:sqlite for storing api keys, projects etc taking advantage of buns implementation which is pretty fast but also its less resource usage slightly because I'm not using json for everything I need parsing it stringifying it pushing it to file a lot. All previous json files will be migrated on start to the new db.
+
+0 likes • 113 min
+
+## Devlog 4167 • 2025-12-29
+
+OKAY REAL DEVLOG THIS TIME, markdown support is now fully added i think yes
+
+0 likes • 28 min
+
+## Devlog 4157 • 2025-12-29
+
+Trying to implement support for markdown in logpheus
+<u>meow</u>
+
+i like <u>potatos</u>
+
+0 likes • 34 min
+
+## Devlog 4147 • 2025-12-29
+
+# Haiiiiiiiiiiii
+> I NEED MARKDOWN TO TEST LOGPHEUS THIS ISNT REALLY A DEVLOG JUST TESTING SOMETHING DEVLOG SOON THO
+
+~~REA~~
+*DK*
+**YOUR BALD**
+- QUACK
+- A
+
+1. A
+2. a
+- [x] quacked at people today
+- [ ] meowed at people today
+`sniffs you`
+```
+arf arf
+```
+[quacker](https://example.com)
+
+
+---
+sadgagagdag
+
+0 likes • 19 min
+
 ## Devlog 4012 • 2025-12-29
 
 UH MORE HOURS FOR ME YIPEEEEEE so basically i in this time explode prod a couple times because of the new dockerfile but fixed it added improved error handling so that it doesnt spam my logs when something like a 401 happens i added ability to change api key in a channel using /logpheus-config, i converted timestamps to utc and now use the good format not the us format for dates so DD/MM/YYYY and it is now clickable timestamp so users can click it and convert it to their timezone if they want to and i moved the ext header which is useless to axios.create instead of spammed in every func call

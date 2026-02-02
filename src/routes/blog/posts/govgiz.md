@@ -98,3 +98,32 @@ Wow an hour just spent on this? ![bleh](https://images.weserv.nl/?url=https%3A%2
 
 0 likes • 86 min
 
+## Devlog 18019 • 2026-01-31
+
+BLEHHHHHH 2 HOURS ALREADY DAMN BLEHHH
+ANYWAY ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) ![3cnuke](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3cnuke%2Fe35ee9bec8dfa875.png&w=30&h=30&fit=contain&n=-1)
+UPDATEEEEEEEEEEEEEE AAAAAAAAAAAAAAAAAA
+- I did sum code theft ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) someone made a blog in solidjs with mdx before me so i stole sum code from it [there blog on it is here](https://andi.dev/blog/how-solid-start-blog/) so i made use of that code for mine but modifying it so it fits uk gov design bleh
+- I did other stuff but forgor
+### Changelog
+- [feat: basic ahh blog i ripped off from someones site but trying to make fit this design](https://api.github.com/repos/GizzyUwU/govgiz/commits/4b2613c90b8a156fd557a6569138a5416a1876cd)
+
+
+0 likes • 131 min
+
+## Devlog 17146 • 2026-01-29
+
+Im eepy its 1 am but gotta devlog so yipeeeeeeeeeeeeeeeeee
+- Uses hackatime now to get my hours coded today
+- Shows my local time which also live updates using typedjs to update it
+- Small desc about me uses typedjs to change values bleh ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
+
+0 likes • 47 min
+
+## Devlog 17136 • 2026-01-29
+
+Blehhhh ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) so new project first devlog i spent most of time fighitng to get it to work with solidjs but it works AND LOOKS SEXY i also wiped up custom logo in figma balls
+
+
+0 likes • 87 min
+
