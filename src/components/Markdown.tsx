@@ -249,6 +249,7 @@ export const markdownComponents = {
   ul: Ul,
   blockquote: Blockquote,
   pre: Pre,
+  h1: H2,
   h2: H2,
   h3: H3,
   h4: H4,

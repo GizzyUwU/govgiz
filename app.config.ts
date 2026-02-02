@@ -10,6 +10,7 @@ import rehypeMdxCodeProps from "rehype-mdx-code-props";
 import mdxPrism from "./plugins/mdxPrism";
 import prismjs from "vite-plugin-prismjs";
 import remarkToc from "remark-toc";
+import remarkGfm from "remark-gfm"
 import postsPlugin from "./plugins/postsPlugin";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,7 +29,7 @@ export default defineConfig({
         css: true,
       }),
       mdx.withImports({})({
-        remarkPlugins: [remarkFrontmatter, remarkToc],
+        remarkPlugins: [remarkFrontmatter, remarkToc, remarkGfm],
         rehypePlugins: [rehypeMdxCodeProps, mdxPrism],
         jsx: true,
         jsxImportSource: "solid-js",
