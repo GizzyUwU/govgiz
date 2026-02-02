@@ -8,6 +8,27 @@ tags:
   - projects
 ---
 
+## Devlog 18978 • 2026-02-02
+
+HAIIIII IM BACK AGAIN ;3c
+SOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO i made sum changes if you didnt notice dumb ahh
+- Modified FTToMDX to not just use minutes but hours and if you need days too that but like that prob wont be hit for days
+- Swapped da order from oldest -> newest to newest -> so it looks better
+- Better markdown support with h1 support and other stuff like checkboxes just not existing
+- Improved detection of lang in markdown code block but if it cant detect it just say unknown then nothing
+- Copy block no longer copies its own text
+I got the 4167 devlog id? ![sixseven](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fsixseven%2F361b0d7b25240b66.png&w=30&h=30&fit=contain&n=-1) 
+
+### Changelog
+- [minor: change from just mins to days, hours, mins](https://api.github.com/repos/GizzyUwU/govgiz/commits/9d231bc4a59e7c3c5849548039877bdb07dc3bcc)
+- [feat: improved detection of language by parsing child, fix for copy button coping the copy button too not just the code](https://api.github.com/repos/GizzyUwU/govgiz/commits/30e7d6bb0071061868c2eb01f74be74fe4b3697d)
+- [fix: lacking rmark-gfm causing some markdown to not be supported, h1 missing so it didnt match](https://api.github.com/repos/GizzyUwU/govgiz/commits/acf0304757e1e5c7969d7b2221a0db2447cd3e6e)
+- [feat: ratelimit handler + fix for it not moving stuff for new devlogs i forgor about that case](https://api.github.com/repos/GizzyUwU/govgiz/commits/698bdaa1fa6ab7821cb743dc1dec67aa07c3665f)
+- [fix: swap order from oldest to newest to newest to oldest](https://api.github.com/repos/GizzyUwU/govgiz/commits/07b3487f54bc06b62bcceb717473469060c4a358)
+
+
+0 likes • 1h 3m
+
 ## Devlog 18818 • 2026-02-02
 
 An hour? Damn not that long to be fair, ANYWAY hai chat ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) I did sum fixes
