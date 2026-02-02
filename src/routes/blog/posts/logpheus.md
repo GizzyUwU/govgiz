@@ -19,7 +19,7 @@ Chat, are we codemaxxing rn? no stupid we are bugfixing dumb ahh
 - Config command not channel specific now it uses user id to update api key
 - Tells user that prod exploded instead of ghostting them when it does
 
-0 likes • 156 min
+0 likes • 2h 36m
 
 ## Devlog 16313 • 2026-01-26
 
@@ -30,7 +30,7 @@ Almost 3 hours again GOD i kinda forgor was gonna do one this morning but devlog
 - More bug fixes as an FT api route changed without me knowing breaking the bot so had to fix that and fallback so if it happens again it logs to sentry as sus ![sussy](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fsussy%2Fcc3a0a8a261caea2.png&w=30&h=30&fit=contain&n=-1)
 - Did a update to readme to match new stuff ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
 
-0 likes • 161 min
+0 likes • 2h 40m
 
 ## Devlog 15877 • 2026-01-25
 
@@ -39,45 +39,45 @@ i fixed sum bugs
 user command! get someones ft profile from sometimes slack account
 opt outs column for something soon owo
 
-0 likes • 182 min
+0 likes • 3h 2m
 
 ## Devlog 15662 • 2026-01-25
 
 Another time for a devlog!!!!!!!!!!!!!!!!!!!!!!! BLEH :hyper-dino-wave:
 I spent most of the time improving the error handling of logpheus so it makes use of MY BUGSINK MOREEEE and its more specific with errors so now if it isnt 401 it doesnt default to no project exists at id it only does that at 404 :3c with MORE CONTEXT TOO so better easier debugging
 
-0 likes • 117 min
+0 likes • 1h 56m
 
 ## Devlog 15325 • 2026-01-24
 
 uhm pushed to prod the changes i madeto table etc fixed sum stuff took down prod for like half and hour as u do so fixed that because of dumb migration issues bleh but it does make use of new tables now for data not all data in new tables tho like last devlog timestamp or the store of user ids so i need to manually add uids in for users previous to the update but also change it so it stores and uses last devlog timestamp as main check and fallback to id check if need be
 
-0 likes • 71 min
+0 likes • 1h 11m
 
 ## Devlog 15281 • 2026-01-24
 
 bleh more time for me! I did sum cleaning moving devlog check to sept file and no longer rely on loadApiKeys which is super overkill for 1 function using it since func was legacy code used a lot before changing to drizzle etc
 
-0 likes • 54 min
+0 likes • 54m
 
 ## Devlog 15243 • 2026-01-24
 
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 I work on moving schema :3c and also cleaning up the codebase so its more readable as ts confusing also improved schema migration by learning how to actually use drizzle frfr
 
-0 likes • 87 min
+0 likes • 1h 26m
 
 ## Devlog 15051 • 2026-01-23
 
 Well uhm this was a crazy one, a self hosted instance caused offical to die because of how slack handles slash commands its extremely secure setup allows other bots to overwrite the slash commnads you have to their own and dw it does the exact opposite of telling user this it still shows that the command you are about to run is from the offical bot so i had to modify it so self hosted instances now use user id and bot user as prefix to fix it also updating schema to work more efficiently then and clean up code
 
-0 likes • 222 min
+0 likes • 3h 41m
 
 ## Devlog 14494 • 2026-01-21
 
 Mreowwwww! I'm literally just improving logpheus handling of issues to use bugsink to post errors so I can read but also handle 401 errors better so I'm not being spammed with errors because you guys being annoying with your api keys
 
-1 likes • 105 min
+1 likes • 1h 45m
 
 ## Devlog 13586 • 2026-01-19
 
@@ -86,44 +86,44 @@ Fixed bugs!
 - You can now add multiple projects to one api key as fixed bug preventing this
 - you can no longer be a stinky and try add the same project twice under a api key
 
-0 likes • 46 min
+0 likes • 46m
 
 ## Devlog 4960 • 2026-01-01
 
 Nvm i hate code! 16m of more bug fixing to get it to stop spamming qwp
 
-0 likes • 16 min
+0 likes • 16m
 
 ## Devlog 4952 • 2026-01-01
 
 I'm logging this cuz free time! Logpheus felt like going on a spamming spree because of a bug in my code. Every minute a check ran and my dumbass made it update db to the value of the check so every 2 minutes it would change value back to one that causes shipped message to post causing spam hopefully this should be fixed tho
 
-0 likes • 29 min
+0 likes • 29m
 
 ## Devlog 4943 • 2025-12-31
 
 WOOOOOOO just took down prod for 10 minutes because im dumb! I spent this time fixing my dumb mistakes, adding support to use full postgres in prod so I only need pglite in dev making my life easier in both cases and adding validation of api keys when added!
 
-0 likes • 124 min
+0 likes • 2h 3m
 
 ## Devlog 4899 • 2025-12-31
 
 This whole devlog time was spent on another migration because I found out about pglite (postgres in wasm) and drizzle supported it so I migrated over to that instead because drizzle makes my life way more convienent especially working on logpheus it just took so long to setup as it was my first time using drizzle and i had to also create migration from sqlite and json to pglite to ensure no data loss.
 
-0 likes • 290 min
+0 likes • 4h 49m
 
 ## Devlog 4394 • 2025-12-30
 
 # Migration!
 Using json was really annoying especially for every project using their own cache json file for devlogs so instead i swapped to SQL which is using bun:sqlite for storing api keys, projects etc taking advantage of buns implementation which is pretty fast but also its less resource usage slightly because I'm not using json for everything I need parsing it stringifying it pushing it to file a lot. All previous json files will be migrated on start to the new db.
 
-0 likes • 113 min
+0 likes • 1h 52m
 
 ## Devlog 4167 • 2025-12-29
 
 OKAY REAL DEVLOG THIS TIME, markdown support is now fully added i think yes
 
-0 likes • 28 min
+0 likes • 28m
 
 ## Devlog 4157 • 2025-12-29
 
@@ -132,7 +132,7 @@ Trying to implement support for markdown in logpheus
 
 i like <u>potatos</u>
 
-0 likes • 34 min
+0 likes • 34m
 
 ## Devlog 4147 • 2025-12-29
 
@@ -159,77 +159,77 @@ arf arf
 ---
 sadgagagdag
 
-0 likes • 19 min
+0 likes • 18m
 
 ## Devlog 4012 • 2025-12-29
 
 UH MORE HOURS FOR ME YIPEEEEEE so basically i in this time explode prod a couple times because of the new dockerfile but fixed it added improved error handling so that it doesnt spam my logs when something like a 401 happens i added ability to change api key in a channel using /logpheus-config, i converted timestamps to utc and now use the good format not the us format for dates so DD/MM/YYYY and it is now clickable timestamp so users can click it and convert it to their timezone if they want to and i moved the ext header which is useless to axios.create instead of spammed in every func call
 
-0 likes • 103 min
+0 likes • 1h 43m
 
 ## Devlog 3646 • 2025-12-28
 
 Might aswell make a devlog for the stuff i did even though not really important. During this time I improved upon the add command to post more detail of the project when being added, I made changes to the Dockerfile to improve its build times using docker's cache mounts and removing unnecessary stages (i stole the build file from buns website and its very over complicated for this) and I made pending review after ship message more clear and once reviewed message more clear.
 
-0 likes • 31 min
+0 likes • 31m
 
 ## Devlog 3075 • 2025-12-26
 
 Clean up of code to be more easier to develop in by seperating views/commands out into seperate files, fixed cache files that was done before latest update using differnet cache setup not causing any issues but with this update would of so it now migrates old caches to new format and now includes ship status!!!!!!!
 
-0 likes • 83 min
+0 likes • 1h 23m
 
 ## Devlog 3026 • 2025-12-26
 
 More improvements to the code! The bot message has improved to be more detailed with the devlog and also improved the code by setting types to the functions used so when called you can know what data is returned easily from typescript and your ide and also cleaned up some of the code.
 
-0 likes • 44 min
+0 likes • 44m
 
 ## Devlog 2938 • 2025-12-26
 
 Okay bot now makes use of devlog_ids to check so less resources during hosting and should also mean less api hits :3c also now /logpheus-stats to see how many users it has and every req has header that makes bot show up on the extensions page
 
-0 likes • 34 min
+0 likes • 34m
 
 ## Devlog 2912 • 2025-12-26
 
 I need a devlog to test but the bot's handling system of new devlogs is being changed to do less work by making us of the new devlog_id in /api/v1/projects/:id making the bot and probably the api do less work thats just assuming but atleast the bot will do less work so peak!!!
 
-0 likes • 48 min
+0 likes • 48m
 
 ## Devlog 2321 • 2025-12-24
 
 An extra 21 minutes for me because docker sucks! I literally spent 21 minutes just trying to get apiKeys to be persistant in the docker containuer using docker volumes i hate docker NOW ITS PRODTATO READY
 
-0 likes • 20 min
+0 likes • 19m
 
 ## Devlog 2308 • 2025-12-24
 
 Prodtato. The bot is in prod and seems stable working in my channel! The docker is complete and also finished the readme showing how to use it but also how to self host it if you dont trust me with your api key which is BORING TRUST MEEEEEE its basically done i ship i think i did other stuff too but i forgor
 
-0 likes • 45 min
+0 likes • 45m
 
 ## Devlog 2272 • 2025-12-24
 
 Woah fast fix too i swapped it to use api key instead sas the prefix only allowing 1 api key to be used for a channel but a channe4l can have multiple projects subscribed so yipeeeeeeeee
 
-0 likes • 27 min
+0 likes • 27m
 
 ## Devlog 2261 • 2025-12-24
 
 Woah this was a fast devlog i made /logpheus-remove so you can now remove your project from a channel! and i also realised im an idiot! i now gotta modify the code to not use project id as a prefix and instead use channel id so someone cant block you from adding your proj to your channel because they added it to theres!
 
-0 likes • 21 min
+0 likes • 20m
 
 ## Devlog 2250 • 2025-12-24
 
 The past hour I have been debugging and making the bot worked implementing /logpheus-add to add projects to the list and it works i just need to add /logpheus-remove now :3c and also docker support
 
-0 likes • 75 min
+0 likes • 1h 15m
 
 ## Devlog 2214 • 2025-12-24
 
 I need a devlog to test so uhm past hour and half i well made lib file for ft its a class file so i can use it in other projects if i want to too then using that i made it pull projects then pull devlogs if no cache file exists it adds all devlogs of project id which is in apiKeys.json which stores project id as key then under it the api key and channel to post it to
 
-0 likes • 98 min
+0 likes • 1h 38m
 

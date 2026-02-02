@@ -108,12 +108,26 @@ for (const project of projects) {
 
   const preDevlogContent = body.split(/^\s*## Devlog/m)[0];
 
-  const rebuiltDevlogs = devlogs.map(
-    (d) =>
-      `## Devlog ${d.id} • ${new Date(d.created_at).toISOString().slice(0, 10)}\n\n` +
+  const rebuiltDevlogs = devlogs.map((d) => {
+    const totalSeconds = d.duration_seconds;
+
+    const days = Math.floor(totalSeconds / (24 * 3600));
+    const hours = Math.floor((totalSeconds % (24 * 3600)) / 3600);
+    const mins = Math.floor((totalSeconds % 3600) / 60);
+
+    const durationParts = [];
+    if (days) durationParts.push(`${days}d`);
+    if (hours) durationParts.push(`${hours}h`);
+    if (mins || durationParts.length === 0) durationParts.push(`${mins}m`);
+
+    return (
+      `## Devlog ${d.id} • ${new Date(d.created_at)
+        .toISOString()
+        .slice(0, 10)}\n\n` +
       `${d.body}\n\n` +
-      `${d.likes_count} likes • ${Math.round(d.duration_seconds / 60)} min\n\n`,
-  );
+      `${d.likes_count} likes • ${durationParts.join(" ")}\n\n`
+    );
+  });
 
   const frontmatterContent =
     `---\n` +
