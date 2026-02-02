@@ -179,7 +179,6 @@ export default function Home() {
 
   return (
     <main class="govuk-main-wrapper">
-      <div class="govuk-grid-row">
         <h1 id="header" class="govuk-heading-l">
           Hey! I'm Gizzy
         </h1>
@@ -301,7 +300,6 @@ export default function Home() {
             </For>
           </ul>
         </Show>
-      </div>
     </main>
   );
 }

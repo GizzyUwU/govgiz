@@ -1,7 +1,6 @@
 export default function Details() {
   return (
     <main class="govuk-main-wrapper">
-      <div class="govuk-grid-row">
         <h1 id="header" class="govuk-heading-l">
           Details about me!
         </h1>
@@ -97,7 +96,6 @@ export default function Details() {
           </a>{" "}
           that uses they/them pronouns so please be respectfully of that.
         </p>
-      </div>
     </main>
   );
 }
