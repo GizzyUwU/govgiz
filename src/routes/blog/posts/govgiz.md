@@ -118,3 +118,12 @@ KABOOM WE DO UPDATE YIPEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 
 0 likes • 101 min
 
+## Devlog 18818 • 2026-02-02
+
+An hour? Damn not that long to be fair, ANYWAY hai chat ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) I did sum fixes
+- 404 continued to explode on github so I fixed that finally by making a static 404.html not solidjs one,
+- 404, Details and Home page is less fucked on mobile now
+- Improved birthday count down text to do less typedjs typing
+
+0 likes • 52 min
+
