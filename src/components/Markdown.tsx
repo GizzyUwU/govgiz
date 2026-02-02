@@ -268,6 +268,13 @@ export const Input: ParentComponent<ComponentProps<"input">> = (props) => {
   return <input style={{ background: "black", color: "black" }} {...props} />;
 };
 
+export const IMG: ParentComponent<ComponentProps<"img">> = (props) => {
+  return <img {...props} style={{
+    "vertical-align": "middle"
+  }} />
+}
+
+
 export const markdownComponents = {
   a: A,
   p: P,
@@ -281,4 +288,5 @@ export const markdownComponents = {
   h3: H3,
   h4: H4,
   input: Input,
+  img: IMG
 };
