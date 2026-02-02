@@ -19,9 +19,7 @@ const Ul: ParentComponent = (props) => (
   <ul class="govuk-list govuk-list--bullet">{props.children}</ul>
 );
 
-const Li: ParentComponent = (props) => (
-  <li>{props.children}</li>
-);
+const Li: ParentComponent = (props) => <li>{props.children}</li>;
 
 export const Blockquote: ParentComponent = (props) => {
   let ref!: HTMLDivElement;
@@ -46,10 +44,10 @@ const Pre: ParentComponent<{
   file?: string;
   children: JSXElement;
 }> = (props) => {
+  console.log("uhh", props.lang);
   const [copied, setCopied] = createSignal(false);
   const [open, setOpen] = createSignal<boolean>(false);
-  let ref!: HTMLPreElement;
-  let divRef!: HTMLDivElement;
+  let ref!: HTMLDivElement;
 
   const onCopy = () => {
     setCopied(true);
@@ -87,17 +85,15 @@ const Pre: ParentComponent<{
             href="#"
             onClick={toggle}
           >
-            {props.displayLang}
+            {props.displayLang || props.lang || "Unknown"}
           </a>
         </li>
       </ul>
       <div
         class="govuk-tabs__panel "
-        ref={divRef}
         style={{ display: open() ? "block" : "none" }}
       >
         <pre
-          ref={ref}
           class={`language-${props.lang}`}
           data-line={props.lines}
           style={{
@@ -121,7 +117,9 @@ const Pre: ParentComponent<{
           >
             {copied() ? "Copied!" : "Copy code"}
           </button>
+          <div           ref={ref}>
           {props.children}
+          </div>
         </pre>
       </div>
     </div>
