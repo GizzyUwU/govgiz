@@ -6,6 +6,7 @@ import {
   createSignal,
   Show,
   onMount,
+  ComponentProps,
 } from "solid-js";
 
 const P: ParentComponent = (props) => (
@@ -117,9 +118,7 @@ const Pre: ParentComponent<{
           >
             {copied() ? "Copied!" : "Copy code"}
           </button>
-          <div           ref={ref}>
-          {props.children}
-          </div>
+          <div ref={ref}>{props.children}</div>
         </pre>
       </div>
     </div>
@@ -239,6 +238,36 @@ export const Aside: ParentComponent = (props) => {
   );
 };
 
+export const Input: ParentComponent<ComponentProps<"input">> = (props) => {
+  if (props.type === "checkbox") {
+    return (
+      <div
+        style={{
+          background: "black",
+          display: "inline-block",
+          "vertical-align": "middle",
+        }}
+      >
+        <input
+          type="checkbox"
+          name="mdx"
+          {...props}
+          style={{
+            width: "20px",
+            height: "20px",
+            cursor: "pointer",
+            position: "relative",
+            display: "inline-block",
+            "vertical-align": "middle",
+          }}
+        />
+      </div>
+    );
+  }
+
+  return <input style={{ background: "black", color: "black" }} {...props} />;
+};
+
 export const markdownComponents = {
   a: A,
   p: P,
@@ -251,4 +280,5 @@ export const markdownComponents = {
   h2: H2,
   h3: H3,
   h4: H4,
+  input: Input,
 };
