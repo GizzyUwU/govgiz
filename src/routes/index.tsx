@@ -6,7 +6,6 @@ import { A } from "@solidjs/router";
 
 const fetchStats = async () => {
   const today = new Date().toISOString().split("T")[0];
-
   try {
     const res = await fetch(
       `https://hackatime.hackclub.com/api/v1/users/gizzy/stats?start_date=${today}`,
@@ -248,7 +247,6 @@ export default function Home() {
             }}
           >
             <MakiArrow font-size="16" />
-
             <A class="govuk-link" href="/blog">
               Blog Posts
             </A>
