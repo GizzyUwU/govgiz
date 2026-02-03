@@ -62,7 +62,6 @@ export default function App() {
                   </div>
                 </div>
               </header>
-              <div class="govuk-!-display-none"><A href="/kaboom"></A></div>
               <Suspense
                 fallback={
                   <div
