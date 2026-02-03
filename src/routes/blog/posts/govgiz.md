@@ -8,6 +8,21 @@ tags:
   - projects
 ---
 
+## Devlog 19140 • 2026-02-03
+
+Another day another update BLEH ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1)
+I mostly did fixes but also some nice to have changes
+- Vertically align emojis from devlogs with the text
+- Make checkboxes more visible but also uglier because i couldnt set a custom bg for them
+- Drop solid-icons for unplugin icons to shutup a babel error which also slowed down load in dev
+- Change <a> with <A> from solidjs router as i heard its better for solidjs idk 
+- Throws a 404 now when project doesn't exist instead of erroring
+- Shut up solid hydration because of using <link> not <Link> for 88x31
+- Drop kaboom a tag which was hidden from viewers but not needed anyway as i went with different fix for 404
+Thats basically it also I GET UNBANNED FROM THE SLACK TODAY YAY ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
+
+0 likes • 1h 46m
+
 ## Devlog 18978 • 2026-02-02
 
 HAIIIII IM BACK AGAIN ;3c
