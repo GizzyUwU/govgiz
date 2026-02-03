@@ -1,6 +1,7 @@
 import { Component, For, Show } from "solid-js";
 import { useLocation } from "@solidjs/router";
 import { posts } from "~/data/posts";
+import { A } from "@solidjs/router";
 
 const capitalize = (s: string) =>
   s.length > 0 ? s[0].toUpperCase() + s.slice(1) : "";
@@ -31,15 +32,15 @@ export const Breadcrumb: Component = () => {
       <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
         <ol class="govuk-breadcrumbs__list">
           <li class="govuk-breadcrumbs__list-item">
-            <a class="govuk-breadcrumbs__link" href="/">Home</a>
+            <A class="govuk-breadcrumbs__link" href="/">Home</A>
           </li>
 
           <For each={segments()}>
             {(seg, i) => (
               <li class="govuk-breadcrumbs__list-item">
-                <a class="govuk-breadcrumbs__link" href={paths()[i()]}>
+                <A class="govuk-breadcrumbs__link" href={paths()[i()]}>
                   {labelForSegment(seg, i())}
-                </a>
+                </A>
               </li>
             )}
           </For>

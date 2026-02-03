@@ -1,5 +1,6 @@
 import { Title } from "@solidjs/meta";
 import { HttpStatusCode } from "@solidjs/start";
+import { A } from "@solidjs/router";
 
 export default function NotFound() {
   return (
@@ -21,9 +22,9 @@ export default function NotFound() {
         <p class="govuk-body">
           If the web address is correct or you selected a link or button, then
           this page no longer exists!{" "}
-          <a class="govuk-link" href="/">
+          <A class="govuk-link" href="/">
             Redirect to the homepage!
-          </a>
+          </A>
         </p>
       </div>
     </main>

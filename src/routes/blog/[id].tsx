@@ -1,15 +1,17 @@
 import type { RouteSectionProps } from "@solidjs/router";
-import { For, Show, lazy, Suspense, createSignal, onMount } from "solid-js";
+import { For, Show, lazy, Suspense, createSignal, createMemo, onMount } from "solid-js";
 import { Meta, Title } from "@solidjs/meta";
 // @ts-expect-error
 import { MDXProvider } from "solid-mdx";
 import { posts } from "~/data/posts";
 import { markdownComponents, PostImage } from "~/components/Markdown";
 import type { Post } from "~/types";
+import { Dynamic } from "solid-js/web";
 import dayjs from "dayjs";
 import "prismjs/themes/prism.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs";
+import { A, useNavigate } from "@solidjs/router";
 
 const Giscus = lazy(() =>
   import("@giscus/solid").then((mod) => ({ default: mod.default })),
@@ -23,73 +25,84 @@ const loadPost = (slug: string) =>
   );
 
 const Blog = (props: RouteSectionProps<{ params: { id: string } }>) => {
-  const meta = () => posts.find((p) => p.slug === props.params.id) as Post;
-  const PostContent = loadPost(meta()?.slug || "");
-  const [isClient, setIsClient] = createSignal(false);
+  const nav = useNavigate();
+  const meta = createMemo(() => posts.find((p) => p.slug === props.params.id));
+  const PostContent = createMemo(() => {
+    if (!meta()) return undefined
+    return loadPost(meta()?.slug || "")
+  });
 
-  onMount(() => setIsClient(true));
+  const [isClient, setIsClient] = createSignal(false);
+  onMount(() => {
+    if(!meta() || Object.keys(meta()!).length === 0) {
+      return nav("/404")
+    }
+    setIsClient(true)
+});
 
   return (
-    <>
-      <Title>Gizzy - {meta()?.title}</Title>
-      <Meta name="og:title" content={meta().title} />
-      <Meta name="description" content={meta().description} />
-      <Meta name="og:description" content={meta().description} />
-      <Show when={meta().featuredImage}>
-        <PostImage
-          class="govuk-!-margin-top-2"
-          src={meta().featuredImage || ""}
-          alt={meta().featuredImageDesc || ""}
-          bgColor={meta()?.featuredImageBGColor}
-        />
-      </Show>
-      <br />
-      <h1 class="govuk-heading-l govuk-!-margin-bottom-0">{meta().title}</h1>
-      <p class="govuk-body-s govuk-!-margin-top-2">
-        {dayjs(meta().date).format("DD MMMM YYYY")}
-        {" - "}
-        <Show when={meta().tags}>
-          <For each={meta().tags}>
-            {(tag, index) => (
-              <>
-                <a href={`/tags/${tag}`} class="govuk-link">
-                  {tag}
-                </a>
-                {index() === meta().tags!.length - 1 ? "" : ", "}
-              </>
-            )}
-          </For>
+    <Show when={meta() && isClient()}>
+      <>
+        <Title>Gizzy - {meta()?.title}</Title>
+        <Meta name="og:title" content={meta()!.title} />
+        <Meta name="description" content={meta()!.description} />
+        <Meta name="og:description" content={meta()!.description} />
+        <Show when={meta()!.featuredImage}>
+          <PostImage
+            class="govuk-!-margin-top-2"
+            src={meta()?.featuredImage || ""}
+            alt={meta()?.featuredImageDesc || ""}
+            bgColor={meta()?.featuredImageBGColor}
+          />
         </Show>
-        <Show when={meta().tag}>
-          <For each={meta().tag}>
-            {(tag, index) => (
-              <>
-                <a href={`/tags/${tag}`} class="govuk-link">
-                  {tag}
-                </a>
-                {index() === meta().tag!.length - 1 ? "" : ", "}
-              </>
-            )}
-          </For>
-        </Show>
-      </p>
-      <div class="govuk-!-margin-top-2"></div>
-      <Suspense
-        fallback={
-          <div
-            style={{
-              width: "100%",
-              height: "100%",
-              "background-color": "black",
-            }}
-          ></div>
-        }
-      >
-        <MDXProvider components={markdownComponents}>
-          <PostContent />
-        </MDXProvider>
-      </Suspense>
-      <Show when={isClient()}>
+        <br />
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-0">{meta()!.title}</h1>
+        <p class="govuk-body-s govuk-!-margin-top-2">
+          {dayjs(meta()!.date).format("DD MMMM YYYY")}
+          {" - "}
+          <Show when={meta()!.tags}>
+            <For each={meta()!.tags}>
+              {(tag, index) => (
+                <>
+                  <A href={`/tags/${tag}`} class="govuk-link">
+                    {tag}
+                  </A>
+                  {index() === meta()!.tags!.length - 1 ? "" : ", "}
+                </>
+              )}
+            </For>
+          </Show>
+          <Show when={meta()!.tag}>
+            <For each={meta()!.tag}>
+              {(tag, index) => (
+                <>
+                  <A href={`/tags/${tag}`} class="govuk-link">
+                    {tag}
+                  </A>
+                  {index() === meta()!.tag!.length - 1 ? "" : ", "}
+                </>
+              )}
+            </For>
+          </Show>
+        </p>
+        <div class="govuk-!-margin-top-2"></div>
+        <Suspense
+          fallback={
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                "background-color": "black",
+              }}
+            ></div>
+          }
+        >
+          <MDXProvider components={markdownComponents}>
+            <Suspense fallback={<div style={{ background: "black" }} />}>
+              <Dynamic component={PostContent()} />
+            </Suspense>
+          </MDXProvider>
+        </Suspense>
         <Giscus
           id="comments"
           repo="gizzyuwu/govgiz"
@@ -105,8 +118,8 @@ const Blog = (props: RouteSectionProps<{ params: { id: string } }>) => {
           lang="en"
           loading="lazy"
         />
-      </Show>
-    </>
+      </>
+    </Show>
   );
 };
 export default Blog;

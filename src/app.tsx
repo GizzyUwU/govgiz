@@ -3,6 +3,7 @@ import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { Suspense, onMount, createSignal } from "solid-js";
 import { Breadcrumb } from "./components/Breadcrumb";
+import { A } from "@solidjs/router";
 
 export default function App() {
   const [ready, setReady] = createSignal(false);
@@ -49,7 +50,7 @@ export default function App() {
               <header class="govuk-header" data-module="govuk-header">
                 <div class="govuk-header__container govuk-width-container">
                   <div class="govuk-header__logo">
-                    <a href="/">
+                    <A href="/">
                       <img
                         style={{
                           transform: "scale(1.4)",
@@ -57,11 +58,11 @@ export default function App() {
                         }}
                         src="/logo.svg"
                       ></img>
-                    </a>
+                    </A>
                   </div>
                 </div>
               </header>
-              <div class="govuk-!-display-none"><a href="/kaboom"></a></div>
+              <div class="govuk-!-display-none"><A href="/kaboom"></A></div>
               <Suspense
                 fallback={
                   <div

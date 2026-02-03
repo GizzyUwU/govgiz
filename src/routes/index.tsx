@@ -2,6 +2,7 @@ import { onMount, onCleanup, createResource, Show, For } from "solid-js";
 import { FaSolidArrowRight } from "solid-icons/fa";
 import { posts } from "~/data/posts";
 import Typed from "typed.js";
+import { A } from "@solidjs/router";
 
 const fetchStats = async () => {
   const today = new Date().toISOString().split("T")[0];
@@ -219,9 +220,9 @@ export default function Home() {
             }}
           >
             <FaSolidArrowRight size="16" />
-            <a class="govuk-link" href="/details">
+            <A class="govuk-link" href="/details">
               Details
-            </a>
+            </A>
           </li>
           <li
             class="govuk-grid-column-one-third"
@@ -232,9 +233,9 @@ export default function Home() {
             }}
           >
             <FaSolidArrowRight size="16" />
-            <a class="govuk-link" href="/tags/projects">
+            <A class="govuk-link" href="/tags/projects">
               Projects
-            </a>
+            </A>
           </li>
 
           <li
@@ -246,9 +247,9 @@ export default function Home() {
             }}
           >
             <FaSolidArrowRight size="16" />
-            <a class="govuk-link" href="/blog">
+            <A class="govuk-link" href="/blog">
               Blog Posts
-            </a>
+            </A>
           </li>
 
           <li
@@ -260,9 +261,9 @@ export default function Home() {
             }}
           >
             <FaSolidArrowRight size="16" />
-            <a class="govuk-link" href="/88x31">
+            <A class="govuk-link" href="/88x31">
               88x31
-            </a>
+            </A>
           </li>
         </ul>
       </div>
@@ -290,13 +291,13 @@ export default function Home() {
             {(post) => (
               <li class="govuk-task-list__item govuk-task-list__item--with-link">
                 <div class="govuk-task-list__name-and-hint">
-                  <a
+                  <A
                     class="govuk-link govuk-task-list__link"
                     href={`/blog/${post.slug}`}
                     aria-describedby="company-details-1-status"
                   >
                     {post.title}
-                  </a>
+                  </A>
                   <div class="govuk-task-list__hint">{post.description}</div>
                 </div>
               </li>

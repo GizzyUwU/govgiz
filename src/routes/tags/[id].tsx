@@ -4,6 +4,8 @@ import { posts } from "~/data/posts";
 import dayjs from "dayjs";
 import { tags } from "~/data/tags";
 import { FaSolidMagnifyingGlass } from "solid-icons/fa";
+import { A } from "@solidjs/router";
+
 
 const TagId: Component<RouteSectionProps<{ params: { id: string } }>> = (
   props,
@@ -70,13 +72,13 @@ const TagId: Component<RouteSectionProps<{ params: { id: string } }>> = (
           {(post) => (
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
-                <a
+                <A
                   class="govuk-link govuk-task-list__link"
                   href={`/blog/${post.slug}`}
                   aria-describedby="company-details-1-status"
                 >
                   {post.title}
-                </a>
+                </A>
                 <div class="govuk-task-list__hint">{post.description}</div>
                 <p class="govuk-task-list__hint govuk-body-s govuk-!-margin-bottom-0">
                   {dayjs(post.date).format("DD MMMM YYYY")}

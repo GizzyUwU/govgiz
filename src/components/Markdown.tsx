@@ -8,6 +8,7 @@ import {
   onMount,
   ComponentProps,
 } from "solid-js";
+import { A as Anchor } from "@solidjs/router";
 
 const P: ParentComponent = (props) => (
   <p class="govuk-body">{props.children}</p>
@@ -78,7 +79,7 @@ const Pre: ParentComponent<{
                 }),
           }}
         >
-          <a
+          <Anchor
             class="govuk-tabs__tab"
             style={{
               "text-decoration": "none",
@@ -87,7 +88,7 @@ const Pre: ParentComponent<{
             onClick={toggle}
           >
             {props.displayLang || props.lang || "Unknown"}
-          </a>
+          </Anchor>
         </li>
       </ul>
       <div
@@ -129,7 +130,7 @@ const headingLink = (children: JSXElement) =>
   children?.toString().toLowerCase().replaceAll(" ", "-").replaceAll(",", "");
 
 const HeadlineLink: Component<{ link: string; class: string }> = (props) => {
-  return <a href={props.link} class="govuk-link"></a>;
+  return <Anchor href={props.link} class="govuk-link"></Anchor>;
 };
 
 const H2: ParentComponent = (props) => (
@@ -159,9 +160,9 @@ const A: ParentComponent<{ href: string }> = (props) => {
   );
 
   return (
-    <a href={props.href} target={isLocal() ? "" : "_blank"} class="govuk-link">
+    <Anchor href={props.href} target={isLocal() ? "" : "_blank"} class="govuk-link">
       {props.children}
-    </a>
+    </Anchor>
   );
 };
 

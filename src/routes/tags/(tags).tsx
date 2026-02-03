@@ -1,6 +1,7 @@
 import { For, createSignal, createMemo, Show } from "solid-js";
 import { tags } from "~/data/tags";
 import { FaSolidMagnifyingGlass } from "solid-icons/fa";
+import { A } from "@solidjs/router";
 
 const capitalize = (s: string) =>
   s.length > 0 ? s[0].toUpperCase() + s.slice(1) : "";
@@ -53,13 +54,13 @@ const Tags = () => {
           {(tag) => (
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
-                <a
+                <A
                   class="govuk-link govuk-task-list__link"
                   href={`/tags/${tag.id}`}
                   aria-describedby="company-details-1-status"
                 >
                   {capitalize(tag.id)}
-                </a>
+                </A>
                 <div class="govuk-task-list__hint">
                   {tag.posts.length} Post{tag.posts.length === 1 ? "" : "s"}
                 </div>
