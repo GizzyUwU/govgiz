@@ -14,7 +14,7 @@ Bleh haiii again ![wave-pikachu-2](https://images.weserv.nl/?url=https%3A%2F%2Fe
 I spent the past hour adding hc webring to my site (would of been easier using the provided embed but that doesnt fit the theme so why would i do that?)
 I remade the embed that provided the webring but with govuk design to match better it doesnt look like much but it was pain to get it to be like that
 
-0 likes • 1h 6m
+1 likes • 1h 6m
 
 ## Devlog 19140 • 2026-02-03
 
@@ -29,7 +29,7 @@ I mostly did fixes but also some nice to have changes
 - Drop kaboom a tag which was hidden from viewers but not needed anyway as i went with different fix for 404
 Thats basically it also I GET UNBANNED FROM THE SLACK TODAY YAY ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
 
-0 likes • 1h 46m
+1 likes • 1h 46m
 
 ## Devlog 18978 • 2026-02-02
 
@@ -50,7 +50,7 @@ I got the 4167 devlog id? ![sixseven](https://images.weserv.nl/?url=https%3A%2F%
 - [fix: swap order from oldest to newest to newest to oldest](https://api.github.com/repos/GizzyUwU/govgiz/commits/07b3487f54bc06b62bcceb717473469060c4a358)
 
 
-0 likes • 1h 3m
+1 likes • 1h 3m
 
 ## Devlog 18818 • 2026-02-02
 
@@ -59,7 +59,7 @@ An hour? Damn not that long to be fair, ANYWAY hai chat ![3c](https://images.wes
 - 404, Details and Home page is less fucked on mobile now
 - Improved birthday count down text to do less typedjs typing
 
-0 likes • 51m
+1 likes • 51m
 
 ## Devlog 18662 • 2026-02-01
 
@@ -74,7 +74,7 @@ KABOOM WE DO UPDATE YIPEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 - [feat: fix 404 on github, 88x31 for this site, github follower count and star count i stole from cyteon, details page](https://api.github.com/repos/GizzyUwU/govgiz/commits/f4fbc7f37ad4baa27692f9d5a6df0e8f1421487b)
 
 
-0 likes • 1h 40m
+1 likes • 1h 40m
 
 ## Devlog 18619 • 2026-02-01
 
@@ -92,7 +92,7 @@ i DID SOME THINGS
 - No longer shows posts with tag projects on blog posts page
 - Made tags and blog posts page more sexy
 
-0 likes • 3h 26m
+1 likes • 3h 26m
 
 ## Devlog 18312 • 2026-02-01
 
@@ -101,13 +101,13 @@ bleh i had to fix script and aciton that was painfal its 1 am im eepy but update
 - it prevents xss now from mdx bleh
 - IM TIRIED
 
-0 likes • 44m
+1 likes • 44m
 
 ## Devlog 18303 • 2026-02-01
 
 BLEHHH IM BACK AGAIN ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) since it has a blog now i gotta do the natural thing of being lazy! I made a github action to generate an mdx from these FT devlogs and projects and add it to the website mdx ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) i also did sum other stuff but thats not really important compared to that
 
-0 likes • 2h 41m
+1 likes • 2h 41m
 
 ## Devlog 18203 • 2026-01-31
 
@@ -121,7 +121,7 @@ This wasnt much but yipeee
 - [feat: giscus for comments, gov giz logo redirect to /](https://api.github.com/repos/GizzyUwU/govgiz/commits/a260a01ac6257e84efe3acdbee4ef790727bf6f1)
 
 
-0 likes • 59m
+1 likes • 59m
 
 ## Devlog 18087 • 2026-01-31
 
@@ -134,7 +134,7 @@ ANYWAY
 - [fix: add copy button](https://api.github.com/repos/GizzyUwU/govgiz/commits/ef7e40b4fd1f2690a1b582ae4f07e73f1b5253c5)
 
 
-0 likes • 46m
+1 likes • 46m
 
 ## Devlog 18071 • 2026-01-31
 
