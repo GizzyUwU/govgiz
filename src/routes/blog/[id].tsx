@@ -28,7 +28,7 @@ const Blog = (props: RouteSectionProps<{ params: { id: string } }>) => {
   const nav = useNavigate();
   const meta = createMemo(() => posts.find((p) => p.slug === props.params.id));
   const PostContent = createMemo(() => {
-    if (!meta()) return undefined
+    if (!meta()) return undefined;
     return loadPost(meta()?.slug || "")
   });
 

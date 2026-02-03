@@ -1,7 +1,7 @@
 import { For, createSignal, createMemo, Show } from "solid-js";
 import { posts } from "~/data/posts";
 import { Title } from "@solidjs/meta";
-import { FaSolidMagnifyingGlass } from "solid-icons/fa";
+import Fa7SolidMagnifyingGlass from '~icons/fa7-solid/magnifying-glass';
 import { A } from "@solidjs/router";
 
 export default function Blogs() {
@@ -65,7 +65,7 @@ export default function Blogs() {
                 setSearchInput(searchInput().toLowerCase().trim());
               }}
             >
-              <FaSolidMagnifyingGlass color="white" />
+              <Fa7SolidMagnifyingGlass color="white" />
             </div>
           </div>
         </div>

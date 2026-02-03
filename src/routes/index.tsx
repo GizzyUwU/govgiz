@@ -1,5 +1,5 @@
 import { onMount, onCleanup, createResource, Show, For } from "solid-js";
-import { FaSolidArrowRight } from "solid-icons/fa";
+import MakiArrow from '~icons/maki/arrow';
 import { posts } from "~/data/posts";
 import Typed from "typed.js";
 import { A } from "@solidjs/router";
@@ -219,7 +219,7 @@ export default function Home() {
               gap: "0.6rem",
             }}
           >
-            <FaSolidArrowRight size="16" />
+            <MakiArrow font-size="16" />
             <A class="govuk-link" href="/details">
               Details
             </A>
@@ -232,7 +232,8 @@ export default function Home() {
               gap: "0.6rem",
             }}
           >
-            <FaSolidArrowRight size="16" />
+            <MakiArrow font-size="16" />
+
             <A class="govuk-link" href="/tags/projects">
               Projects
             </A>
@@ -246,7 +247,8 @@ export default function Home() {
               gap: "0.6rem",
             }}
           >
-            <FaSolidArrowRight size="16" />
+            <MakiArrow font-size="16" />
+
             <A class="govuk-link" href="/blog">
               Blog Posts
             </A>
@@ -260,7 +262,8 @@ export default function Home() {
               gap: "0.6rem",
             }}
           >
-            <FaSolidArrowRight size="16" />
+            <MakiArrow font-size="16" />
+
             <A class="govuk-link" href="/88x31">
               88x31
             </A>

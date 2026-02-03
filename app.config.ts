@@ -12,6 +12,7 @@ import prismjs from "vite-plugin-prismjs";
 import remarkToc from "remark-toc";
 import remarkGfm from "remark-gfm"
 import postsPlugin from "./plugins/postsPlugin";
+import Icons from "unplugin-icons/vite"
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -53,6 +54,10 @@ export default defineConfig({
             dest: "assets",
           },
         ],
+      }),
+      Icons({
+        compiler: 'jsx',
+        jsx: 'preact',
       }),
     ],
   } satisfies ViteConfig,

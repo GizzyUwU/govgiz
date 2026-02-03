@@ -15,6 +15,8 @@
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^0.15.0",
     "@solidjs/start": "^1.1.0",
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
     "@types/js-yaml": "^4.0.9",
     "@types/refractor": "^4.0.0",
     "@vinxi/plugin-mdx": "^3.7.2",
@@ -30,7 +32,6 @@
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.1",
     "remark-toc": "^9.0.0",
-    "solid-icons": "^1.2.0",
     "solid-js": "^1.9.5",
     "solid-jsx": "^1.1.4",
     "solid-mdx": "^0.0.7",
@@ -38,6 +39,7 @@
     "typed-css-modules": "^0.9.1",
     "typed.js": "^3.0.0",
     "unist-util-visit": "^5.1.0",
+    "unplugin-icons": "^23.0.1",
     "vfile-matter": "^5.0.1",
     "vinxi": "^0.5.7",
     "vite-plugin-prismjs": "^0.0.11"
@@ -46,6 +48,7 @@
     "node": ">=22"
   },
   "devDependencies": {
+    "@iconify/json": "^2.2.435",
     "@types/node": "^25.1.0",
     "vite-plugin-static-copy": "^3.2.0"
   }
