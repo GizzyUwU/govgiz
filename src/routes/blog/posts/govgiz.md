@@ -8,6 +8,14 @@ tags:
   - projects
 ---
 
+## Devlog 19153 • 2026-02-03
+
+Bleh haiii again ![wave-pikachu-2](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fwave-pikachu-2%2F5e95fb2267f03afa.gif&w=30&h=30&fit=contain&n=-1) 
+I spent the past hour adding hc webring to my site (would of been easier using the provided embed but that doesnt fit the theme so why would i do that?)
+I remade the embed that provided the webring but with govuk design to match better it doesnt look like much but it was pain to get it to be like that
+
+0 likes • 1h 6m
+
 ## Devlog 19140 • 2026-02-03
 
 Another day another update BLEH ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1)
