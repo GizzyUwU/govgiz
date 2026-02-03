@@ -34,11 +34,11 @@ const Blog = (props: RouteSectionProps<{ params: { id: string } }>) => {
 
   const [isClient, setIsClient] = createSignal(false);
   onMount(() => {
-    if(!meta() || Object.keys(meta()!).length === 0) {
+    if (!meta() || Object.keys(meta()!).length === 0) {
       return nav("/404")
     }
     setIsClient(true)
-});
+  });
 
   return (
     <Show when={meta() && isClient()}>

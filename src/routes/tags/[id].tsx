@@ -4,9 +4,7 @@ import { posts } from "~/data/posts";
 import dayjs from "dayjs";
 import { tags } from "~/data/tags";
 import Fa7SolidMagnifyingGlass from '~icons/fa7-solid/magnifying-glass';
-
 import { A } from "@solidjs/router";
-
 
 const TagId: Component<RouteSectionProps<{ params: { id: string } }>> = (
   props,
@@ -64,8 +62,7 @@ const TagId: Component<RouteSectionProps<{ params: { id: string } }>> = (
               setSearchInput(searchInput().toLowerCase().trim());
             }}
           >
-                          <Fa7SolidMagnifyingGlass color="white" />
-
+            <Fa7SolidMagnifyingGlass color="white" />
           </div>
         </div>
       </div>

@@ -1,7 +1,6 @@
 import { For, createSignal, createMemo, Show } from "solid-js";
 import { tags } from "~/data/tags";
 import Fa7SolidMagnifyingGlass from '~icons/fa7-solid/magnifying-glass';
-
 import { A } from "@solidjs/router";
 
 const capitalize = (s: string) =>
@@ -43,7 +42,7 @@ const Tags = () => {
               setSearchInput(searchInput().toLowerCase().trim());
             }}
           >
-                          <Fa7SolidMagnifyingGlass color="white" />
+            <Fa7SolidMagnifyingGlass color="white" />
 
           </div>
         </div>
