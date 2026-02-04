@@ -194,7 +194,7 @@ export default function App() {
                     <div class="govuk-footer__meta-item">
                       <a
                         class="govuk-footer__link govuk-footer__copyright-logo"
-                        href="#">
+                        href="/license">
                         © Copyright of Gizzy, 2026 to {new Date().getFullYear()}
                       </a>
                     </div>

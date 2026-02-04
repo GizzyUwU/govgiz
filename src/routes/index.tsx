@@ -261,8 +261,7 @@ export default function Home() {
             }}
           >
             <MakiArrow font-size="16" />
-
-            <A class="govuk-link" href="/88x31">
+            <A class="govuk-link" href="/88x31.svg">
               88x31
             </A>
           </li>
