@@ -18,5 +18,10 @@
         "name": "MilkCool",
         "image": "https://milkcool.ru/buttons/mybutton.gif",
         "site": "https://milkcool.ru/"
+    },
+    {
+        "name": "Estrogen",
+        "image": "https://alyx.sh/images/hrt-geocities-buttons/e2v2-88x31.gif",
+        "site": "https://alyx.sh/"
     }
 ]
