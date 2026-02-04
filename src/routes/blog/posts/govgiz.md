@@ -34,7 +34,7 @@ Bleh haiii again ![wave-pikachu-2](https://images.weserv.nl/?url=https%3A%2F%2Fe
 I spent the past hour adding hc webring to my site (would of been easier using the provided embed but that doesnt fit the theme so why would i do that?)
 I remade the embed that provided the webring but with govuk design to match better it doesnt look like much but it was pain to get it to be like that
 
-1 likes • 1h 6m
+2 likes • 1h 6m
 
 ## Devlog 19140 • 2026-02-03
 
