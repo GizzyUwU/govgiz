@@ -171,10 +171,6 @@ export default function App() {
                 "margin-top": "100%"
               }}>
                 <div class="govuk-width-container">
-                  <img class="govuk-footer__crown" src="/haj.svg" style={{
-                    "max-height": "64px",
-                    "max-width": "64px"
-                  }} />
                   <div class="govuk-footer__meta">
                     <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
                       <Buttons />
