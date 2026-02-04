@@ -187,15 +187,15 @@ export default function App() {
                         All content is available under the{" "}
                         <a
                           class="govuk-footer__link"
-                          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
-                          rel="license">MIT LIcense</a>, except where otherwise stated
+                          href="/license"
+                          rel="license">MIT Lcense</a>, except where otherwise stated
                       </span>
                     </div>
                     <div class="govuk-footer__meta-item">
                       <a
                         class="govuk-footer__link govuk-footer__copyright-logo"
                         href="#">
-                        © Gizzy copyright
+                        © Copyright of Gizzy, 2026 to {new Date().getFullYear()}
                       </a>
                     </div>
                   </div>
