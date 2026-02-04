@@ -19,7 +19,7 @@ export const Buttons: Component = () => {
                 <For each={buttons()}>
                     {(button) => (
                         <li class="govuk-footer__inline-list-item">
-                            <a class="govuk-footer__link" href="#">
+                            <a class="govuk-footer__link" href={button.site}>
                                 <img alt={button.name} src={button.image} style={{
                                     "max-height": "31px",
                                     "max-width": "88px",
