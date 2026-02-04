@@ -4,6 +4,7 @@ import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { Suspense, onMount, createSignal } from "solid-js";
 import { Breadcrumb } from "./components/Breadcrumb";
+import { Buttons } from "./components/Buttons";
 import { A } from "@solidjs/router";
 
 async function fetchWebring() {
@@ -166,6 +167,40 @@ export default function App() {
                   </div>
                 </div>
               </Show>
+              <footer class="govuk-footer" style={{
+                "margin-top": "100%"
+              }}>
+                <div class="govuk-width-container">
+                  <img class="govuk-footer__crown" src="/haj.svg" style={{
+                    "max-height": "64px",
+                    "max-width": "64px"
+                  }} />
+                  <div class="govuk-footer__meta">
+                    <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+                      <Buttons />
+                      <img class="govuk-footer__licence-logo" src="/haj.svg" style={{
+                        "max-height": "32px",
+                        "max-width": "32px",
+                        "vertical-align": "middle"
+                      }} />
+                      <span class="govuk-footer__licence-description">
+                        All content is available under the{" "}
+                        <a
+                          class="govuk-footer__link"
+                          href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+                          rel="license">MIT LIcense</a>, except where otherwise stated
+                      </span>
+                    </div>
+                    <div class="govuk-footer__meta-item">
+                      <a
+                        class="govuk-footer__link govuk-footer__copyright-logo"
+                        href="#">
+                        © Gizzy copyright
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </footer>
             </div>
           </MetaProvider>
         </Suspense>

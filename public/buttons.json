@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Gizzy",
+        "image": "/88x31.svg",
+        "site": "https://gizzy.gay/"
+    },
+    {
+        "name": "Matei",
+        "image": "https://mateishome.page/files/images/buttons/mateishomepage.png",
+        "site": "https://mateishome.page/"
+    },
+    {
+        "name": "Areg",
+        "image": "/areg.png",
+        "site": "https://aregus.me/"
+    },
+    {
+        "name": "MilkCool",
+        "image": "https://milkcool.ru/buttons/mybutton.gif",
+        "site": "https://milkcool.ru/"
+    }
+]
