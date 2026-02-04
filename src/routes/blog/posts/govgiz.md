@@ -8,6 +8,26 @@ tags:
   - projects
 ---
 
+## Devlog 19473 • 2026-02-04
+
+Woah an update? IN THIS FLAVORTOWN?! UNACCEPTABLE
+Too bad accept it ![bleh](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fbleh%2F8be6dc6939de105f.png&w=30&h=30&fit=contain&n=-1)
+ANYWAY UPDATEEEEEEEEEEEEEEEEEEEE:
+- License page just so i can link to it in footer
+- 88x31 buttons in footer ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
+Thats about it small change but bleh
+
+### Changelog
+- [minor: update 88x31 to link to my img, clean up license page bleh, link to license](https://github.com/GizzyUwU/govgiz/commit/58cd7b9f2e0a61b36514f1ea670364846a127bad)
+- [feat: license and other stuff](https://github.com/GizzyUwU/govgiz/commit/c69dc52142addb0822edf1f6b3b4be3ab087294a)
+- [fix: just saw their pr and it used name as estrogen](https://github.com/GizzyUwU/govgiz/commit/79b22e493247fd8d36851d0124fb466c4ab2f8f1)
+- [minor: add alyx to 88x31](https://github.com/GizzyUwU/govgiz/commit/d8b030fa23456389597a7f4811e565f4d7ac7d47)
+- [fix: 88x31 buttons not leading to sites](https://github.com/GizzyUwU/govgiz/commit/0e76fd575fd382e32cbfb2ee500584a870f3e57a)
+- [feat: 88x31 buttons :3c](https://github.com/GizzyUwU/govgiz/commit/1de14c7d4efb362d3fb26c566623155f96461e9a)
+
+
+0 likes • 1h 5m
+
 ## Devlog 19153 • 2026-02-03
 
 Bleh haiii again ![wave-pikachu-2](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fwave-pikachu-2%2F5e95fb2267f03afa.gif&w=30&h=30&fit=contain&n=-1) 
