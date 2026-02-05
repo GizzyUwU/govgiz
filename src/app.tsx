@@ -71,7 +71,16 @@ export default function App() {
             <Meta name="language" content="English" />
             <Meta name="revisit-after" content="30 days" />
             <Meta name="author" content="Gizzy" />
-
+            <Meta property="og:type" content="website" />
+            <Meta property="og:url" content="https://gizzy.gay/" />
+            <Meta property="og:title" content="Welcome to Gov.Giz" />
+            <Meta property="og:description" content="GOV.Giz - The best place to find Gizzy services and information." />
+            <Meta property="og:image" content="https://gizzy.gay/88x31.svg" />
+            <Meta property="twitter:card" content="summary_large_image" />
+            <Meta property="twitter:url" content="https://gizzy.gay" />
+            <Meta property="twitter:title" content="Welcome to Gov.Giz" />
+            <Meta property="twitter:description" content="GOV.Giz - The best place to find Gizzy services and information." />
+            <Meta property="twitter:image" content="https://gizzy.gay/88x31.svg" />
             <div
               style={{
                 display: ready() ? "block" : "none",
