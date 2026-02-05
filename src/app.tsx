@@ -1,4 +1,4 @@
-import { Link, MetaProvider, Title } from "@solidjs/meta";
+import { Link, Meta, MetaProvider, Title } from "@solidjs/meta";
 import { createResource, Show } from "solid-js";
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
@@ -60,10 +60,18 @@ export default function App() {
           }
         >
           <MetaProvider>
-            <Title>Gizzy</Title>
+            <Title>Gov.Giz</Title>
             <Link rel="icon" sizes="88x31" href="/88x31.svg" />
             <Link rel="icon" href="/haj.svg" />
             <Link rel="stylesheet" href="/assets/govuk-frontend.min.css" />
+            <Meta name="title" content="Welcome to GOV.Giz" />
+            <Meta name="description" content="GOV.Giz - The best place to find gizzy services and information." />
+            <Meta name="keywords" content="gizzy, govgiz, gov.giz, gizgov, giz.gov" />
+            <Meta name="robots" content="index, follow" />
+            <Meta name="language" content="English" />
+            <Meta name="revisit-after" content="30 days" />
+            <Meta name="author" content="Gizzy" />
+
             <div
               style={{
                 display: ready() ? "block" : "none",

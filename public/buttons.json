@@ -23,5 +23,10 @@
         "name": "Estrogen",
         "image": "https://alyx.sh/images/hrt-geocities-buttons/e2v2-88x31.gif",
         "site": "https://alyx.sh/"
+    },
+    {
+        "name": "Addy",
+        "image": "https://raw.githubusercontent.com/Addy10s/Portfolio/refs/heads/main/myapp/static/addy88x31.png",
+        "site": "https://addy10s.xyz/"
     }
 ]
