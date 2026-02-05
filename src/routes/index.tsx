@@ -1,5 +1,5 @@
 import { onMount, onCleanup, createResource, Show, For } from "solid-js";
-import MakiArrow from '~icons/maki/arrow';
+import MakiArrow from "~icons/maki/arrow";
 import { posts } from "~/data/posts";
 import Typed from "typed.js";
 import { A } from "@solidjs/router";
@@ -130,10 +130,10 @@ export default function Home() {
 
       let output: string = "";
       const ageEl = document.querySelector("#age") as HTMLElement;
-      ageEl.textContent = `${years} years so far`
+      ageEl.textContent = `${years} years so far`;
 
       if (today.getMonth() === birth.getMonth()) {
-        ageEl.textContent = `${years} years so far, and I'm gonna have survived`
+        ageEl.textContent = `${years} years so far, and I'm gonna have survived`;
 
         const birthdayThisYear = new Date(
           today.getFullYear(),
@@ -187,7 +187,7 @@ export default function Home() {
         Hey! I'm Gizzy
       </h1>
       <p class="govuk-body govuk-!-margin-bottom-0">
-        I've survived  <span id="age"></span> <span id="birthday-count"></span>
+        I've survived <span id="age"></span> <span id="birthday-count"></span>
       </p>
       <p class="govuk-body">
         I'm a <span id="typed-list"></span>based in the United Kingdom!
@@ -261,9 +261,16 @@ export default function Home() {
             }}
           >
             <MakiArrow font-size="16" />
-            <A class="govuk-link" href="/88x31.svg">
+            <a
+              class="govuk-link"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = "/88x31.svg";
+              }}
+            >
               88x31
-            </A>
+            </a>
           </li>
         </ul>
       </div>
