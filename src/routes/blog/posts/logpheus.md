@@ -197,12 +197,6 @@ I need a devlog to test but the bot's handling system of new devlogs is being ch
 
 0 likes • 48m
 
-## Devlog 2321 • 2025-12-24
-
-An extra 21 minutes for me because docker sucks! I literally spent 21 minutes just trying to get apiKeys to be persistant in the docker containuer using docker volumes i hate docker NOW ITS PRODTATO READY
-
-0 likes • 19m
-
 ## Devlog 2308 • 2025-12-24
 
 Prodtato. The bot is in prod and seems stable working in my channel! The docker is complete and also finished the readme showing how to use it but also how to self host it if you dont trust me with your api key which is BORING TRUST MEEEEEE its basically done i ship i think i did other stuff too but i forgor
