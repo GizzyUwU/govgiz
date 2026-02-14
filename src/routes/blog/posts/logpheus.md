@@ -8,6 +8,18 @@ tags:
   - projects
 ---
 
+## Devlog 22326 • 2026-02-14
+
+HEYYY ITS ME FINALLY AGAIN ima just say the changes i made today as i cant remember all of the stuff i fixed a hwhile ago JESUS 17 DAYS SINCE LAST DEVLOG DAMN
+
+ANYWAY
+- The logs was pretty vague especially for drizzle so I swapped to logtape to log all drizzle stuff to sentry enabled breadcrumbs to help debugging even more
+- Swapped the contexts to use logtape so its even better for contexts
+- Broke prod logpheus because slack broke saying i didnt own bot meaning i couldnt work on it adding new commands n stuff so i had to kick it from the workspace remake new account
+- DMed all private channel users about the kick so if they want to use it they just have to add it back and for public channel users I added it back for them
+
+0 likes • 1h 57m
+
 ## Devlog 17028 • 2026-01-28
 
 Chat, are we codemaxxing rn? no stupid we are bugfixing dumb ahh
