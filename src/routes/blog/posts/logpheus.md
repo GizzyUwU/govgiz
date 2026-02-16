@@ -8,6 +8,18 @@ tags:
   - projects
 ---
 
+## Devlog 22874 • 2026-02-16
+
+Yeah I should probably devlog ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+HAIIIII FLAVORTOWN VIEWERS AND QUACKERS ![som-duck](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fsom-duck%2F314dc974c22b0e95.png&w=30&h=30&fit=contain&n=-1) 
+so this time was literally spent on literally debugging
+
+- I bwoke prod of logpheus so I needed to debug and a lot of the debugging was kinda vague so I swapped over to logtape so I can get better drizzle logging in sentry and also allow me to log easy with sentry
+- I added a lot of debug stuff to prod to see why it was down and found out IT WASNT MY CODE YAY it was a psql misconfiguration causing it to not allow wireguard connection
+- I moved prod back to server with db as db reqs was slow but now there is more chance of slack timing out requests but ig cope i want fast db requests not slow ones
+
+0 likes • 1h 21m
+
 ## Devlog 22326 • 2026-02-14
 
 HEYYY ITS ME FINALLY AGAIN ima just say the changes i made today as i cant remember all of the stuff i fixed a hwhile ago JESUS 17 DAYS SINCE LAST DEVLOG DAMN
