@@ -8,6 +8,20 @@ tags:
   - projects
 ---
 
+## Devlog 23453 • 2026-02-18
+
+Quack another devlog colon three ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+Update not really that big but still I need the hours
+- Increased deployment speed on builds from new commits by making apk (alpine linux package manager) cache and use the right bun cache location
+- Added MP (Multi-Platform) Dockerfile as I think my changes are really platform specific to alpine as I used apk cache folder on host too as my server runs alpine linux so to ensure other instances don't break they can use MP
+- Updated the README to reflect new changes for docker with the MP but also  to reflect the change in code for chosing how the prefix is chosen
+- I made the markdown parser more maintainable by swapping from a bunch of if's to a switch statement and not using a bunch of numbers with match[] to find it and instead using match.groups! for group.,emoji etc so it actually makes sense
+- Fixed FT Utils emoji handler on FT messing up Logpheus's emojis as it uses it was links so I had to make a parser to look for emoji.slack-edge.com and parse that for [emojiName](emojiLink) to use emojiName for emoji in slack
+
+I LIED THIS WAS A BIG CHANGE BOZO GET LIED TO ![bleh](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fbleh%2F8be6dc6939de105f.png&w=30&h=30&fit=contain&n=-1) 
+
+0 likes • 1h 25m
+
 ## Devlog 22874 • 2026-02-16
 
 Yeah I should probably devlog ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
