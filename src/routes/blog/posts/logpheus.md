@@ -8,6 +8,17 @@ tags:
   - projects
 ---
 
+## Devlog 23465 • 2026-02-18
+
+58 minutes for this? Damn peak! ANYWAY UPDATE ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
+- I added a drop command to make dev testing easier allowing me to drop data in db ONLY ON DEVPHEUS and only people with MY SLACK IDS so can't happen on prod
+- Dropped sentryEnabled mostly everywhere as logtape is now used so I do the check if sentryEnabled in the sink so if its not enabled it uses console and if it is enabled it uses sentry
+### Changelog
+- [feat: drop command for dev instance and only attached to my user ids so I can be lazy and not go into db just to test, chore: drop sentryEnabled from most stuff and instead use sentryEnabled on logger sink to see if enabled use sentry else console](https://github.com/GizzyUwU/logpheus/commit/bb1f435507ea5b6b664fc175a28e34f634fd8088)
+
+
+0 likes • 59m
+
 ## Devlog 23453 • 2026-02-18
 
 Quack another devlog colon three ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
