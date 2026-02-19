@@ -8,14 +8,13 @@ on:
 jobs:
   run-bun-script:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     env:
       FT_API_KEY: ${{ secrets.FT_API_KEY }}
     steps:
       - uses: actions/checkout@v5
         with:
           ref: ${{ github.head_ref }}
+          token: ${{ secrets.GH_PAT }}
           persist-credentials: true
 
       - uses: oven-sh/setup-bun@v2
@@ -29,3 +28,4 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "Update MDX posts"
+          push_options: --force
