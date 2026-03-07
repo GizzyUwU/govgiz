@@ -14,9 +14,10 @@ async function fetchWebring() {
 
 export default function App() {
   const [ready, setReady] = createSignal(false);
-  const [members] = createResource(fetchWebring)
+  const [members] = createResource(fetchWebring);
   const [prevUrl, setPrevUrl] = createSignal("#");
   const [nextUrl, setNextUrl] = createSignal("#");
+  const [vh, setVh] = createSignal(0);
 
   onMount(async () => {
     document.body.className +=
@@ -28,11 +29,20 @@ export default function App() {
     const govuk = await import("govuk-frontend");
     govuk.initAll();
 
+    setVh(window.innerHeight);
+
+    const handleResize = () => setVh(window.innerHeight);
+    window.addEventListener("resize", handleResize);
+
     const data = members();
     if (!data) return;
 
-    const currentHostname = new URL(document.referrer || document.location.href).hostname.toLowerCase();
-    let index = data.findIndex(m => new URL(m.url).hostname.toLowerCase() === currentHostname);
+    const currentHostname = new URL(
+      document.referrer || document.location.href,
+    ).hostname.toLowerCase();
+    let index = data.findIndex(
+      (m) => new URL(m.url).hostname.toLowerCase() === currentHostname,
+    );
     if (index === -1) index = 0;
 
     const prevIndex = (index - 1 + data.length) % data.length;
@@ -41,6 +51,7 @@ export default function App() {
     setPrevUrl(data[prevIndex].url);
     setNextUrl(data[nextIndex].url);
     setReady(true);
+    return () => window.removeEventListener("resize", handleResize);
   });
 
   return (
@@ -65,8 +76,14 @@ export default function App() {
             <Link rel="icon" href="/haj.svg" />
             <Link rel="stylesheet" href="/assets/govuk-frontend.min.css" />
             <Meta name="title" content="Welcome to GOV.Giz" />
-            <Meta name="description" content="GOV.Giz - The best place to find gizzy services and information." />
-            <Meta name="keywords" content="gizzy, govgiz, gov.giz, gizgov, giz.gov" />
+            <Meta
+              name="description"
+              content="GOV.Giz - The best place to find gizzy services and information."
+            />
+            <Meta
+              name="keywords"
+              content="gizzy, govgiz, gov.giz, gizgov, giz.gov"
+            />
             <Meta name="robots" content="index, follow" />
             <Meta name="language" content="English" />
             <Meta name="revisit-after" content="30 days" />
@@ -74,16 +91,27 @@ export default function App() {
             <Meta property="og:type" content="website" />
             <Meta property="og:url" content="https://gizzy.gay/" />
             <Meta property="og:title" content="Welcome to Gov.Giz" />
-            <Meta property="og:description" content="GOV.Giz - The best place to find Gizzy services and information." />
+            <Meta
+              property="og:description"
+              content="GOV.Giz - The best place to find Gizzy services and information."
+            />
             <Meta property="og:image" content="https://gizzy.gay/88x31.svg" />
             <Meta property="twitter:card" content="summary_large_image" />
             <Meta property="twitter:url" content="https://gizzy.gay" />
             <Meta property="twitter:title" content="Welcome to Gov.Giz" />
-            <Meta property="twitter:description" content="GOV.Giz - The best place to find Gizzy services and information." />
-            <Meta property="twitter:image" content="https://gizzy.gay/88x31.svg" />
+            <Meta
+              property="twitter:description"
+              content="GOV.Giz - The best place to find Gizzy services and information."
+            />
+            <Meta
+              property="twitter:image"
+              content="https://gizzy.gay/88x31.svg"
+            />
             <div
               style={{
-                display: ready() ? "block" : "none",
+                display: ready() ? "flex" : "none",
+                "flex-direction": "column",
+                "min-height": "100vh",
                 width: "100%",
               }}
             >
@@ -121,26 +149,50 @@ export default function App() {
                 </div>
               </Suspense>
               <Show when={members()} fallback={null}>
-                <div class="govuk-width-container" style={{
-                  display: "flex",
-                  "justify-content": "center",
-                }}>
-                  <div class="govuk-grid-row" style={{
+                <div
+                  class="govuk-width-container"
+                  style={{
                     display: "flex",
-                    position: "relative",
-                    bottom: 0
-                  }}>
-                    <nav class="govuk-pagination" aria-label="Pagination" style={{
+                    flex: "1",
+                    "justify-content": "center",
+                  }}
+                >
+                  <div
+                    class="govuk-grid-row"
+                    style={{
                       display: "flex",
-                      "align-items": "center",
-                    }}>
+                      position: "relative",
+                      bottom: 0,
+                    }}
+                  >
+                    <nav
+                      class="govuk-pagination"
+                      aria-label="Pagination"
+                      style={{
+                        display: "flex",
+                        "align-items": "center",
+                      }}
+                    >
                       <div class="govuk-pagination__prev">
-                        <a class="govuk-link govuk-pagination__link" href={prevUrl()} target="_parent" rel="prev">
-                          <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" viewBox="0 0 15 13">
+                        <a
+                          class="govuk-link govuk-pagination__link"
+                          href={prevUrl()}
+                          target="_parent"
+                          rel="prev"
+                        >
+                          <svg
+                            class="govuk-pagination__icon govuk-pagination__icon--prev"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="13"
+                            width="15"
+                            aria-hidden="true"
+                            viewBox="0 0 15 13"
+                          >
                             <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
                           </svg>
                           <span class="govuk-pagination__link-title">
-                            Previous<span class="govuk-visually-hidden"> site</span>
+                            Previous
+                            <span class="govuk-visually-hidden"> site</span>
                           </span>
                         </a>
                       </div>
@@ -163,19 +215,31 @@ export default function App() {
                               src="https://assets.hackclub.com/icon-rounded.svg"
                               alt="Hack Club Webring"
                               style={{
-                                "height": "50px",
-                                "width": "150px",
+                                height: "50px",
+                                width: "150px",
                               }}
                             />
                           </a>
                         </li>
                       </ul>
                       <div class="govuk-pagination__next">
-                        <a class="govuk-link govuk-pagination__link" href={nextUrl()} target="_parent" rel="next">
+                        <a
+                          class="govuk-link govuk-pagination__link"
+                          href={nextUrl()}
+                          target="_parent"
+                          rel="next"
+                        >
                           <span class="govuk-pagination__link-title">
                             Next<span class="govuk-visually-hidden"> site</span>
                           </span>
-                          <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" viewBox="0 0 15 13">
+                          <svg
+                            class="govuk-pagination__icon govuk-pagination__icon--next"
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="13"
+                            width="15"
+                            aria-hidden="true"
+                            viewBox="0 0 15 13"
+                          >
                             <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
                           </svg>
                         </a>
@@ -184,30 +248,43 @@ export default function App() {
                   </div>
                 </div>
               </Show>
-              <footer class="govuk-footer" style={{
-                "margin-top": "100%"
-              }}>
+              <footer
+                class="govuk-footer"
+                style={{
+                  transform: "translateY(100%)",
+                  transition: "transform 0.3s",
+                }}
+              >
                 <div class="govuk-width-container">
                   <div class="govuk-footer__meta">
                     <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
                       <Buttons />
-                      <img class="govuk-footer__licence-logo" src="/haj.svg" style={{
-                        "max-height": "32px",
-                        "max-width": "32px",
-                        "vertical-align": "middle"
-                      }} />
+                      <img
+                        class="govuk-footer__licence-logo"
+                        src="/haj.svg"
+                        style={{
+                          "max-height": "32px",
+                          "max-width": "32px",
+                          "vertical-align": "middle",
+                        }}
+                      />
                       <span class="govuk-footer__licence-description">
                         All content is available under the{" "}
                         <a
                           class="govuk-footer__link"
                           href="/license"
-                          rel="license">MIT Lcense</a>, except where otherwise stated
+                          rel="license"
+                        >
+                          MIT Lcense
+                        </a>
+                        , except where otherwise stated
                       </span>
                     </div>
                     <div class="govuk-footer__meta-item">
                       <a
                         class="govuk-footer__link govuk-footer__copyright-logo"
-                        href="/license">
+                        href="/license"
+                      >
                         © Copyright of Gizzy, 2026 to {new Date().getFullYear()}
                       </a>
                     </div>
@@ -217,10 +294,9 @@ export default function App() {
             </div>
           </MetaProvider>
         </Suspense>
-      )
-      }
+      )}
     >
       <FileRoutes />
-    </Router >
+    </Router>
   );
 }
