@@ -8,6 +8,86 @@ tags:
   - projects
 ---
 
+## Devlog 28900 • 2026-03-07
+
+I did a bit of updates :3c mainly to shop command but some other stuff too SO LETS DEVLOG ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
+- Shop command now has region based showing (if you have a region set in /logpheus-config
+- Config command now prompts for a region ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+- New meta column on users standing for metadata on users for stuff like regions
+- CheckAPIKey returns db row too now so I can use it without new db call when data was already grabbed during that check
+- Log Zod issues in bugsink now
+LETS HOPE WE DONT BREAK PROD WITH THE CHANGES ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
+
+ps: matei if your reading this you are a cutie pants
+
+0 likes • 1h 21m
+
+## Devlog 28770 • 2026-03-06
+
+Woah more changes IM LOCKED IN CHAT LITERALLY LOCKED IN AAAAAAAAAAAAAA HELP ME THEY LOCKED ME IN HERE IM TRAPPED IM STUCK GET ME OUT PLEASE LET ME OUT
+- Fully changed to Zod for requests so thats sigma it points out my dumb mistakes more
+- Finally handles http codes set out by docs mostly some stuff still no i dont think
+- Changed shop command to not use disgusting slack table and also push it to prod
+
+0 likes • 1h 2m
+
+## Devlog 28755 • 2026-03-06
+
+I mainly just worked on the code conversion in this update so it all uses ZOD NOW ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
+The zod types autogenerate off of the openapi spec the use of scalar makes which flavortown now uses so MY BAD CUSTOM TYPES ARE NO LONGER IN USE WE USE ZOD ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
+I also made the basic api data check better as it was kinda hard to understand and messy before
+
+0 likes • 1h 37m
+
+## Devlog 28570 • 2026-03-06
+
+I should devlog right about meow so HAIIIIIIII x2
+- Added da shop command so you can run /logpheus-shop [id] to view shop items and the id to look at a specific shop item just not pushed to prod yet (This is still a WIP i will be changing away from using slack tables because they don't actually work properly so you can't view whole table)
+- Config command was still channel restricted which was meant to be dropped a while ago so I dropped it just need to push change to prod
+- About to wip a /logpheus-help command to view all commands because I know slack can kind of suck to show all logpheus commands
+
+0 likes • 2h 12m
+
+## Devlog 26412 • 2026-02-27
+
+Wow this is a short update ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) so I ASKED FOR A PR AND IT GOT MADE BY CYTEON WE LOVE CYTEON CHAT YAY THEN IT GOT ACCEPTED AFTER A WEEK BY NEON WE LOVE NEON
+so now
+- Attachments on devlog posts ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+- Fixed checkAPIKey failing when trying to change api key in config command due to it not being able to find you as it used the new api key you are providing to do the check not old one
+
+0 likes • 36m
+
+## Devlog 26400 • 2026-02-27
+
+Rawr not much changes just bug fixes
+- Fixed code in parseMarkdown thrown type errors as I didn't updat to strict
+- Shut up loadHandlers as it failed dupe check every min spamming console as already registered
+- Fixed throwing error on empty optional env
+- Removed sum debug stuff
+- Fixed prod explosion cuz commands didnt work as bug
+
+0 likes • 1h 49m
+
+## Devlog 24405 • 2026-02-21
+
+I did some things ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+- It now redacts sensitive info in logs as it didn't before
+- Improved FT API Handler so that I can easily modify it without it being annoying
+- Made it throw an error on dupe handler names as I keep accidentally not changing the name
+- Changed to use lib of checkAPIKey instead of manual implementation for each handler
+- Enforces strict typescript so that its easier to see issues in files
+
+0 likes • 2h 20m
+
+## Devlog 24073 • 2026-02-20
+
+Since I forgor to devlog my changes yesturday/day before I'll devlog it today for you cuties ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+- Fixed the disabled message not getting posted which caused people not to get alerted when bot broke for them as unauthorized
+- Wip of Projects Command mostly working but slack hates long tables idk how to fix that and still needs to fix pagination on it
+- System information on the stats command now
+
+0 likes • 2h 42m
+
 ## Devlog 23465 • 2026-02-18
 
 58 minutes for this? Damn peak! ANYWAY UPDATE ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
