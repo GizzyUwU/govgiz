@@ -8,6 +8,16 @@ tags:
   - projects
 ---
 
+## Devlog 29258 • 2026-03-08
+
+This devlog really isnt that much ngl I just spent the past hour and a min cleaning up old code to make the codebase less complicated so
+- Dropped add command taking in api-key for new comers the register commands and its easier to maintain one command for adding a new user to logpheus then 2 ways
+- Made views and commands more reliant on checkAPIKey function so less code in every file for doing the same check everytime
+- Cleaned up register command to also use checkAPIKey but also easier maintability as changed way from spam of if statements by using a obj with type UserInsert to add to it and added ability to add region on register
+- Both config and register command now has hyperlink leading straight to flavortown's api key setting box to make it easier for user to get
+
+0 likes • 1h 7m
+
 ## Devlog 28900 • 2026-03-07
 
 I did a bit of updates :3c mainly to shop command but some other stuff too SO LETS DEVLOG ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
