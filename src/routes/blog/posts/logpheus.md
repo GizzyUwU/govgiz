@@ -16,7 +16,7 @@ This devlog really isnt that much ngl I just spent the past hour and a min clean
 - Cleaned up register command to also use checkAPIKey but also easier maintability as changed way from spam of if statements by using a obj with type UserInsert to add to it and added ability to add region on register
 - Both config and register command now has hyperlink leading straight to flavortown's api key setting box to make it easier for user to get
 
-0 likes • 1h 7m
+0 likes • 1h 8m
 
 ## Devlog 28900 • 2026-03-07
 
@@ -47,7 +47,7 @@ I mainly just worked on the code conversion in this update so it all uses ZOD NO
 The zod types autogenerate off of the openapi spec the use of scalar makes which flavortown now uses so MY BAD CUSTOM TYPES ARE NO LONGER IN USE WE USE ZOD ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
 I also made the basic api data check better as it was kinda hard to understand and messy before
 
-0 likes • 1h 37m
+0 likes • 1h 35m
 
 ## Devlog 28570 • 2026-03-06
 
@@ -65,7 +65,7 @@ so now
 - Attachments on devlog posts ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
 - Fixed checkAPIKey failing when trying to change api key in config command due to it not being able to find you as it used the new api key you are providing to do the check not old one
 
-0 likes • 36m
+0 likes • 38m
 
 ## Devlog 26400 • 2026-02-27
 
@@ -76,7 +76,7 @@ Rawr not much changes just bug fixes
 - Removed sum debug stuff
 - Fixed prod explosion cuz commands didnt work as bug
 
-0 likes • 1h 49m
+0 likes • 1h 47m
 
 ## Devlog 24405 • 2026-02-21
 
@@ -87,7 +87,7 @@ I did some things ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-
 - Changed to use lib of checkAPIKey instead of manual implementation for each handler
 - Enforces strict typescript so that its easier to see issues in files
 
-0 likes • 2h 20m
+0 likes • 2h 22m
 
 ## Devlog 24073 • 2026-02-20
 
@@ -96,7 +96,7 @@ Since I forgor to devlog my changes yesturday/day before I'll devlog it today fo
 - Wip of Projects Command mostly working but slack hates long tables idk how to fix that and still needs to fix pagination on it
 - System information on the stats command now
 
-0 likes • 2h 42m
+0 likes • 2h 41m
 
 ## Devlog 23465 • 2026-02-18
 
@@ -107,7 +107,7 @@ Since I forgor to devlog my changes yesturday/day before I'll devlog it today fo
 - [feat: drop command for dev instance and only attached to my user ids so I can be lazy and not go into db just to test, chore: drop sentryEnabled from most stuff and instead use sentryEnabled on logger sink to see if enabled use sentry else console](https://github.com/GizzyUwU/logpheus/commit/bb1f435507ea5b6b664fc175a28e34f634fd8088)
 
 
-0 likes • 59m
+0 likes • 1h 1m
 
 ## Devlog 23453 • 2026-02-18
 
@@ -121,7 +121,7 @@ Update not really that big but still I need the hours
 
 I LIED THIS WAS A BIG CHANGE BOZO GET LIED TO ![bleh](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fbleh%2F8be6dc6939de105f.png&w=30&h=30&fit=contain&n=-1) 
 
-0 likes • 1h 25m
+0 likes • 1h 26m
 
 ## Devlog 22874 • 2026-02-16
 
@@ -158,7 +158,7 @@ Chat, are we codemaxxing rn? no stupid we are bugfixing dumb ahh
 - Config command not channel specific now it uses user id to update api key
 - Tells user that prod exploded instead of ghostting them when it does
 
-0 likes • 2h 36m
+0 likes • 2h 35m
 
 ## Devlog 16313 • 2026-01-26
 
@@ -169,7 +169,7 @@ Almost 3 hours again GOD i kinda forgor was gonna do one this morning but devlog
 - More bug fixes as an FT api route changed without me knowing breaking the bot so had to fix that and fallback so if it happens again it logs to sentry as sus ![sussy](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fsussy%2Fcc3a0a8a261caea2.png&w=30&h=30&fit=contain&n=-1)
 - Did a update to readme to match new stuff ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
 
-0 likes • 2h 40m
+0 likes • 2h 41m
 
 ## Devlog 15877 • 2026-01-25
 
@@ -178,7 +178,7 @@ i fixed sum bugs
 user command! get someones ft profile from sometimes slack account
 opt outs column for something soon owo
 
-0 likes • 3h 2m
+0 likes • 3h 1m
 
 ## Devlog 15662 • 2026-01-25
 
@@ -191,26 +191,26 @@ I spent most of the time improving the error handling of logpheus so it makes us
 
 uhm pushed to prod the changes i madeto table etc fixed sum stuff took down prod for like half and hour as u do so fixed that because of dumb migration issues bleh but it does make use of new tables now for data not all data in new tables tho like last devlog timestamp or the store of user ids so i need to manually add uids in for users previous to the update but also change it so it stores and uses last devlog timestamp as main check and fallback to id check if need be
 
-0 likes • 1h 11m
+0 likes • 1h 13m
 
 ## Devlog 15281 • 2026-01-24
 
 bleh more time for me! I did sum cleaning moving devlog check to sept file and no longer rely on loadApiKeys which is super overkill for 1 function using it since func was legacy code used a lot before changing to drizzle etc
 
-0 likes • 54m
+0 likes • 52m
 
 ## Devlog 15243 • 2026-01-24
 
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 I work on moving schema :3c and also cleaning up the codebase so its more readable as ts confusing also improved schema migration by learning how to actually use drizzle frfr
 
-0 likes • 1h 26m
+0 likes • 1h 27m
 
 ## Devlog 15051 • 2026-01-23
 
 Well uhm this was a crazy one, a self hosted instance caused offical to die because of how slack handles slash commands its extremely secure setup allows other bots to overwrite the slash commnads you have to their own and dw it does the exact opposite of telling user this it still shows that the command you are about to run is from the offical bot so i had to modify it so self hosted instances now use user id and bot user as prefix to fix it also updating schema to work more efficiently then and clean up code
 
-0 likes • 3h 41m
+0 likes • 3h 42m
 
 ## Devlog 14494 • 2026-01-21
 
@@ -225,7 +225,7 @@ Fixed bugs!
 - You can now add multiple projects to one api key as fixed bug preventing this
 - you can no longer be a stinky and try add the same project twice under a api key
 
-0 likes • 46m
+0 likes • 44m
 
 ## Devlog 4960 • 2026-01-01
 
@@ -243,13 +243,13 @@ I'm logging this cuz free time! Logpheus felt like going on a spamming spree bec
 
 WOOOOOOO just took down prod for 10 minutes because im dumb! I spent this time fixing my dumb mistakes, adding support to use full postgres in prod so I only need pglite in dev making my life easier in both cases and adding validation of api keys when added!
 
-0 likes • 2h 3m
+0 likes • 2h 2m
 
 ## Devlog 4899 • 2025-12-31
 
 This whole devlog time was spent on another migration because I found out about pglite (postgres in wasm) and drizzle supported it so I migrated over to that instead because drizzle makes my life way more convienent especially working on logpheus it just took so long to setup as it was my first time using drizzle and i had to also create migration from sqlite and json to pglite to ensure no data loss.
 
-0 likes • 4h 49m
+0 likes • 4h 51m
 
 ## Devlog 4394 • 2025-12-30
 
@@ -262,7 +262,7 @@ Using json was really annoying especially for every project using their own cach
 
 OKAY REAL DEVLOG THIS TIME, markdown support is now fully added i think yes
 
-0 likes • 28m
+0 likes • 26m
 
 ## Devlog 4157 • 2025-12-29
 
@@ -271,7 +271,7 @@ Trying to implement support for markdown in logpheus
 
 i like <u>potatos</u>
 
-0 likes • 34m
+0 likes • 35m
 
 ## Devlog 4147 • 2025-12-29
 
@@ -298,7 +298,7 @@ arf arf
 ---
 sadgagagdag
 
-0 likes • 18m
+0 likes • 19m
 
 ## Devlog 4012 • 2025-12-29
 

@@ -24,19 +24,19 @@ Better parsing of rich text blocks :3c not completely dont yet tho
 
 A bit better message parsing :3c it now has semi good image support setup image is kinda large gotta fix that but it also unescapes html encode stuff now so yipee
 
-0 likes • 59m
+0 likes • 57m
 
 ## Devlog 5979 • 2026-01-04
 
 Names! Yes this could of been done in like 30 minutes but im a twat i made a stupid mistake causing me to not match the user id to the gotten ids for the channel because i used channel: channelId in the body not channels: [channelId] causing slack to throw workspace users not channel users. I also moved chat to its own file instead of just in the index.tsx file
 
-0 likes • 2h 10m
+0 likes • 2h 9m
 
 ## Devlog 5720 • 2026-01-03
 
 Yeah my previous fix to shutup couldnt find callback id annoyed me so i spent this whole devlog time just trying to get my shit rust code to work so it prevents default reload and instead causes a window relaunch clearing out any callback ids so no console spam because it relaunches on reload
 
-0 likes • 1h 39m
+0 likes • 1h 41m
 
 ## Devlog 5676 • 2026-01-03
 

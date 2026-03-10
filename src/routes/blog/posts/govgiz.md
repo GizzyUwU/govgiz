@@ -26,7 +26,7 @@ Thats about it small change but bleh
 - [feat: 88x31 buttons :3c](https://github.com/GizzyUwU/govgiz/commit/1de14c7d4efb362d3fb26c566623155f96461e9a)
 
 
-1 likes • 1h 5m
+1 likes • 1h 7m
 
 ## Devlog 19153 • 2026-02-03
 
@@ -34,7 +34,7 @@ Bleh haiii again ![wave-pikachu-2](https://images.weserv.nl/?url=https%3A%2F%2Fe
 I spent the past hour adding hc webring to my site (would of been easier using the provided embed but that doesnt fit the theme so why would i do that?)
 I remade the embed that provided the webring but with govuk design to match better it doesnt look like much but it was pain to get it to be like that
 
-2 likes • 1h 6m
+2 likes • 1h 4m
 
 ## Devlog 19140 • 2026-02-03
 
@@ -49,7 +49,7 @@ I mostly did fixes but also some nice to have changes
 - Drop kaboom a tag which was hidden from viewers but not needed anyway as i went with different fix for 404
 Thats basically it also I GET UNBANNED FROM THE SLACK TODAY YAY ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
 
-1 likes • 1h 46m
+1 likes • 1h 48m
 
 ## Devlog 18978 • 2026-02-02
 
@@ -70,7 +70,7 @@ I got the 4167 devlog id? ![sixseven](https://images.weserv.nl/?url=https%3A%2F%
 - [fix: swap order from oldest to newest to newest to oldest](https://api.github.com/repos/GizzyUwU/govgiz/commits/07b3487f54bc06b62bcceb717473469060c4a358)
 
 
-1 likes • 1h 3m
+1 likes • 1h 1m
 
 ## Devlog 18818 • 2026-02-02
 
@@ -94,7 +94,7 @@ KABOOM WE DO UPDATE YIPEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 - [feat: fix 404 on github, 88x31 for this site, github follower count and star count i stole from cyteon, details page](https://api.github.com/repos/GizzyUwU/govgiz/commits/f4fbc7f37ad4baa27692f9d5a6df0e8f1421487b)
 
 
-1 likes • 1h 40m
+1 likes • 1h 42m
 
 ## Devlog 18619 • 2026-02-01
 
@@ -112,7 +112,7 @@ i DID SOME THINGS
 - No longer shows posts with tag projects on blog posts page
 - Made tags and blog posts page more sexy
 
-1 likes • 3h 26m
+1 likes • 3h 24m
 
 ## Devlog 18312 • 2026-02-01
 
@@ -121,7 +121,7 @@ bleh i had to fix script and aciton that was painfal its 1 am im eepy but update
 - it prevents xss now from mdx bleh
 - IM TIRIED
 
-1 likes • 44m
+1 likes • 46m
 
 ## Devlog 18303 • 2026-02-01
 
@@ -141,7 +141,7 @@ This wasnt much but yipeee
 - [feat: giscus for comments, gov giz logo redirect to /](https://api.github.com/repos/GizzyUwU/govgiz/commits/a260a01ac6257e84efe3acdbee4ef790727bf6f1)
 
 
-1 likes • 59m
+1 likes • 58m
 
 ## Devlog 18087 • 2026-01-31
 
@@ -154,7 +154,7 @@ ANYWAY
 - [fix: add copy button](https://api.github.com/repos/GizzyUwU/govgiz/commits/ef7e40b4fd1f2690a1b582ae4f07e73f1b5253c5)
 
 
-1 likes • 46m
+1 likes • 47m
 
 ## Devlog 18071 • 2026-01-31
 
@@ -182,7 +182,7 @@ Im eepy its 1 am but gotta devlog so yipeeeeeeeeeeeeeeeeee
 - Shows my local time which also live updates using typedjs to update it
 - Small desc about me uses typedjs to change values bleh ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
 
-0 likes • 46m
+0 likes • 47m
 
 ## Devlog 17136 • 2026-01-29
 
