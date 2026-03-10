@@ -8,6 +8,19 @@ tags:
   - projects
 ---
 
+## Devlog 30075 • 2026-03-10
+
+I did some stuff ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+- Some how THE CHANNEL CREATOER REQUIREMENET STAYED EVEN THO I KNOW I REMOVED IT GRRRRR
+- Spelling mistake in region text in config view
+- Zod error in shop for item id as it sent string not number
+- Hours of project based on devlogs ;3c
+- Devlogs function checking params for query throwing zod error
+- Predicted cookie amount (based on avg of 10 cookies per hour not previous ship cookies)
+- Ping groups are in wip
+
+0 likes • 2h 24m
+
 ## Devlog 29258 • 2026-03-08
 
 This devlog really isnt that much ngl I just spent the past hour and a min cleaning up old code to make the codebase less complicated so
