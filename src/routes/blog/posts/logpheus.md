@@ -1,12 +1,23 @@
 ---
 title: Logpheus
-description: Basic Slack Bot that makes use of FT API to query for new devlogs and posts it to personal channels (for each personal channel you will have to provide your own api key i aint hitting ratelimit on my own api key for yall smh)
+description: Flavorpheus but actually useful! It's a generic flavortown bot used for automatic devlog posting to a channel, looking at projects shop items users and more!
 date: '2025-12-24'
 tags:
   - flavourtown
   - flavortown
   - projects
 ---
+
+## Devlog 30296 • 2026-03-11
+
+Ts a basic ahh devlog but i mean hey i need the HOURS GRRRRRRRRRRRRRRRRRRRRR
+- Fixed bug in data command causing double ":" to appear
+- Add command now accepts a param for project id to make it less inconvinent adding it
+- log better in prod to see why unexpected project response error cuz idk why that happens
+- Fixed remove command not working for set id and removed remove all option as thats just revoke and it doesnt delete user from db now as revoke does that
+- Data command now includes metadata
+
+0 likes • 33m
 
 ## Devlog 30237 • 2026-03-11
 
