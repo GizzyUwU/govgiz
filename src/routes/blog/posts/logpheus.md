@@ -8,6 +8,14 @@ tags:
   - projects
 ---
 
+## Devlog 30237 • 2026-03-11
+
+Quick bit of coding before I catch the bus ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+- Hopefully fix the issue where it says unexpected error from api as no status code
+- Revoke command to remove yourself from logpheus with ease if u want to sadly
+
+0 likes • 29m
+
 ## Devlog 30075 • 2026-03-10
 
 I did some stuff ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
