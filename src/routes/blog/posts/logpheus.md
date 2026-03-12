@@ -1,6 +1,6 @@
 ---
 title: Logpheus
-description: Flavorpheus but actually useful! It's a generic flavortown bot used for automatic devlog posting to a channel, looking at projects shop items users and more!
+description: Flavorpheus but actually useful! It's a generic flavortown bot used for automatic devlog posting to a channel, looking at projects shop items users and more! Check it out by using /logpheus-(commandName) in the Slack! You could also self host it if you want to.
 date: '2025-12-24'
 tags:
   - flavourtown
