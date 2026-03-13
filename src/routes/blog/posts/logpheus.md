@@ -8,6 +8,15 @@ tags:
   - projects
 ---
 
+## Devlog 30977 • 2026-03-13
+
+Whoops didnt mean to go this long its a 1 commit update! giant commit tho
+- Swagger API Documentation for /api/v1 on logpheus
+- Goals API so FT Utils/Spicetown can give me your shop goal data
+A lot of this was making goals api and also trying to get swagger to work with boltjs custom routes as slack sucks
+
+0 likes • 3h 4m
+
 ## Devlog 30296 • 2026-03-11
 
 Ts a basic ahh devlog but i mean hey i need the HOURS GRRRRRRRRRRRRRRRRRRRRR
