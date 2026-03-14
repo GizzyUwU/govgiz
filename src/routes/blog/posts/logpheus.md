@@ -8,6 +8,20 @@ tags:
   - projects
 ---
 
+## Devlog 31097 • 2026-03-14
+
+Only 45 minutes? For all this commits? crazy i know right... ANYWAY HAI CUTIES IM DEVLOGGING Again ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+This is mostly bug fixing based it has new stuff but thats part of fixing issues for users
+- Fixed region text to be more specific on format so users know how it needs to be to get it to work
+- Reactivate command so you can get undisabled in db once you fixed an issue as config command makes u update something to reactiavte and logpheus not being in channel just requires being added to channel to fix
+- Use more prefix based text instead of "logpheus" so it makes more sense on self hosted instances
+- Disable users from automated posting when logpheus not in the channel
+- Log on API so it shows in sentry and is useful then not making sense to debug
+- use ctxLogger on timer based handlers because without it wont know what file is causing it
+- Removed debug console logs i left in qwp
+
+0 likes • 54m
+
 ## Devlog 30977 • 2026-03-13
 
 Whoops didnt mean to go this long its a 1 commit update! giant commit tho
