@@ -187,8 +187,10 @@ export const PostImage: Component<{
   class?: string;
   bgColor?: string;
 }> = (props) => {
+  console.log(props);
   let ref!: HTMLImageElement;
   onMount(() => {
+    if (props.src.includes("emoji.slack-edge.com")) return;
     const cell = gridCellDimensions();
     function setHeightFromRatio() {
       const ratio = ref.naturalWidth / ref.naturalHeight;
@@ -208,21 +210,32 @@ export const PostImage: Component<{
     }
   });
 
-  return (
-    <>
+  if (props.src.includes("emoji.slack-edge.com")) {
+    return (
       <img
-        ref={ref}
-        src={props.src}
-        alt={props.alt}
+        {...props}
         style={{
-          "max-width": "100%",
-          width: "100%",
+          "vertical-align": "middle",
         }}
-        classList={{ [props.class || ""]: !!props.class }}
       />
-      {props.attr}
-    </>
-  );
+    );
+  } else {
+    return (
+      <>
+        <img
+          ref={ref}
+          src={props.src}
+          alt={props.alt}
+          style={{
+            "max-width": "100%",
+            width: "100%",
+          }}
+          classList={{ [props.class || ""]: !!props.class }}
+        />
+        {props.attr}
+      </>
+    );
+  }
 };
 
 export const Aside: ParentComponent = (props) => {
@@ -269,6 +282,17 @@ export const Input: ParentComponent<ComponentProps<"input">> = (props) => {
   }
 
   return <input style={{ background: "black", color: "black" }} {...props} />;
+};
+
+export const IMG: ParentComponent<ComponentProps<"img">> = (props) => {
+  return (
+    <img
+      {...props}
+      style={{
+        "vertical-align": "middle",
+      }}
+    />
+  );
 };
 
 export const markdownComponents = {
