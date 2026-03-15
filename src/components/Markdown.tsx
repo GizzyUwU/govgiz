@@ -187,7 +187,6 @@ export const PostImage: Component<{
   class?: string;
   bgColor?: string;
 }> = (props) => {
-  console.log(props);
   let ref!: HTMLImageElement;
   onMount(() => {
     if (props.src.includes("emoji.slack-edge.com")) return;
