@@ -8,6 +8,24 @@ tags:
   - projects
 ---
 
+## Devlog 31454 • 2026-03-15
+
+This devlog is all just bugfixing and optimization so it works better with a lot of users
+- Make the user check for automated posts more specific to not include regular users
+- Decrease N+1 DB queries with prefetching projects and users and search using maps
+- Fixed logic error where 1 bad handler could break all handlers
+- Lock mechanism to prevent reruns of handlers when a handler is still running
+- Dropped old 2s wait used for ratelimits as new ratelimit handler
+- Keep parseMarkdown regex in mem already loaded so slight improvement on bursts from automated devlog posts
+- Use utcFormatter which is already in mem as slight benefit on resources for each devlog post
+- Drop clients if none in userRows
+- API now reuses ftClient if it already exists in clients
+- Fixed videos not working because misisng title and thumbnail
+- Don't hit db for data we already have
+In docker it didnt drop mem usage by much only around 16mb which is still nice and it did drop idle cpu usage a bit but still bursts during activity it mostly just improves speed for user for posts
+
+0 likes • 1h 20m
+
 ## Devlog 31097 • 2026-03-14
 
 Only 45 minutes? For all this commits? crazy i know right... ANYWAY HAI CUTIES IM DEVLOGGING Again ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
