@@ -8,6 +8,17 @@ tags:
   - projects
 ---
 
+## Devlog 31593 • 2026-03-15
+
+Woah woah woah did someone say a new... a new devlog? WOA AWOW THIS IS SO SIGMA
+Yall get a new devlog you cutie pies ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+- Help command so you can see command params and command descriptions easily as slack kind of sucks for slash commands!
+- Devlog command so you can see a devlog's content in the slack ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
+- Zod infer types for ft api functions as not being able to see what needed to provided was annoying meeeeeow
+OKAY BAI CUTIES TILL NEXT DEVLOG YOU CUTIES
+
+0 likes • 58m
+
 ## Devlog 31454 • 2026-03-15
 
 This devlog is all just bugfixing and optimization so it works better with a lot of users
