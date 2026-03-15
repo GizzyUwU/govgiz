@@ -46,7 +46,6 @@ const Pre: ParentComponent<{
   file?: string;
   children: JSXElement;
 }> = (props) => {
-  console.log("uhh", props.lang);
   const [copied, setCopied] = createSignal(false);
   const [open, setOpen] = createSignal<boolean>(false);
   let ref!: HTMLDivElement;
@@ -160,7 +159,11 @@ const A: ParentComponent<{ href: string }> = (props) => {
   );
 
   return (
-    <Anchor href={props.href} target={isLocal() ? "" : "_blank"} class="govuk-link">
+    <Anchor
+      href={props.href}
+      target={isLocal() ? "" : "_blank"}
+      class="govuk-link"
+    >
       {props.children}
     </Anchor>
   );
@@ -185,7 +188,6 @@ export const PostImage: Component<{
   bgColor?: string;
 }> = (props) => {
   let ref!: HTMLImageElement;
-
   onMount(() => {
     const cell = gridCellDimensions();
     function setHeightFromRatio() {
@@ -207,19 +209,19 @@ export const PostImage: Component<{
   });
 
   return (
-    <div>
+    <>
       <img
         ref={ref}
         src={props.src}
         alt={props.alt}
         style={{
-          "max-width": "1020px",
+          "max-width": "100%",
           width: "100%",
         }}
         classList={{ [props.class || ""]: !!props.class }}
       />
       {props.attr}
-    </div>
+    </>
   );
 };
 
@@ -269,13 +271,6 @@ export const Input: ParentComponent<ComponentProps<"input">> = (props) => {
   return <input style={{ background: "black", color: "black" }} {...props} />;
 };
 
-export const IMG: ParentComponent<ComponentProps<"img">> = (props) => {
-  return <img {...props} style={{
-    "vertical-align": "middle"
-  }} />
-}
-
-
 export const markdownComponents = {
   a: A,
   p: P,
@@ -289,5 +284,5 @@ export const markdownComponents = {
   h3: H3,
   h4: H4,
   input: Input,
-  img: IMG
+  img: PostImage,
 };
