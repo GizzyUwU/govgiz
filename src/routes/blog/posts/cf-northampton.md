@@ -7,9 +7,6 @@ tags:
   - Campfire
 ---
 
-# Campfire Northampton (Perspective of an Organiser)
-
-
 I was part of organisers a local event in Northampton known as Campfire Northampton! This was part of Hack Club's Campfire Event which is a student-led event which ran in over 200 cities on the same date of 28th of February 2026. They provided a lot of the resources to help us run the event such as the prize money, t-shirts, organiser guide to show us how to organise such event showing how to get a venue and contact sponsors, safeguard training and more!
 
 The event ended up being a huge success as there was 22 sign-ups with 20 people actually coming to the event which is huge for such an event as before the event I never really thought Northampton had much teens that enjoyed coding. Even better is that out of the 20 people who turned up 20 shipped giving us a ship rate of 100% which compared to other Campfire's was amazing.
