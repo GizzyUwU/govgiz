@@ -1,6 +1,6 @@
 ---
 title: Campfire Northampton (Perspective of an Organiser)
-description:  This is a post about Campfire Northampton from the perspective of an organiser
+description: This is a post about Campfire Northampton from the perspective of an organiser
 date: '2026-03-15'
 tags:
   - HackClub
