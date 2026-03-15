@@ -143,13 +143,13 @@ export default function App() {
                   </div>
                 }
               >
-                <main class="govuk-main-wrapper">
-                  <div
-                    class="govuk-width-container govuk-!-text-break-word"
-                    style={{
-                      "margin-top": "-40px",
-                    }}
-                  >
+                <main
+                  class="govuk-main-wrapper"
+                  style={{
+                    "padding-top": "0px",
+                  }}
+                >
+                  <div class="govuk-width-container govuk-!-text-break-word">
                     <Breadcrumb />
                     {props.children}
                   </div>
