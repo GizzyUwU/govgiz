@@ -40,7 +40,6 @@ export default function App() {
     const currentHostname = new URL(
       document.referrer || document.location.href,
     ).hostname.toLowerCase();
-    console.log(currentHostname)
     let index = data.findIndex(
       (m) => new URL(m.url).hostname.toLowerCase() === currentHostname,
     );
