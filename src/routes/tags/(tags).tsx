@@ -20,7 +20,7 @@ const Tags = () => {
   });
 
   return (
-    <div class="govuk-width-container govuk-!-text-break-word">
+    <>
       <h1 class="govuk-heading-m">All tags:</h1>
       <div class="govuk-form-group">
         <div class="govuk-input__wrapper">
@@ -70,7 +70,7 @@ const Tags = () => {
           )}
         </For>
       </ul>
-    </div>
+      </>
   );
 };
 

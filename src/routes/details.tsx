@@ -2,7 +2,7 @@ import { A } from "@solidjs/router";
 
 export default function Details() {
   return (
-    <main class="govuk-main-wrapper">
+    <>
         <h1 id="header" class="govuk-heading-l">
           Details about me!
         </h1>
@@ -98,6 +98,6 @@ export default function Details() {
           </A>{" "}
           that uses they/them pronouns so please be respectfully of that.
         </p>
-    </main>
+    </>
   );
 }

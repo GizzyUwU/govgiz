@@ -43,7 +43,6 @@ export default function Blogs() {
   return (
     <>
       <Title>All posts</Title>
-      <div class="govuk-width-container">
         <h1 class="govuk-heading-l">All Blog Posts</h1>
         <div class="govuk-form-group">
           <div class="govuk-input__wrapper">
@@ -90,7 +89,6 @@ export default function Blogs() {
             )}
           </For>
         </ul>
-      </div>
     </>
   );
 }

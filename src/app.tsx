@@ -143,10 +143,17 @@ export default function App() {
                   </div>
                 }
               >
-                <div class="govuk-width-container govuk-!-text-break-word">
-                  <Breadcrumb />
-                  {props.children}
-                </div>
+                <main class="govuk-main-wrapper">
+                  <div
+                    class="govuk-width-container govuk-!-text-break-word"
+                    style={{
+                      "margin-top": "-40px",
+                    }}
+                  >
+                    <Breadcrumb />
+                    {props.children}
+                  </div>
+                </main>
               </Suspense>
               <Show when={members()} fallback={null}>
                 <div
