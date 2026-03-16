@@ -40,7 +40,7 @@ jobs:
         run: cp src/routes/404.html .output/public/404.html
 
       - name: Run Sitemap Build
-        run: bun run src/automation/sitemap.BunJS
+        run: bun src/automation/sitemap.js
 
       - name: Copy Sitemap XML to output
         run: cp src/public/sitemap.xml .output/public/sitemap.xml
