@@ -8,6 +8,15 @@ tags:
   - projects
 ---
 
+## Devlog 31917 • 2026-03-16
+
+Yknow this isn't even really a devlog we went back in progress
+- Goals on devlog post cuz yes thats sigma
+- PUT request bug fix as it only showed goals given to api not updated db
+- Drop embed support for videos as it never worked and prob will never work because well thats just say I have never seen an api more idiotic then what slack has made I seriously hope slack rebuilds their api from the ground up because whoever made it in the first place failed miserablely at supporting video
+
+0 likes • 3h 16m
+
 ## Devlog 31593 • 2026-03-15
 
 Woah woah woah did someone say a new... a new devlog? WOA AWOW THIS IS SO SIGMA
