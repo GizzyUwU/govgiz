@@ -43,7 +43,7 @@ jobs:
         run: bun src/automation/sitemap.js
 
       - name: Copy Sitemap XML to output
-        run: cp src/public/sitemap.xml .output/public/sitemap.xml
+        run: cp public/sitemap.xml .output/public/sitemap.xml
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
