@@ -8,6 +8,14 @@ tags:
   - projects
 ---
 
+## Devlog 32073 • 2026-03-17
+
+Woah a new devlog?! YIPEEEEEEEEEEEE
+- FIxed shop command not grabbing region correctly from meta
+- Goals command to see your goals remove and add
+
+0 likes • 44m
+
 ## Devlog 31917 • 2026-03-16
 
 Yknow this isn't even really a devlog we went back in progress
