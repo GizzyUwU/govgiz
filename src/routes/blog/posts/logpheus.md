@@ -14,7 +14,7 @@ Not much of a devlog but still worth a post so yes ![yesyes](https://images.wese
 - Goals are now on the shop command!
 - Decrease shop item limit on shop command cuz slack sucks have to wait for cyteons pr to get ?limit= to create a pagination fix for this
 
-1 likes • 25m
+2 likes • 25m
 
 ## Devlog 32073 • 2026-03-17
 
