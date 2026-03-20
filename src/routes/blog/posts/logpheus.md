@@ -8,6 +8,15 @@ tags:
   - projects
 ---
 
+## Devlog 33010 • 2026-03-20
+
+3 hour devlog? YIPEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE ![yayayayayay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyayayayayay%2F203666b7424ee7a7.gif&w=30&h=30&fit=contain&n=-1) 
+I spent ages just making 2 command cuz node-vikunja kinda sucks to use
+- FEATURE REQUEST COMMAND SO YOU CAN REQUEST FEATURES
+- Report command to report when logpheus is being a meanie pants and refusing to work properly >:(
+
+0 likes • 2h 49m
+
 ## Devlog 32405 • 2026-03-18
 
 Not much of a devlog but still worth a post so yes ![yesyes](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyesyes%2F6796aab389ede56d.gif&w=30&h=30&fit=contain&n=-1) 
