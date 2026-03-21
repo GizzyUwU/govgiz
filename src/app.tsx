@@ -74,7 +74,7 @@ export default function App() {
         >
           <Plausible.Provider
             value={{
-              apiHost: "https://pausible.gizzy.gay",
+              apiHost: "https://pawsible.gizzy.gay",
               domain: "gizzy.gay",
             }}
           >
