@@ -1,5 +1,5 @@
 import { SitemapStream, streamToPromise } from "sitemap"
-import { writeFileSync, readdirSync, readFileSync } from "fs"
+import { writeFileSync, readdirSync, readFileSync, statSync } from "fs"
 import path from "path"
 
 const hostname = "https://gizzy.gay"
@@ -20,15 +20,10 @@ function walk(dir, base = "") {
     if (entry.isFile() && entry.name.endsWith(".tsx")) {
       if (entry.name.includes("[")) continue
 
-      let route = entry.name
-        .replace(/\.tsx$/, "")
-        .replace(/^index$/, "")
-
+      let route = entry.name.replace(/\.tsx$/, "").replace(/^index$/, "")
       route = base + (route ? "/" + route : "")
-
       if (route.includes("(") || route.includes(")")) continue
       if (route === "") route = "/"
-
       routes.push(route)
     }
   }
@@ -45,7 +40,10 @@ function getBlogData() {
     if (!file.endsWith(".md")) continue
 
     const slug = file.replace(/\.md$/, "")
-    posts.push(`/blog/${slug}/`)
+    posts.push({
+      url: `/blog/${slug}/`,
+      lastmod: statSync(path.join(postsDir, file)).mtime.toISOString()
+    })
 
     const content = readFileSync(path.join(postsDir, file), "utf8")
     const tagMatch = content.match(/tags:\s*\n((\s*-\s*.*\n)+)/)
@@ -58,7 +56,6 @@ function getBlogData() {
 
       for (const line of tagLines) {
         let tag = line.replace("-", "").trim()
-        
         if (!tag || tag === "--") continue
         const slugTag = tag.toLowerCase().replace(/\s+/g, "-")
         tags.add(`/tags/${slugTag}/`)
@@ -75,20 +72,31 @@ async function generate() {
   const routes = walk(routesDir)
   const { posts, tags } = getBlogData()
 
-  let urls = [...routes, ...posts, ...tags]
-urls = urls.map(url => url === "/" ? "/" : url.replace(/\/?$/, "/"))
-  urls.forEach((url) => {
-    smStream.write({
-      url,
-      changefreq: "weekly",
-      priority: url === "/" ? 1.0 : 0.7
-    })
+  let urls = [...routes.map(r => ({ url: r })), ...posts, ...tags.map(t => ({ url: t }))]
+
+  urls = urls.map(u => ({ ...u, url: u.url === "/" ? "/" : u.url.replace(/\/?$/, "/") }))
+
+  urls.forEach((entry) => {
+    const sitemapEntry = {
+      url: entry.url
+    }
+
+    if (entry.url === "/") {
+      sitemapEntry.priority = 1.0
+      sitemapEntry.changefreq = "weekly"
+    } else {
+      sitemapEntry.priority = 0.7
+      sitemapEntry.changefreq = "weekly"
+    }
+
+    if (entry.lastmod) sitemapEntry.lastmod = entry.lastmod
+
+    smStream.write(sitemapEntry)
   })
 
   smStream.end()
 
-  const sitemap = await streamToPromise(smStream).then((sm) => sm.toString())
-
+  const sitemap = await streamToPromise(smStream).then(sm => sm.toString())
   writeFileSync("./public/sitemap.xml", sitemap)
   console.log("✅ Sitemap generated with", urls.length, "URLs")
 }
