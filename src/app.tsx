@@ -83,8 +83,8 @@ export default function App() {
               href="/_build/assets/client-DIJl3Nsl.css"
               as="style"
             />
-            <Link rel="preconnect" href="https://wsrv.nl" />
-            <Link rel="preconnect" href="https://assets.hackclub.com" />
+            <Link rel="preconnect" href="https://wsrv.nl" crossorigin="anonymous" />
+            <Link rel="preconnect" href="https://assets.hackclub.com" crossorigin="anonymous" />
             <Link rel="icon" sizes="88x31" href="/88x31.svg" />
             <Link rel="icon" href="/haj.svg" />
             <Link rel="stylesheet" href="/assets/govuk-frontend.min.css" />
@@ -140,6 +140,7 @@ export default function App() {
                         alt=""
                         src="/logo.svg"
                       ></img>
+                      <span class="govuk-visually-hidden">Go to Gov.Giz homepage</span>
                     </A>
                   </div>
                 </div>
@@ -282,6 +283,7 @@ export default function App() {
                       <Buttons />
                       <img
                         class="govuk-footer__licence-logo"
+                        alt=""
                         src="/haj.svg"
                         loading="lazy"
                         style={{
