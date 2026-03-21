@@ -1,4 +1,4 @@
-import { Link, Meta, MetaProvider, Title } from "@solidjs/meta";
+import { Link, Meta, MetaProvider, Style, Title } from "@solidjs/meta";
 import { createResource, Show } from "solid-js";
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
@@ -6,6 +6,7 @@ import { Suspense, onMount, createSignal } from "solid-js";
 import { Breadcrumb } from "./components/Breadcrumb";
 import { Buttons } from "./components/Buttons";
 import { A } from "@solidjs/router";
+import "./css/index.css"
 
 async function fetchWebring() {
   const res = await fetch("https://webring.hackclub.com/members.json");
@@ -78,7 +79,7 @@ export default function App() {
             <Meta name="title" content="Welcome to GOV.Giz" />
             <Meta
               name="description"
-              content="GOV.Giz - The best place to find gizzy services and information."
+              content="Gizzy's personal site built with GOV.UK design system package!"
             />
             <Meta
               name="keywords"
@@ -269,6 +270,7 @@ export default function App() {
                       <img
                         class="govuk-footer__licence-logo"
                         src="/haj.svg"
+                        loading="lazy"
                         style={{
                           "max-height": "32px",
                           "max-width": "32px",
@@ -289,7 +291,7 @@ export default function App() {
                     </div>
                     <div class="govuk-footer__meta-item">
                       <a
-                        class="govuk-footer__link govuk-footer__copyright-logo"
+                        class="govuk-footer__link govuk-footer__copyright-logo copyright-logo-patch"
                         href="/license"
                       >
                         © Copyright of Gizzy, 2026 to {new Date().getFullYear()}

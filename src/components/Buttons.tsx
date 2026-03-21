@@ -20,12 +20,12 @@ export const Buttons: Component = () => {
                     {(button) => (
                         <li class="govuk-footer__inline-list-item">
                             <a class="govuk-footer__link" href={button.site}>
-                                <img alt={button.name} src={button.image} style={{
+                                <img alt={button.name} src={button.ignoreCDN ? button.image : "https://wsrv.nl/?url=" + button.image} style={{
                                     "max-height": "31px",
                                     "max-width": "88px",
                                     "height": "31px",
                                     "width": "88px"
-                                }} />
+                                }} loading="lazy" />
                             </a>
                         </li>
                     )}

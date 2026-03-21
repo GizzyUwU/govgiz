@@ -1,7 +1,7 @@
 [
     {
         "name": "Gizzy",
-        "image": "/88x31.svg",
+        "image": "https://gizzy.gay/88x31.svg",
         "site": "https://gizzy.gay/"
     },
     {
@@ -11,7 +11,7 @@
     },
     {
         "name": "Areg",
-        "image": "/areg.png",
+        "image": "https://gizzy.gay/areg.png",
         "site": "https://aregus.me/"
     },
     {
@@ -27,6 +27,7 @@
     {
         "name": "Addy",
         "image": "https://www.addy10s.xyz/addy88x31.gif",
+        "ignoreCDN": true,
         "site": "https://addy10s.xyz/"
     },
     {

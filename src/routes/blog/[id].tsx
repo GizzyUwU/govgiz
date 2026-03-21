@@ -1,6 +1,14 @@
 import type { RouteSectionProps } from "@solidjs/router";
-import { For, Show, lazy, Suspense, createSignal, createMemo, onMount } from "solid-js";
-import { Meta, Title } from "@solidjs/meta";
+import {
+  For,
+  Show,
+  lazy,
+  Suspense,
+  createSignal,
+  createMemo,
+  onMount,
+} from "solid-js";
+import { Link, Meta, Title } from "@solidjs/meta";
 // @ts-expect-error
 import { MDXProvider } from "solid-mdx";
 import { posts } from "~/data/posts";
@@ -29,24 +37,54 @@ const Blog = (props: RouteSectionProps<{ params: { id: string } }>) => {
   const meta = createMemo(() => posts.find((p) => p.slug === props.params.id));
   const PostContent = createMemo(() => {
     if (!meta()) return undefined;
-    return loadPost(meta()?.slug || "")
+    return loadPost(meta()?.slug || "");
   });
 
   const [isClient, setIsClient] = createSignal(false);
   onMount(() => {
     if (!meta() || Object.keys(meta()!).length === 0) {
-      return nav("/404")
+      return nav("/404");
     }
-    setIsClient(true)
+    setIsClient(true);
   });
 
   return (
-    <Show when={meta() && isClient()}>
+    <Show when={meta()}>
       <>
         <Title>Gizzy - {meta()?.title}</Title>
         <Meta name="og:title" content={meta()!.title} />
+        <Meta
+          name="og:url"
+          content={"https://gizzy.gay/blog/" + meta()!.slug}
+        />
+        <Link rel="canonical" href={"https://gizzy.gay/blog/" + meta()!.slug} />
         <Meta name="description" content={meta()!.description} />
         <Meta name="og:description" content={meta()!.description} />
+        <Meta
+          name="application/ld+json"
+          content={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: meta()!.title,
+            image: meta()!.featuredImage,
+            author: {
+              "@type": "Person",
+              name: "Gizzy",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Gov.Giz",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://gizzy.gay/logo.svg",
+              },
+            },
+            datePublished: meta()!.date,
+            dateModified: meta()!.date,
+            description: meta()!.description,
+            mainEntityOfPage: "https://gizzy.gay/blog/" + meta()!.slug,
+          })}
+        />
         <Show when={meta()!.featuredImage}>
           <PostImage
             class="govuk-!-margin-top-2"
@@ -103,21 +141,44 @@ const Blog = (props: RouteSectionProps<{ params: { id: string } }>) => {
             </Suspense>
           </MDXProvider>
         </Suspense>
-        <Giscus
-          id="comments"
-          repo="gizzyuwu/govgiz"
-          repoId="R_kgDORD3Y5w"
-          category="General"
-          categoryId="DIC_kwDORD3Y584C1sjr"
-          mapping="pathname"
-          strict="1"
-          reactions-enabled="1"
-          emitMetadata="0"
-          inputPosition="bottom"
-          theme="catppuccin_latte"
-          lang="en"
-          loading="lazy"
-        />
+        <Show when={posts.filter((p) => p.slug !== meta()!.slug).length > 0}>
+          <h2 class="govuk-heading-m">Other posts!</h2>
+          <ul class="govuk-task-list">
+            {posts
+              .filter((p) => p.slug !== meta()!.slug)
+              .slice(0, 3)
+              .map((p) => (
+                <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                  <div class="govuk-task-list__name-and-hint">
+                    <A
+                      href={`/blog/${p.slug}`}
+                      class="govuk-link  govuk-task-list__link"
+                    >
+                      {p.title}
+                    </A>
+                    <div class="govuk-task-list__hint">{p.description}</div>
+                  </div>
+                </li>
+              ))}
+          </ul>
+        </Show>
+        <Show when={isClient()}>
+          <Giscus
+            id="comments"
+            repo="gizzyuwu/govgiz"
+            repoId="R_kgDORD3Y5w"
+            category="General"
+            categoryId="DIC_kwDORD3Y584C1sjr"
+            mapping="pathname"
+            strict="1"
+            reactions-enabled="1"
+            emitMetadata="0"
+            inputPosition="bottom"
+            theme="catppuccin_latte"
+            lang="en"
+            loading="lazy"
+          />
+        </Show>
       </>
     </Show>
   );

@@ -1,0 +1,7 @@
+* {
+  font-family: arial, sans-serif !important;
+}
+
+.copyright-logo-patch::before {
+    background: transparent;
+}

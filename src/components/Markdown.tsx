@@ -216,6 +216,7 @@ export const PostImage: Component<{
         style={{
           "vertical-align": "middle",
         }}
+        loading="lazy"
       />
     );
   } else {
@@ -230,6 +231,7 @@ export const PostImage: Component<{
             width: "100%",
           }}
           classList={{ [props.class || ""]: !!props.class }}
+          loading="lazy"
         />
         {props.attr}
       </>

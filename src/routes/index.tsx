@@ -3,6 +3,7 @@ import MakiArrow from "~icons/maki/arrow";
 import { posts } from "~/data/posts";
 import Typed from "typed.js";
 import { A } from "@solidjs/router";
+import { Meta } from "@solidjs/meta";
 
 const fetchStats = async () => {
   const today = new Date().toISOString().split("T")[0];
@@ -274,6 +275,44 @@ export default function Home() {
           </li>
         </ul>
       </div>
+      <Show
+        when={
+          posts &&
+          posts?.filter((post) => !post.tags?.includes("projects")).length > 0
+        }
+      >
+        <h2 class="govuk-heading-m">Latest Blog Posts</h2>
+        <ul class="govuk-task-list">
+          <For
+            each={posts
+              .filter(
+                (post) =>
+                  !post.tags?.includes("projects") &&
+                  !post.tag?.includes("projects"),
+              )
+              .sort(
+                (a, b) =>
+                  new Date(b.date).getTime() - new Date(a.date).getTime(),
+              )
+              .slice(0, 3)}
+          >
+            {(post) => (
+              <li class="govuk-task-list__item govuk-task-list__item--with-link">
+                <div class="govuk-task-list__name-and-hint">
+                  <A
+                    class="govuk-link govuk-task-list__link"
+                    href={`/blog/${post.slug}`}
+                    aria-describedby="company-details-1-status"
+                  >
+                    {post.title}
+                  </A>
+                  <div class="govuk-task-list__hint">{post.description}</div>
+                </div>
+              </li>
+            )}
+          </For>
+        </ul>
+      </Show>
       <Show
         when={
           posts &&
