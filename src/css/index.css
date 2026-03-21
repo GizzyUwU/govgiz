@@ -3,5 +3,5 @@
 }
 
 .copyright-logo-patch::before {
-    background: transparent;
+    background: transparent !important;
 }

@@ -20,7 +20,7 @@ export const Buttons: Component = () => {
                     {(button) => (
                         <li class="govuk-footer__inline-list-item">
                             <a class="govuk-footer__link" href={button.site}>
-                                <img alt={button.name} src={button.ignoreCDN ? button.image : "https://wsrv.nl/?url=" + button.image} style={{
+                                <img alt={button.name} src={button.ignoreCDN ? button.image : "https://wsrv.nl/?url=" + encodeURIComponent(button.image) + "&output=webp"} style={{
                                     "max-height": "31px",
                                     "max-width": "88px",
                                     "height": "31px",
