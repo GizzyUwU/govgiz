@@ -6,7 +6,7 @@ import { Suspense, onMount, createSignal } from "solid-js";
 import { Breadcrumb } from "./components/Breadcrumb";
 import { Buttons } from "./components/Buttons";
 import { A } from "@solidjs/router";
-import "./css/index.css"
+import "./css/index.css";
 
 async function fetchWebring() {
   const res = await fetch("https://webring.hackclub.com/members.json");
@@ -73,6 +73,18 @@ export default function App() {
         >
           <MetaProvider>
             <Title>Gov.Giz</Title>
+            <Link
+              rel="preload"
+              href="/assets/govuk-frontend.min.css"
+              as="style"
+            />
+            <Link
+              rel="preload"
+              href="/_build/assets/client-DIJl3Nsl.css"
+              as="style"
+            />
+            <Link rel="preconnect" href="https://wsrv.nl" />
+            <Link rel="preconnect" href="https://assets.hackclub.com" />
             <Link rel="icon" sizes="88x31" href="/88x31.svg" />
             <Link rel="icon" href="/haj.svg" />
             <Link rel="stylesheet" href="/assets/govuk-frontend.min.css" />
@@ -119,12 +131,13 @@ export default function App() {
               <header class="govuk-header" data-module="govuk-header">
                 <div class="govuk-header__container govuk-width-container">
                   <div class="govuk-header__logo">
-                    <A href="/">
+                    <A href="/" aria-current="page">
                       <img
                         style={{
                           transform: "scale(1.4)",
                           "transform-origin": "left center",
                         }}
+                        alt=""
                         src="/logo.svg"
                       ></img>
                     </A>
