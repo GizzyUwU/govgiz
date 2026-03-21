@@ -45,9 +45,6 @@ jobs:
       - name: Copy Sitemap XML to output
         run: cp public/sitemap.xml .output/public/sitemap.xml
   
-      - name: Copy Assets to Public
-        run: cp -r public/assets .output/public/assets
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
