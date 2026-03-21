@@ -1,0 +1,8 @@
+[
+  {
+    "title": "Posts",
+    "slug": "posts",
+    "path": "src/routes/blog/posts",
+    "children": []
+  }
+]
