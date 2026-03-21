@@ -15,6 +15,7 @@
     "@solidjs/meta": "^0.29.4",
     "@solidjs/router": "^0.15.0",
     "@solidjs/start": "^1.1.0",
+    "@strootje/solid-plausible": "npm:@jsr/strootje__solid-plausible",
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@types/js-yaml": "^4.0.9",
