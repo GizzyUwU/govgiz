@@ -18,7 +18,7 @@ function walk(dir, base = "") {
     }
 
     if (entry.isFile() && entry.name.endsWith(".tsx")) {
-      if (entry.name.includes("[")) continue // skip dynamic routes
+      if (entry.name.includes("[")) continue
 
       let route = entry.name
         .replace(/\.tsx$/, "")
@@ -26,9 +26,7 @@ function walk(dir, base = "") {
 
       route = base + (route ? "/" + route : "")
 
-      // skip invalid routes with parentheses
       if (route.includes("(") || route.includes(")")) continue
-
       if (route === "") route = "/"
 
       routes.push(route)
@@ -47,11 +45,9 @@ function getBlogData() {
     if (!file.endsWith(".md")) continue
 
     const slug = file.replace(/\.md$/, "")
-    posts.push(`/blog/${slug}`)
+    posts.push(`/blog/${slug}/`)
 
     const content = readFileSync(path.join(postsDir, file), "utf8")
-
-    // match tags list in YAML frontmatter
     const tagMatch = content.match(/tags:\s*\n((\s*-\s*.*\n)+)/)
 
     if (tagMatch) {
@@ -65,7 +61,7 @@ function getBlogData() {
         
         if (!tag || tag === "--") continue
         const slugTag = tag.toLowerCase().replace(/\s+/g, "-")
-        tags.add(`/tags/${slugTag}`)
+        tags.add(`/tags/${slugTag}/`)
       }
     }
   }
@@ -79,8 +75,8 @@ async function generate() {
   const routes = walk(routesDir)
   const { posts, tags } = getBlogData()
 
-  const urls = [...routes, ...posts, ...tags]
-
+  let urls = [...routes, ...posts, ...tags]
+urls = urls.map(url => url === "/" ? "/" : url.replace(/\/?$/, "/"))
   urls.forEach((url) => {
     smStream.write({
       url,
