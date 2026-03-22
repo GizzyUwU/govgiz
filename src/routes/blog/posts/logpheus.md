@@ -8,6 +8,18 @@ tags:
   - projects
 ---
 
+## Devlog 33700 • 2026-03-22
+
+New devlog who dis? ITS ME YOU SILLY GOOSE! ANYWAY UPDATE TIME ![yayayayayay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyayayayayay%2F203666b7424ee7a7.gif&w=30&h=30&fit=contain&n=-1) 
+- Sabio begged me for new api so they can give me project multiplier idk if ft utils would implement api but sabio said they would add it to spicetown
+- Oopsie lets not add region again instead lets overwrite so it changes not causing issues
+- Added new api to DOCS ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
+- Added tags to docs to make it clearer then it all being under default
+- Move api routes to seperate files as index file was getting fat
+- Set vikunja stuff optional so self hosted instances dont need vikunja to run
+
+0 likes • 1h 23m
+
 ## Devlog 33010 • 2026-03-20
 
 3 hour devlog? YIPEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE ![yayayayayay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyayayayayay%2F203666b7424ee7a7.gif&w=30&h=30&fit=contain&n=-1) 
