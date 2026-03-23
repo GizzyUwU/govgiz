@@ -8,6 +8,14 @@ tags:
   - projects
 ---
 
+## Devlog 33994 • 2026-03-23
+
+Woah a qucik update? This is just bugfixing mostly but ![yayayayayay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyayayayayay%2F203666b7424ee7a7.gif&w=30&h=30&fit=contain&n=-1) ![som-duck](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fsom-duck%2F314dc974c22b0e95.png&w=30&h=30&fit=contain&n=-1) 
+- Fixed docs using Goals request body instead of Multiplier request body
+- Multiplier was written stupidly by me I made it user specific not project specific so I had to change API and DB to store in projects by making projectId requirement now in API requests
+
+0 likes • 34m
+
 ## Devlog 33700 • 2026-03-22
 
 New devlog who dis? ITS ME YOU SILLY GOOSE! ANYWAY UPDATE TIME ![yayayayayay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyayayayayay%2F203666b7424ee7a7.gif&w=30&h=30&fit=contain&n=-1) 
