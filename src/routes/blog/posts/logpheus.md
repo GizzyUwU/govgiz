@@ -8,6 +8,14 @@ tags:
   - projects
 ---
 
+## Devlog 34139 • 2026-03-23
+
+It's about time I meow at you cuties :3c: 
+- Fixed cookie predictions as i made it user base not project base causing predictions to be wrong i also made it store in db with user current cookie amount + predicted contributing to issue
+- Feature and Bug Report commands added :yay: 
+
+0 likes • 51m
+
 ## Devlog 33994 • 2026-03-23
 
 Woah a qucik update? This is just bugfixing mostly but ![yayayayayay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyayayayayay%2F203666b7424ee7a7.gif&w=30&h=30&fit=contain&n=-1) ![som-duck](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fsom-duck%2F314dc974c22b0e95.png&w=30&h=30&fit=contain&n=-1) 
