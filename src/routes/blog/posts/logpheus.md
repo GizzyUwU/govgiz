@@ -8,6 +8,16 @@ tags:
   - projects
 ---
 
+## Devlog 34684 • 2026-03-25
+
+Woah another devlog? This is so figma balls
+- Ratelimit on API so no stinky people can ruin it
+- Updates README so it makes sense for new version
+- Bugsink error cmd now so you can see if any errors logged ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
+OKAY BAIII CUTE PEOPLE ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+
+0 likes • 1h 52m
+
 ## Devlog 34139 • 2026-03-23
 
 It's about time I meow at you cuties :3c: 
