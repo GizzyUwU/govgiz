@@ -102,8 +102,8 @@ export default function App() {
                 href="https://assets.hackclub.com"
                 crossorigin="anonymous"
               />
-              <Link rel="icon" sizes="88x31" href="/88x31.svg" />
-              <Link rel="icon" href="/haj.svg" />
+              <Link rel="icon" type="image/svg+xml" sizes="any" href="/haj.svg" />
+              <Link rel="icon" sizes="88x31" type="image/svg+xml" href="/88x31.svg" />
               <Link rel="stylesheet" href="/assets/govuk-frontend.min.css" />
               <Meta name="title" content="Welcome to GOV.Giz" />
               <Meta
