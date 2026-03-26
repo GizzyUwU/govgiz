@@ -8,6 +8,17 @@ tags:
   - projects
 ---
 
+## Devlog 34860 • 2026-03-26
+
+Guess who's back. Back again. ITS ME SILLYYYYYYYYYYYYYYYY
+HAIIIIIIIIIIIIIIIIII I DO ANOTHER DEVLOG
+- 10x improved the projects command as it now has a better query system using --limit and --query for options and no -- for just search and it no longer uses slack's table block which was broken it is actually usable over 10 projects!
+- Updated zod types for FT API
+- User command now shows achievements ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
+OKAY BAIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+
+0 likes • 32m
+
 ## Devlog 34684 • 2026-03-25
 
 Woah another devlog? This is so figma balls
