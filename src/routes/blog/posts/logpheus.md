@@ -21,7 +21,7 @@ Woah is this that time already? It's the last time too before the new ship I bel
 - [feat: include manifest, update readme to match new bugsink stuff](https://github.com/GizzyUwU/logpheus/commit/79126ed)
 
 
-0 likes • 17m
+1 likes • 17m
 
 ## Devlog 34860 • 2026-03-26
 
@@ -32,7 +32,7 @@ HAIIIIIIIIIIIIIIIIII I DO ANOTHER DEVLOG
 - User command now shows achievements ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) 
 OKAY BAIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
 
-0 likes • 32m
+1 likes • 32m
 
 ## Devlog 34684 • 2026-03-25
 
@@ -70,7 +70,7 @@ New devlog who dis? ITS ME YOU SILLY GOOSE! ANYWAY UPDATE TIME ![yayayayayay](ht
 - Move api routes to seperate files as index file was getting fat
 - Set vikunja stuff optional so self hosted instances dont need vikunja to run
 
-0 likes • 1h 23m
+1 likes • 1h 23m
 
 ## Devlog 33010 • 2026-03-20
 
