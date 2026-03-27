@@ -8,6 +8,21 @@ tags:
   - projects
 ---
 
+## Devlog 35266 • 2026-03-27
+
+Woah is this that time already? It's the last time too before the new ship I believe. So here are the changes chat ![agabye](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fagabye%2Fbdc8d3b33137b199.gif&w=30&h=30&fit=contain&n=-1) this journey was great most of the stuff after this probably wont be in a ship
+- Removed old db migrations from different dbs
+- Fixed drizzle not following strict typescript
+- Fixed huge n+1 with project map hitting db on every user doing opposite of optimising it
+- Included manifest from slack, update readme to show bugsink stuff
+### Changelog
+- [fix: drizzle never got updated to strict type, chore: drop old db](https://github.com/GizzyUwU/logpheus/commit/17610d4)
+- [fix: huge n+1 with projectMap hitting db  on every user doing opposite](https://github.com/GizzyUwU/logpheus/commit/0ea091f)
+- [feat: include manifest, update readme to match new bugsink stuff](https://github.com/GizzyUwU/logpheus/commit/79126ed)
+
+
+0 likes • 17m
+
 ## Devlog 34860 • 2026-03-26
 
 Guess who's back. Back again. ITS ME SILLYYYYYYYYYYYYYYYY
