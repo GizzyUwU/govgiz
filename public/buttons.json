@@ -27,7 +27,7 @@
     {
         "name": "Addy",
         "image": "https://www.addy10s.xyz/addy88x31.gif",
-        "ignoreCDN": false,
+        "ignoreCDN": true,
         "site": "https://addy10s.xyz/"
     },
     {
