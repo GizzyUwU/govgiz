@@ -115,7 +115,7 @@
         background-color: inherit !important;
     }
     
-    .govuk-pagination__item:hover {
+    .govuk-pagination__item:hover, .govuk-pagination__next:hover, .govuk-pagination__prev:hover {
         background-color: inherit !important;
     }
 }
