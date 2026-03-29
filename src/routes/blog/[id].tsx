@@ -184,7 +184,7 @@ const Blog = (props: RouteSectionProps<{ params: { id: string } }>) => {
                   reactions-enabled="1"
                   emitMetadata="0"
                   inputPosition="bottom"
-                  theme="catppuccin_latte"
+                  theme="preferred_color_scheme"
                   lang="en"
                   loading="lazy"
                 />
