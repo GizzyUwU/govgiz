@@ -7,19 +7,20 @@ import {
   createSignal,
   createMemo,
   onMount,
+  onCleanup,
 } from "solid-js";
 import { Link, Meta, Title } from "@solidjs/meta";
 // @ts-expect-error
 import { MDXProvider } from "solid-mdx";
 import { posts } from "~/data/posts";
 import { markdownComponents, PostImage } from "~/components/Markdown";
-import type { Post } from "~/types";
 import { Dynamic } from "solid-js/web";
 import dayjs from "dayjs";
 import "prismjs/themes/prism.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
 import "prismjs";
 import { A, useNavigate } from "@solidjs/router";
+import { GiscusProps } from "@giscus/solid";
 
 const Giscus = lazy(() =>
   import("@giscus/solid").then((mod) => ({ default: mod.default })),
@@ -41,6 +42,36 @@ const Blog = (props: RouteSectionProps<{ params: { id: string } }>) => {
       return nav("/404");
     }
     setIsClient(true);
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const updateGiscusTheme = () => {
+      const giscusWidget = document.querySelector<HTMLElement>("#comments");
+      if (giscusWidget) {
+        const theme = mediaQuery.matches
+          ? "catppuccin_macchiato"
+          : "catppuccin_latte";
+  
+        giscusWidget.setAttribute("theme", theme);
+      }
+    };
+
+    const observer = new MutationObserver(() => {
+      const giscusWidget = document.querySelector("#comments");
+      if (giscusWidget) {
+        updateGiscusTheme();
+        observer.disconnect()
+      }
+    });
+  
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+  
+    mediaQuery.addEventListener("change", updateGiscusTheme);
+    onCleanup(() => {
+      mediaQuery.removeEventListener("change", updateGiscusTheme);
+      observer.disconnect();
+    });
   });
 
   return (

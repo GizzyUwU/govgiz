@@ -5,7 +5,7 @@
 @media screen and (prefers-color-scheme: dark) {
     body.govuk-template__body {
         background-color: #24273a;
-        color: #cad3f5 !important;
+        color: white !important;
     }
 
     header.govuk-header,
@@ -27,7 +27,7 @@
     
     :not(pre) > code[class*="language-"], pre[class*="language-"] {
         background: #5b6078 !important;
-        color: #cad3f5 !important;
+        color: white !important;
         text-shadow: none !important;
     }
     
@@ -44,7 +44,7 @@
     .govuk-heading-xs,
     p,
     .govuk-list {
-        color: #cad3f5 !important;
+        color: white !important;
     }
 
     a:link {
@@ -74,13 +74,13 @@
 
     .govuk-back-link,
     .govuk-breadcrumbs__link {
-        color: #cad3f5 !important;
+        color: white !important;
         &:link,
         &:visited,
         &:hover,
         &:active,
         &:focus {
-            color: #cad3f5 !important;
+            color: white !important;
         }
     }
     .govuk-caption-xl {
@@ -93,7 +93,7 @@
         background-color: #008f4c !important;
     }
     .js-step-title-text {
-        color: #cad3f5 !important;
+        color: white !important;
     }
     .app-step-nav-header {
         background-color: #24273a !important;
@@ -101,12 +101,12 @@
     
     .govuk-footer {
         background: #1e2030 !important;
-        color: #cad3f5 !important;
+        color: white !important;
     }
     
     input {
         background: #494d64!important;
-        color: #cad3f5 !important;
+        color: white !important;
     }
     
     *:focus {
