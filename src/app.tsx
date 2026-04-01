@@ -104,7 +104,7 @@ export default function App() {
               />
               <Link rel="icon" type="image/svg+xml" sizes="any" href="/haj.svg" />
               <Link rel="stylesheet" href="/assets/govuk-frontend.min.css" />
-              <Meta name="title" content="Welcome to GOV.Giz" />
+              <Meta name="title" content="Welcome to GOV.Giz" />              
               <Meta
                 name="description"
                 content="Gizzy's personal site built with GOV.UK design system package!"
@@ -118,22 +118,23 @@ export default function App() {
               <Meta name="revisit-after" content="30 days" />
               <Meta name="author" content="Gizzy" />
               <Meta property="og:type" content="website" />
-              <Meta property="og:url" content="https://gizzy.gay/" />
+              <Meta property="og:url" content="https://gizzy.gay" />
+              <Meta property="og:site_name" content="GOV.Giz" />
               <Meta property="og:title" content="Welcome to Gov.Giz" />
               <Meta
                 property="og:description"
                 content="GOV.Giz - The best place to find Gizzy services and information."
               />
               <Meta property="og:image" content="https://gizzy.gay/88x31.svg" />
-              <Meta property="twitter:card" content="summary_large_image" />
-              <Meta property="twitter:url" content="https://gizzy.gay" />
-              <Meta property="twitter:title" content="Welcome to Gov.Giz" />
+              <Meta name="twitter:card" content="summary_large_image" />
+              <Meta name="twitter:url" content="https://gizzy.gay" />
+              <Meta name="twitter:title" content="Welcome to Gov.Giz" />
               <Meta
-                property="twitter:description"
+                name="twitter:description"
                 content="GOV.Giz - The best place to find Gizzy services and information."
               />
               <Meta
-                property="twitter:image"
+                name="twitter:image"
                 content="https://gizzy.gay/88x31.svg"
               />
               <div
