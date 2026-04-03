@@ -8,6 +8,21 @@ tags:
   - projects
 ---
 
+## Devlog 37134 • 2026-04-03
+
+![waga](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fwaga%2F248b8fad34de51ba.gif&w=30&h=30&fit=contain&n=-1) ![wagay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fwagay%2F248b8fad34de51ba.gif&w=30&h=30&fit=contain&n=-1) ![gwaga](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fgwaga%2F37bec759aba91c40.gif&w=30&h=30&fit=contain&n=-1) ![swaga](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fswaga%2Ffaf3af2c7de20bd4.png&w=30&h=30&fit=contain&n=-1) ITS A DEVLOG AFTER 3 MONTHS OMG WHAT?!
+- Sections ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+- Channel priority followed as API gives it
+- Usernames now work properly for channel history still broken on incoming
+
+### Changelog
+- [feat: semi decent message parser and sum other stuff](https://github.com/GizzyUwU/suri/commit/5bc39f2)
+- [feat: change how i fixed tauri callback id issue](https://github.com/GizzyUwU/suri/commit/0fd1f6f)
+- [feat: live messages, post messages, my shit attempt at preventing dumb tauri issue](https://github.com/GizzyUwU/suri/commit/def840b)
+
+
+0 likes • 1h 50m
+
 ## Devlog 6298 • 2026-01-05
 
 I implemented more of the formatting :3c also added names back as i broke that
