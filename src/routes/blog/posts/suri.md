@@ -8,6 +8,15 @@ tags:
   - projects
 ---
 
+## Devlog 37476 • 2026-04-04
+
+This isn't much of new stuff just really cleaning up the codebase and adding types
+- Split up stuff into seperate modules on the rust side so compile time is faster as it doesnt have to rebuild whole of lib.rs
+- Slack.ts file now uses types so its harder to make dumb mitakes
+- Fixed new msgs not getting name fetched if they arent already saved
+
+0 likes • 1h 40m
+
 ## Devlog 37134 • 2026-04-03
 
 ![waga](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fwaga%2F248b8fad34de51ba.gif&w=30&h=30&fit=contain&n=-1) ![wagay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fwagay%2F248b8fad34de51ba.gif&w=30&h=30&fit=contain&n=-1) ![gwaga](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fgwaga%2F37bec759aba91c40.gif&w=30&h=30&fit=contain&n=-1) ![swaga](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fswaga%2Ffaf3af2c7de20bd4.png&w=30&h=30&fit=contain&n=-1) ITS A DEVLOG AFTER 3 MONTHS OMG WHAT?!
