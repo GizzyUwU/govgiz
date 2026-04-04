@@ -15,7 +15,7 @@ HAIIIIII THIS IS A DEVLOG YIPEEEEEEEEEEEEEEEEE
 - Unread channels highlight
 - Channels that you got pinged in highlight
 
-0 likes • 57m
+1 likes • 57m
 
 ## Devlog 37476 • 2026-04-04
 
