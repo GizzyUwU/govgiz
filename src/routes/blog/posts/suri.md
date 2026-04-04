@@ -8,6 +8,15 @@ tags:
   - projects
 ---
 
+## Devlog 37566 • 2026-04-04
+
+Mreow ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+HAIIIIII THIS IS A DEVLOG YIPEEEEEEEEEEEEEEEEE
+- Unread channels highlight
+- Channels that you got pinged in highlight
+
+0 likes • 57m
+
 ## Devlog 37476 • 2026-04-04
 
 This isn't much of new stuff just really cleaning up the codebase and adding types
