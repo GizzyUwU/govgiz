@@ -8,6 +8,17 @@ tags:
   - projects
 ---
 
+## Devlog 40191 • 2026-04-12
+
+Weh I fixed sum stuff ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+- Fixed prefix showing as undefined not the actual prefix (404 ss was before the fix i cant get one with it)
+- Fixed projects that was deleted and 404ing from spam,ming sentry because they was gone
+- Fixed quote showing on projects with no description on add
+- Hide user id in the title of view command
+- Fixed stinky poopoohead of the video hyperlinks not being hyperlinky cuz they was mssing the closing ">"
+
+0 likes • 28m
+
 ## Devlog 35266 • 2026-03-27
 
 Woah is this that time already? It's the last time too before the new ship I believe. So here are the changes chat ![agabye](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fagabye%2Fbdc8d3b33137b199.gif&w=30&h=30&fit=contain&n=-1) this journey was great most of the stuff after this probably wont be in a ship
