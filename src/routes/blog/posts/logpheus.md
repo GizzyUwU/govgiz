@@ -8,6 +8,24 @@ tags:
   - projects
 ---
 
+## Devlog 40242 • 2026-04-12
+
+A THIRD DEVLOG?! ITS SHORT LIKE YOU BUT STILL HEHEHEHEHEHEHE ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+MREEEEEEEEEEEEEEEOW
+Literally one update quack
+- /logpheus-devlog now includes latest [projectId] as well as just devlog id as it was pmo that i had to manually search for the latest devlog id when I CAN LITERALLY AUTOMATE IT
+
+0 likes • 17m
+
+## Devlog 40233 • 2026-04-12
+
+Ogay well devlog 2 for today ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+- Added user projects api to the api file and type so i can use it in logpheus stuff
+- Make use of new api to complete feat #13 where logpheus-add imports all projects of user if they provide no project id to make it easier to setup
+- Made annoying "Zod validation failed" easier to fix by providing name of what schema caused it in the logs
+
+0 likes • 45m
+
 ## Devlog 40191 • 2026-04-12
 
 Weh I fixed sum stuff ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
