@@ -124,7 +124,7 @@ Woah a new devlog?! YIPEEEEEEEEEEEE
 - FIxed shop command not grabbing region correctly from meta
 - Goals command to see your goals remove and add
 
-0 likes • 44m
+0 likes • 43m
 
 ## Devlog 31917 • 2026-03-16
 
@@ -133,7 +133,7 @@ Yknow this isn't even really a devlog we went back in progress
 - PUT request bug fix as it only showed goals given to api not updated db
 - Drop embed support for videos as it never worked and prob will never work because well thats just say I have never seen an api more idiotic then what slack has made I seriously hope slack rebuilds their api from the ground up because whoever made it in the first place failed miserablely at supporting video
 
-0 likes • 3h 16m
+0 likes • 3h 14m
 
 ## Devlog 31593 • 2026-03-15
 
@@ -162,7 +162,7 @@ This devlog is all just bugfixing and optimization so it works better with a lot
 - Don't hit db for data we already have
 In docker it didnt drop mem usage by much only around 16mb which is still nice and it did drop idle cpu usage a bit but still bursts during activity it mostly just improves speed for user for posts
 
-0 likes • 1h 20m
+0 likes • 1h 21m
 
 ## Devlog 31097 • 2026-03-14
 
@@ -176,7 +176,7 @@ This is mostly bug fixing based it has new stuff but thats part of fixing issues
 - use ctxLogger on timer based handlers because without it wont know what file is causing it
 - Removed debug console logs i left in qwp
 
-0 likes • 54m
+0 likes • 55m
 
 ## Devlog 30977 • 2026-03-13
 
@@ -196,7 +196,7 @@ Ts a basic ahh devlog but i mean hey i need the HOURS GRRRRRRRRRRRRRRRRRRRRR
 - Fixed remove command not working for set id and removed remove all option as thats just revoke and it doesnt delete user from db now as revoke does that
 - Data command now includes metadata
 
-0 likes • 33m
+0 likes • 31m
 
 ## Devlog 30237 • 2026-03-11
 
@@ -204,7 +204,7 @@ Quick bit of coding before I catch the bus ![3c](https://images.weserv.nl/?url=h
 - Hopefully fix the issue where it says unexpected error from api as no status code
 - Revoke command to remove yourself from logpheus with ease if u want to sadly
 
-0 likes • 29m
+0 likes • 30m
 
 ## Devlog 30075 • 2026-03-10
 
@@ -217,7 +217,7 @@ I did some stuff ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-e
 - Predicted cookie amount (based on avg of 10 cookies per hour not previous ship cookies)
 - Ping groups are in wip
 
-0 likes • 2h 24m
+0 likes • 2h 25m
 
 ## Devlog 29258 • 2026-03-08
 
