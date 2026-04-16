@@ -50,7 +50,7 @@ Woah is this that time already? It's the last time too before the new ship I bel
 - [feat: include manifest, update readme to match new bugsink stuff](https://github.com/GizzyUwU/logpheus/commit/79126ed)
 
 
-1 likes • 17m
+1 likes • 18m
 
 ## Devlog 34860 • 2026-03-26
 
@@ -79,7 +79,7 @@ It's about time I meow at you cuties :3c:
 - Fixed cookie predictions as i made it user base not project base causing predictions to be wrong i also made it store in db with user current cookie amount + predicted contributing to issue
 - Feature and Bug Report commands added :yay: 
 
-0 likes • 51m
+0 likes • 52m
 
 ## Devlog 33994 • 2026-03-23
 
@@ -87,7 +87,7 @@ Woah a qucik update? This is just bugfixing mostly but ![yayayayayay](https://im
 - Fixed docs using Goals request body instead of Multiplier request body
 - Multiplier was written stupidly by me I made it user specific not project specific so I had to change API and DB to store in projects by making projectId requirement now in API requests
 
-0 likes • 34m
+0 likes • 33m
 
 ## Devlog 33700 • 2026-03-22
 
@@ -99,7 +99,7 @@ New devlog who dis? ITS ME YOU SILLY GOOSE! ANYWAY UPDATE TIME ![yayayayayay](ht
 - Move api routes to seperate files as index file was getting fat
 - Set vikunja stuff optional so self hosted instances dont need vikunja to run
 
-1 likes • 1h 23m
+1 likes • 1h 24m
 
 ## Devlog 33010 • 2026-03-20
 
