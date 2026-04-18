@@ -8,6 +8,16 @@ tags:
   - projects
 ---
 
+## Devlog 41887 • 2026-04-18
+
+I should probably devlog....
+- Now using eventemitter3 for websocket events
+- Tried to use slack.ts for some stuff but for some stuff it doesnt work atm so fina use both mine and slack.ts for now
+- Oooooo trying to get emojis ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+- Sum other bug fixes
+
+0 likes • 4h 7m
+
 ## Devlog 37566 • 2026-04-04
 
 Mreow ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
