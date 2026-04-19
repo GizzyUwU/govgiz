@@ -8,6 +8,15 @@ tags:
   - projects
 ---
 
+## Devlog 42085 • 2026-04-19
+
+Yknow this isnt really much of an update few changes but mostly fixing
+- Spent while trying to get slack.ts to work with suri ![yay](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay%2F47296c029c8ee253.gif&w=30&h=30&fit=contain&n=-1) it mostly works now i changed it to abuse vite to modify using ws and fetch to polyfill ws package with tauri websocket and fetch for tauri fetch
+- Mentions and unread is actually less static it now changes it based on new msgs from websocket YIPEEEEEEEE
+- Using slack.ts has improved type safety of suri as its using less any and more types via slack.ts
+
+0 likes • 3h 12m
+
 ## Devlog 41887 • 2026-04-18
 
 I should probably devlog....
