@@ -8,6 +8,14 @@ tags:
   - projects
 ---
 
+## Devlog 42105 • 2026-04-19
+
+Yipeee sum changes ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+- Signin page is less ugly now i copied design from slacks page as it does look good but i want catppuuccin ;3c
+- Slight speed bump for load of channels by showing channels before loading unreads and mentions
+
+0 likes • 1h 27m
+
 ## Devlog 42085 • 2026-04-19
 
 Yknow this isnt really much of an update few changes but mostly fixing
