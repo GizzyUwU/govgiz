@@ -8,6 +8,15 @@ tags:
   - projects
 ---
 
+## Devlog 42243 • 2026-04-19
+
+Devlog time yipeeee!!!
+- Crazy speed bump!!!! Making use of caching of messages and channels now make load way faster by using a cache safe store for persistance so it shows something on app open and for channel open using cache safe store and a in memory cache for what ws sent when channel wasnt open
+- Cleaned up some of the code as its a bit of mess
+- Fixed flash on opening channel on app open as chat was lazy loaded
+
+0 likes • 1h 18m
+
 ## Devlog 42105 • 2026-04-19
 
 Yipeee sum changes ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
