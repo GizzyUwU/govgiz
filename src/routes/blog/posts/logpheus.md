@@ -8,6 +8,17 @@ tags:
   - projects
 ---
 
+## Devlog 42947 • 2026-04-22
+
+Who's my good little reader? You are! You are!
+I did sum things
+- Logpheus now speaks to you if you say a certain thing like "logpheus" or "logpheus is the best"
+- Alerts user of error posting devlog instead of failing silently
+- If error is img download err tell user not me smh
+
+
+0 likes • 1h 23m
+
 ## Devlog 40242 • 2026-04-12
 
 A THIRD DEVLOG?! ITS SHORT LIKE YOU BUT STILL HEHEHEHEHEHEHE ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
