@@ -8,6 +8,17 @@ tags:
   - projects
 ---
 
+## Devlog 43608 • 2026-04-24
+
+New Devlog, who dis?
+ITS MEEEEEEEEEEEEEEEEEEEEEEEEEEE ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2F3c%2F8c317faf11962206.png&w=30&h=30&fit=contain&n=-1) 
+- Slack's mrkdown in commands break slash command args so i had to fix that
+- Swapped devlog command to use header block instead of section for saying waht devlog id it is
+- Add hackatime badge to readme
+- Fix quote escape for basic devlogs with 0 mrkdown and other stuff like it
+
+0 likes • 22m
+
 ## Devlog 42947 • 2026-04-22
 
 Who's my good little reader? You are! You are!
