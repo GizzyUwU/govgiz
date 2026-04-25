@@ -8,6 +8,15 @@ tags:
   - projects
 ---
 
+## Devlog 43720 • 2026-04-25
+
+Yknow Logpheus, you're favourite bot?
+Yeah be rude to it and it now fights back sorry to say but logpheus doesn't take shit from the haters
+- Uses HCAI for Responses to any message with prefix!
+- Fix download image failed from sending to my sentry i did make fix before but it disappeared ![hs](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fhs%2F81898bb9358d88e1.png&w=30&h=30&fit=contain&n=-1) 
+
+0 likes • 39m
+
 ## Devlog 43608 • 2026-04-24
 
 New Devlog, who dis?
