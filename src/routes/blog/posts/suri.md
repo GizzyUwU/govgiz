@@ -8,6 +8,16 @@ tags:
   - projects
 ---
 
+## Devlog 44341 • 2026-04-27
+
+Oh yeah I'm suppose to do this... Oopsie daisy!
+Most of this time is me messing with different libraries to get a working virtual list I was originally gonna use tanstack/virtual but using it kind of sucked so I swapped to virtua while virtua has its annoyances it does seem better as tanstack/virtual kept spamming me and had lag spikes while scrolling I kind of forgor to commit all my testing skulk but now improved scrolling!
+Also some other changes
+- Github Action Workflow building the app as release (without windows build as im windowsphobic + couldn't be asked to fix windows build failing)
+- Fixed cache issues causing weird bugs
+
+0 likes • 5h 39m
+
 ## Devlog 42243 • 2026-04-19
 
 Devlog time yipeeee!!!
