@@ -1,6 +1,6 @@
 ---
 title: Suri
-description: Do you hate slack desktop? Is it really slow for you like it is for me? Well fuck it I hate slack desktop and it's lag so I'm making it myself.
+description: Do you hate slack desktop? Is it really slow for you like it is for me? Well fuck it I hate slack desktop and it's lag so I'm making it myself. HACKCLUBS SLACK SERVER IS HACKCLUB.ENTERPRISE.SLACK.COM THE HACKCLUB.SLACK.COM IS PRE MIGRATION AND WILL NOT WORK IT NEEDS THE RIGHT SERVER also dropped support for macos it doesnt work for sum reason i dont got mac to fix so cope cwy
 date: '2025-12-18'
 tags:
   - flavourtown
