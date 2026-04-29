@@ -8,6 +8,18 @@ tags:
   - projects
 ---
 
+## Devlog 44907 • 2026-04-29
+
+This is short, like you HEHEHEHEHE ANYGAY
+- Fixed message area overflowing which made newest msg be annoying and slightly hard to read
+- Fix above helped to fix auto scroll not scrolling to right message
+- Load more now is used and works!
+- Now fully using virtua to handle msgs as virtual list so not loading a bunch of msgs into dom and it makes my life more convienent
+- Cleaned up sum old code and commented features i wont finish before the end of this
+![yay-67](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack-edge.com%2FT09V59WQY1E%2Fyay-67%2F73384b5693624b3a.gif&w=30&h=30&fit=contain&n=-1) 
+
+0 likes • 39m
+
 ## Devlog 44341 • 2026-04-27
 
 Oh yeah I'm suppose to do this... Oopsie daisy!
