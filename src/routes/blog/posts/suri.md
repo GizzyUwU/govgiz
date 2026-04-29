@@ -8,6 +8,15 @@ tags:
   - projects
 ---
 
+## Devlog 45037 • 2026-04-29
+
+This is just me working on releases from github action
+- Made github action be halfed in build time by caching
+- Fixed tauri stupidness with versioning
+- Meowed a lot
+
+0 likes • 36m
+
 ## Devlog 44907 • 2026-04-29
 
 This is short, like you HEHEHEHEHE ANYGAY
