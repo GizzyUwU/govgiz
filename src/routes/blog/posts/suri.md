@@ -8,6 +8,12 @@ tags:
   - projects
 ---
 
+## Devlog 45763 • 2026-05-01
+
+I know ft has endded but wouldnt it be cute if i devlof after it ended
+
+1 likes • 1h 24m
+
 ## Devlog 45037 • 2026-04-29
 
 This is just me working on releases from github action
