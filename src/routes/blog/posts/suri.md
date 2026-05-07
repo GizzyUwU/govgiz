@@ -12,7 +12,7 @@ tags:
 
 I know ft has endded but wouldnt it be cute if i devlof after it ended
 
-4 likes • 1h 24m
+5 likes • 1h 24m
 
 ## Devlog 45037 • 2026-04-29
 
