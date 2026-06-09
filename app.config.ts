@@ -10,9 +10,9 @@ import rehypeMdxCodeProps from "rehype-mdx-code-props";
 import mdxPrism from "./plugins/mdxPrism";
 import prismjs from "vite-plugin-prismjs";
 import remarkToc from "remark-toc";
-import remarkGfm from "remark-gfm"
+import remarkGfm from "remark-gfm";
 import postsPlugin from "./plugins/postsPlugin";
-import Icons from "unplugin-icons/vite"
+import Icons from "unplugin-icons/vite";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -22,6 +22,9 @@ export default defineConfig({
   vite: {
     build: {
       target: "esnext",
+    },
+    server: {
+      port: 3002,
     },
     plugins: [
       prismjs({
@@ -44,7 +47,7 @@ export default defineConfig({
               __dirname,
               "node_modules/govuk-frontend/dist/govuk/assets",
             ),
-            dest: "assets"
+            dest: "assets",
           },
           {
             src: path.resolve(
@@ -56,15 +59,15 @@ export default defineConfig({
         ],
       }),
       Icons({
-        compiler: 'jsx',
-        jsx: 'preact',
+        compiler: "jsx",
+        jsx: "preact",
       }),
     ],
   } satisfies ViteConfig,
   server: {
     preset: "static",
     prerender: {
-      crawlLinks: true
-    }
+      crawlLinks: true,
+    },
   },
 });
