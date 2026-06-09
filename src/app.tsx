@@ -7,7 +7,7 @@ import { Breadcrumb } from "./components/Breadcrumb";
 import { Buttons } from "./components/Buttons";
 import { A } from "@solidjs/router";
 import "./css/index.css";
-import { Plausible } from "@strootje/solid-plausible";
+import OpenPanel from "./analytics";
 
 async function fetchWebring() {
   const res = await fetch("https://webring.hackclub.com/members.json");
@@ -72,14 +72,6 @@ export default function App() {
             </div>
           }
         >
-          <Plausible.Provider
-            value={{
-              apiHost: "https://pawsible.gizzy.gay",
-              domain: "gizzy.gay",
-            }}
-          >
-            <Plausible.AutoOutboundTracking />
-            <Plausible.AutoPageviewTracking />
             <MetaProvider>
               <Title>Gov.Giz</Title>
               <Link
@@ -136,7 +128,8 @@ export default function App() {
               <Meta
                 name="twitter:image"
                 content="https://gizzy.gay/88x31.svg"
-              />
+            />
+            <OpenPanel />
               <div
                 style={{
                   display: ready() ? "flex" : "none",
@@ -338,7 +331,6 @@ export default function App() {
                 </footer>
               </div>
             </MetaProvider>
-          </Plausible.Provider>
         </Suspense>
       )}
     >
