@@ -220,7 +220,7 @@ export default function Home() {
             }}
           >
             <MakiArrow font-size="16" />
-            <A class="govuk-link" href="/details">
+            <A data-track="redirect_details" class="govuk-link" href="/details">
               Details
             </A>
           </li>
@@ -234,7 +234,7 @@ export default function Home() {
           >
             <MakiArrow font-size="16" />
 
-            <A class="govuk-link" href="/tags/projects">
+            <A data-track="redirect_projects" class="govuk-link" href="/tags/projects">
               Projects
             </A>
           </li>
@@ -248,7 +248,7 @@ export default function Home() {
             }}
           >
             <MakiArrow font-size="16" />
-            <A class="govuk-link" href="/blog">
+            <A data-track="redirect_blog"  class="govuk-link" href="/blog">
               Blog Posts
             </A>
           </li>
@@ -263,6 +263,7 @@ export default function Home() {
           >
             <MakiArrow font-size="16" />
             <a
+              data-track="redirect_88x31" 
               class="govuk-link"
               href="#"
               onClick={(e) => {
@@ -300,6 +301,7 @@ export default function Home() {
               <li class="govuk-task-list__item govuk-task-list__item--with-link">
                 <div class="govuk-task-list__name-and-hint">
                   <A
+                    data-track="redirect_blog"
                     class="govuk-link govuk-task-list__link"
                     href={`/blog/${post.slug}`}
                     aria-describedby="company-details-1-status"
@@ -338,6 +340,7 @@ export default function Home() {
               <li class="govuk-task-list__item govuk-task-list__item--with-link">
                 <div class="govuk-task-list__name-and-hint">
                   <A
+                    data-track={`redirect_projects`}
                     class="govuk-link govuk-task-list__link"
                     href={`/blog/${post.slug}`}
                     aria-describedby="company-details-1-status"

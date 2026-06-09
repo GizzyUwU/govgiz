@@ -72,6 +72,7 @@ const TagId: Component<RouteSectionProps<{ params: { id: string } }>> = (
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
                 <A
+                  data-track="redirect_blog"
                   class="govuk-link govuk-task-list__link"
                   href={`/blog/${post.slug}`}
                   aria-describedby="company-details-1-status"

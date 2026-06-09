@@ -56,6 +56,7 @@ const Tags = () => {
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
                 <A
+                  data-track="redirect_tag"
                   class="govuk-link govuk-task-list__link"
                   href={`/tags/${tag.id}`}
                   aria-describedby="company-details-1-status"

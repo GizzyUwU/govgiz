@@ -1,7 +1,7 @@
 import { For, createSignal, createMemo, Show } from "solid-js";
 import { posts } from "~/data/posts";
 import { Title } from "@solidjs/meta";
-import Fa7SolidMagnifyingGlass from '~icons/fa7-solid/magnifying-glass';
+import Fa7SolidMagnifyingGlass from "~icons/fa7-solid/magnifying-glass";
 import { A } from "@solidjs/router";
 
 export default function Blogs() {
@@ -39,56 +39,56 @@ export default function Blogs() {
     });
   });
 
-
   return (
     <>
       <Title>All posts</Title>
-        <h1 class="govuk-heading-l">All Blog Posts</h1>
-        <div class="govuk-form-group">
-          <div class="govuk-input__wrapper">
-            <input
-              class="govuk-input"
-              type="text"
-              spellcheck="false"
-              value={searchInput()}
-              placeholder="Project..."
-              onInput={(e) => setSearchInput(e.currentTarget.value)}
-            />
-            <div
-              class="govuk-input__suffix"
-              style={{
-                cursor: "pointer",
-                "background-color": "#080",
-              }}
-              onClick={() => {
-                setSearchInput(searchInput().toLowerCase().trim());
-              }}
-            >
-              <Fa7SolidMagnifyingGlass color="white" />
-            </div>
+      <h1 class="govuk-heading-l">All Blog Posts</h1>
+      <div class="govuk-form-group">
+        <div class="govuk-input__wrapper">
+          <input
+            class="govuk-input"
+            type="text"
+            spellcheck="false"
+            value={searchInput()}
+            placeholder="Project..."
+            onInput={(e) => setSearchInput(e.currentTarget.value)}
+          />
+          <div
+            class="govuk-input__suffix"
+            style={{
+              cursor: "pointer",
+              "background-color": "#080",
+            }}
+            onClick={() => {
+              setSearchInput(searchInput().toLowerCase().trim());
+            }}
+          >
+            <Fa7SolidMagnifyingGlass color="white" />
           </div>
         </div>
-        <Show when={filteredPosts().length == 0}>
-          <p class="govuk-body">No blog posts have been made yet.</p>
-        </Show>
-        <ul class="govuk-task-list">
-          <For each={filteredPosts()}>
-            {(post) => (
-              <li class="govuk-task-list__item govuk-task-list__item--with-link">
-                <div class="govuk-task-list__name-and-hint">
-                  <A
-                    class="govuk-link govuk-task-list__link"
-                    href={`/blog/${post.slug}`}
-                    aria-describedby="company-details-1-status"
-                  >
-                    {post.title}
-                  </A>
-                  <div class="govuk-task-list__hint">{post.description}</div>
-                </div>
-              </li>
-            )}
-          </For>
-        </ul>
+      </div>
+      <Show when={filteredPosts().length == 0}>
+        <p class="govuk-body">No blog posts have been made yet.</p>
+      </Show>
+      <ul class="govuk-task-list">
+        <For each={filteredPosts()}>
+          {(post) => (
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <A
+                  data-track="redirect_blog"
+                  class="govuk-link govuk-task-list__link"
+                  href={`/blog/${post.slug}`}
+                  aria-describedby="company-details-1-status"
+                >
+                  {post.title}
+                </A>
+                <div class="govuk-task-list__hint">{post.description}</div>
+              </div>
+            </li>
+          )}
+        </For>
+      </ul>
     </>
   );
 }

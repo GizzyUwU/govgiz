@@ -139,7 +139,7 @@ const Blog = (props: RouteSectionProps<{ params: { id: string } }>) => {
                   <For each={meta()!.tags}>
                     {(tag, index) => (
                       <>
-                        <A href={`/tags/${tag}`} class="govuk-link">
+                        <A data-track="redirect_tag" href={`/tags/${tag}`} class="govuk-link">
                           {tag}
                         </A>
                         {index() === meta()!.tags!.length - 1 ? "" : ", "}
@@ -151,7 +151,7 @@ const Blog = (props: RouteSectionProps<{ params: { id: string } }>) => {
                   <For each={meta()!.tag}>
                     {(tag, index) => (
                       <>
-                        <A href={`/tags/${tag}`} class="govuk-link">
+                        <A data-track="redirect_tag" href={`/tags/${tag}`} class="govuk-link">
                           {tag}
                         </A>
                         {index() === meta()!.tag!.length - 1 ? "" : ", "}
@@ -190,6 +190,7 @@ const Blog = (props: RouteSectionProps<{ params: { id: string } }>) => {
                       <li class="govuk-task-list__item govuk-task-list__item--with-link">
                         <div class="govuk-task-list__name-and-hint">
                           <A
+                            data-track="redirect_blog"
                             href={`/blog/${p.slug}`}
                             class="govuk-link  govuk-task-list__link"
                           >

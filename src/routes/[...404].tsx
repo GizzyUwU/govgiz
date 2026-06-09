@@ -22,7 +22,7 @@ export default function NotFound() {
         <p class="govuk-body">
           If the web address is correct or you selected a link or button, then
           this page no longer exists!{" "}
-          <A class="govuk-link" href="/">
+          <A data-track="redirect_home" class="govuk-link" href="/">
             Redirect to the homepage!
           </A>
         </p>
