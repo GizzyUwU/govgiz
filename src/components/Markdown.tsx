@@ -184,6 +184,7 @@ export const PostImage: Component<{
   src: string;
   alt: string;
   attr?: JSXElement;
+  featuredImage?: boolean;
   class?: string;
   bgColor?: string;
 }> = (props) => {
@@ -215,6 +216,8 @@ export const PostImage: Component<{
         {...props}
         style={{
           "vertical-align": "middle",
+          "max-height": props.featuredImage ? "300px" : undefined,
+          "object-fit": "contain",
         }}
         loading="lazy"
       />
@@ -222,18 +225,30 @@ export const PostImage: Component<{
   } else {
     return (
       <>
-        <img
-          ref={ref}
-          src={props.src}
-          alt={props.alt}
+        <div
           style={{
-            "max-width": "100%",
             width: "100%",
+            position: "relative",
+            overflow: "hidden",
+            "max-height": props.featuredImage ? "300px" : undefined,
+            background: props.bgColor || "transparent",
           }}
-          classList={{ [props.class || ""]: !!props.class }}
-          loading="lazy"
-        />
-        {props.attr}
+        >
+          <img
+            ref={ref}
+            src={props.src}
+            alt={props.alt}
+            style={{
+              "max-width": "100%",
+              width: "100%",
+              "max-height": props.featuredImage ? "300px" : undefined,
+              "object-fit": "contain",
+            }}
+            classList={{ [props.class || ""]: !!props.class }}
+            loading="lazy"
+          />
+          {props.attr}
+        </div>
       </>
     );
   }

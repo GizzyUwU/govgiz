@@ -1,5 +1,7 @@
 ---
 title: Logpheus
+featuredImage: https://cdn.hackclub.com/019e7f4f-78da-7019-af62-5c880963529b/fempheus2.png
+featuredImageBGColor: white
 description: Flavorpheus but actually useful! It's a generic flavortown bot used for automatic devlog posting to a channel, looking at projects shop items users and more! Check it out by using /logpheus-(commandName) in the Slack! You could also self host it if you want to.
 date: '2025-12-24'
 tags:

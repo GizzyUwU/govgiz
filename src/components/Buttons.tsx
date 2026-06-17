@@ -23,7 +23,6 @@ export const Buttons: Component = () => {
   });
 
   const markFailed = (image: string) => {
-    console.log("error", image)
     setFailedImgs((prev) => {
       const next = new Set(prev);
       next.add(image);

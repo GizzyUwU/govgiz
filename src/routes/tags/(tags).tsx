@@ -44,7 +44,6 @@ const Tags = () => {
             }}
           >
             <Fa7SolidMagnifyingGlass color="white" />
-
           </div>
         </div>
       </div>

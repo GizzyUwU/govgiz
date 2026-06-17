@@ -6,41 +6,87 @@ import { A } from "@solidjs/router";
 const capitalize = (s: string) =>
   s.length > 0 ? s[0].toUpperCase() + s.slice(1) : "";
 
-const getPostTitle = (slug: string) =>
-  posts.find((p) => p.slug === slug)?.title;
+const getPost = (slug: string) => posts.find((p) => p.slug === slug);
 
 export const Breadcrumb: Component = () => {
   const location = useLocation();
   const segments = () => location.pathname.split("/").filter(Boolean);
-  const paths = () =>
-    segments().map((seg, i) => "/" + segments().slice(0, i + 1).join("/"));
 
-  const labelForSegment = (seg: string, index: number) => {
-    if (segments()[index - 1] === "blog") {
-      const title = getPostTitle(seg);
-      if (title) return title;
+  const getPost = (slug: string) => posts.find((p) => p.slug === slug);
+
+  const breadcrumbItems = () => {
+    const segs = segments();
+    const items: { label: string; href: string; tags?: string[] }[] = [];
+
+    // always home
+    items.push({ label: "Home", href: "/" });
+
+    for (let i = 0; i < segs.length; i++) {
+      const seg = segs[i];
+
+      const href = "/" + segs.slice(0, i + 1).join("/");
+
+      if (segs[i - 1] === "blog") {
+        const post = getPost(seg);
+        if (post) {
+          const tags = post.tags || [];
+
+          if (tags.length) {
+            items.push({
+              label: "tags",
+              href: null,
+              tags,
+            } as any);
+          }
+
+          items.push({
+            label: post.title,
+            href,
+          });
+
+          continue;
+        }
+      }
+
+      items.push({
+        label: capitalize(decodeURIComponent(seg.replace(/-/g, " "))),
+        href,
+      });
     }
 
-    return capitalize(
-      decodeURIComponent(seg.replace(/-/g, " "))
-    );
+    return items;
   };
-
 
   return (
     <Show when={segments().length > 0}>
       <nav class="govuk-breadcrumbs" aria-label="Breadcrumb">
         <ol class="govuk-breadcrumbs__list">
-          <li class="govuk-breadcrumbs__list-item">
-            <A class="govuk-breadcrumbs__link" href="/">Home</A>
-          </li>
-
-          <For each={segments()}>
-            {(seg, i) => (
+          <For each={breadcrumbItems()}>
+            {(item) => (
               <li class="govuk-breadcrumbs__list-item">
-                <A class="govuk-breadcrumbs__link" href={paths()[i()]}>
-                  {labelForSegment(seg, i())}
-                </A>
+                {item.tags ? (
+                  <span>
+                    <For each={item.tags}>
+                      {(tag, i) => (
+                        <>
+                          <A
+                            class="govuk-breadcrumbs__link"
+                            href={`/tags/${tag}`}
+                          >
+                            {tag}
+                          </A>
+                          <Show when={item.tags && i() < item.tags.length - 1}>
+                            <span class="breadcrumb_tag_sept"> / </span>
+                          </Show>
+                        </>
+                      )}
+                    </For>
+                  </span>
+                ) : (
+                  <A class="govuk-breadcrumbs__link" href={item.href}>
+                    {item.label}
+                  </A>
+                )}
               </li>
             )}
           </For>

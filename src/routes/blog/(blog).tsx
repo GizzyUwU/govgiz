@@ -76,6 +76,19 @@ export default function Blogs() {
           {(post) => (
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
+                <Show when={post.featuredImage}>
+                <div
+                  style={{
+                    width: "100%",
+                    position: "relative",
+                    overflow: "hidden",
+                    "max-height": "100px",
+                    background: post.featuredImageBGColor || "transparent",
+                  }}
+                >
+                  <img src={post.featuredImage} alt={post.featuredImageDesc || ""} />
+                  </div>
+                </Show>
                 <A
                   data-track="redirect_blog"
                   class="govuk-link govuk-task-list__link"

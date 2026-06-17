@@ -125,6 +125,7 @@ const Blog = (props: RouteSectionProps<{ params: { id: string } }>) => {
                   class="govuk-!-margin-top-2"
                   src={meta()?.featuredImage || ""}
                   alt={meta()?.featuredImageDesc || ""}
+                  featuredImage
                   bgColor={meta()?.featuredImageBGColor}
                 />
               </Show>

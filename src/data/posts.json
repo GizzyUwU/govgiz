@@ -1,45 +1,47 @@
 [
-    {
-        "title": "Campfire Northampton (Perspective of an Organiser)",
-        "description": "This is a post about Campfire Northampton from the perspective of an organiser",
-        "date": "2026-03-15",
-        "tags": [
-            "HackClub",
-            "Campfire"
-        ],
-        "slug": "cf-northampton"
-    },
-    {
-        "title": "GovGiz",
-        "description": "Literally remaking my personal site in solidjs with solid-start but using the uk govs styling components :3c",
-        "date": "2026-01-28",
-        "tags": [
-            "flavourtown",
-            "flavortown",
-            "projects"
-        ],
-        "slug": "govgiz"
-    },
-    {
-        "title": "Logpheus",
-        "description": "Flavorpheus but actually useful! It's a generic flavortown bot used for automatic devlog posting to a channel, looking at projects shop items users and more! Check it out by using /logpheus-(commandName) in the Slack! You could also self host it if you want to.",
-        "date": "2025-12-24",
-        "tags": [
-            "flavourtown",
-            "flavortown",
-            "projects"
-        ],
-        "slug": "logpheus"
-    },
-    {
-        "title": "Suri",
-        "description": "Do you hate slack desktop? Is it really slow for you like it is for me? Well fuck it I hate slack desktop and it's lag so I'm making it myself.",
-        "date": "2025-12-18",
-        "tags": [
-            "flavourtown",
-            "flavortown",
-            "projects"
-        ],
-        "slug": "suri"
-    }
+  {
+    "title": "Campfire Northampton (Perspective of an Organiser)",
+    "description": "This is a post about Campfire Northampton from the perspective of an organiser",
+    "date": "2026-03-15",
+    "tags": [
+      "HackClub",
+      "Campfire"
+    ],
+    "slug": "cf-northampton"
+  },
+  {
+    "title": "GovGiz",
+    "description": "Literally remaking my personal site in solidjs with solid-start but using the uk govs styling components :3c",
+    "date": "2026-01-28",
+    "tags": [
+      "flavourtown",
+      "flavortown",
+      "projects"
+    ],
+    "slug": "govgiz"
+  },
+  {
+    "title": "Logpheus",
+    "featuredImage": "https://cdn.hackclub.com/019e7f4f-78da-7019-af62-5c880963529b/fempheus2.png",
+    "featuredImageBGColor": "white",
+    "description": "Flavorpheus but actually useful! It's a generic flavortown bot used for automatic devlog posting to a channel, looking at projects shop items users and more! Check it out by using /logpheus-(commandName) in the Slack! You could also self host it if you want to.",
+    "date": "2025-12-24",
+    "tags": [
+      "flavourtown",
+      "flavortown",
+      "projects"
+    ],
+    "slug": "logpheus"
+  },
+  {
+    "title": "Suri",
+    "description": "Do you hate slack desktop? Is it really slow for you like it is for me? Well fuck it I hate slack desktop and it's lag so I'm making it myself. HACKCLUBS SLACK SERVER IS HACKCLUB.ENTERPRISE.SLACK.COM THE HACKCLUB.SLACK.COM IS PRE MIGRATION AND WILL NOT WORK IT NEEDS THE RIGHT SERVER also dropped support for macos it doesnt work for sum reason i dont got mac to fix so cope cwy",
+    "date": "2025-12-18",
+    "tags": [
+      "flavourtown",
+      "flavortown",
+      "projects"
+    ],
+    "slug": "suri"
+  }
 ]

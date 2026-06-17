@@ -3,13 +3,13 @@ import { type Component, Show, For, createMemo, createSignal } from "solid-js";
 import { posts } from "~/data/posts";
 import dayjs from "dayjs";
 import { tags } from "~/data/tags";
-import Fa7SolidMagnifyingGlass from '~icons/fa7-solid/magnifying-glass';
+import Fa7SolidMagnifyingGlass from "~icons/fa7-solid/magnifying-glass";
 import { A } from "@solidjs/router";
 
 const TagId: Component<RouteSectionProps<{ params: { id: string } }>> = (
   props,
 ) => {
-  const tag = () => props.params.id ? tags[props.params.id] : undefined;
+  const tag = () => (props.params.id ? tags[props.params.id] : undefined);
   const [searchInput, setSearchInput] = createSignal("");
   const filteredPosts = createMemo(() => {
     const q = searchInput().toLowerCase();
@@ -70,21 +70,49 @@ const TagId: Component<RouteSectionProps<{ params: { id: string } }>> = (
       <ul class="govuk-task-list">
         <For each={filteredPosts()}>
           {(post) => (
-            <li class="govuk-task-list__item govuk-task-list__item--with-link">
-              <div class="govuk-task-list__name-and-hint">
-                <A
-                  data-track="redirect_blog"
-                  class="govuk-link govuk-task-list__link"
-                  href={`/blog/${post.slug}`}
-                  aria-describedby="company-details-1-status"
+            <li
+              class="govuk-task-list__item govuk-task-list__item--with-link"
+              style={{
+                "padding-top": "0",
+              }}
+            >
+              <Show when={post.featuredImage}>
+                <div
+                  style={{
+                    top: 0,
+                    width: "100%",
+                    position: "relative",
+                    overflow: "hidden",
+                    display: "flex",
+                    "max-height": "100px",
+                    "justify-content": "center",
+                    "align-items": "center",
+                    background: post.featuredImageBGColor || "transparent",
+                  }}
                 >
-                  {post.title}
-                </A>
-                <div class="govuk-task-list__hint">{post.description}</div>
-                <p class="govuk-task-list__hint govuk-body-s govuk-!-margin-bottom-0">
-                  {dayjs(post.date).format("DD MMMM YYYY")}
-                </p>
-              </div>
+                  <img
+                    src={post.featuredImage}
+                    alt={post.featuredImageDesc || ""}
+                    style={{
+                      "object-fit": "contain",
+                      "max-height": "120px",
+                    }}
+                  />
+                </div>
+              </Show>
+              <div class="govuk-!-margin-top-2" />
+              <A
+                data-track="redirect_blog"
+                class="govuk-link govuk-task-list__link"
+                href={`/blog/${post.slug}`}
+                aria-describedby="company-details-1-status"
+              >
+                {post.title}
+              </A>
+              <div class="govuk-task-list__hint">{post.description}</div>
+              <p class="govuk-task-list__hint govuk-body-s govuk-!-margin-bottom-0">
+                {dayjs(post.date).format("DD MMMM YYYY")}
+              </p>
             </li>
           )}
         </For>
