@@ -23,6 +23,7 @@ export const Buttons: Component = () => {
   });
 
   const markFailed = (image: string) => {
+    console.log("error", image)
     setFailedImgs((prev) => {
       const next = new Set(prev);
       next.add(image);
@@ -48,6 +49,10 @@ export const Buttons: Component = () => {
                           "&output=webp"
                     }
                     onError={() => markFailed(button.image)}
+                    onLoad={(e) => {
+                      const img = e.currentTarget;
+                      if (!img.naturalWidth || !img.naturalHeight) markFailed(button.image);
+                    }}
                     style={{
                       "max-height": "31px",
                       "max-width": "88px",

@@ -48,6 +48,7 @@ export default function Blogs() {
           <input
             class="govuk-input"
             type="text"
+            name="projectSearch"
             spellcheck="false"
             value={searchInput()}
             placeholder="Project..."

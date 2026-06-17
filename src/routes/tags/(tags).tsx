@@ -27,6 +27,7 @@ const Tags = () => {
           <input
             class="govuk-input"
             type="text"
+            name="tagSearch"
             spellcheck="false"
             value={searchInput()}
             placeholder="Projects"
