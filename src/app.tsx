@@ -1,5 +1,5 @@
 import { Link, Meta, MetaProvider, Style, Title } from "@solidjs/meta";
-import { createResource, Show } from "solid-js";
+import { createResource, Show, ErrorBoundary } from "solid-js";
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { Suspense, onMount, createSignal } from "solid-js";
@@ -126,7 +126,9 @@ export default function App() {
               content="GOV.Giz - The best place to find Gizzy services and information."
             />
             <Meta name="twitter:image" content="https://gizzy.gay/88x31.svg" />
-            <OpenPanel />
+            <ErrorBoundary fallback={() => null}>
+              <OpenPanel />
+            </ErrorBoundary>
             <div
               style={{
                 display: ready() ? "flex" : "none",
