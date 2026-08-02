@@ -37,7 +37,7 @@ export default function App() {
     window.addEventListener("resize", handleResize);
 
     const data = members();
-    if (!data) return;
+    if (!data) return setReady(true);
 
     const currentHostname = new URL(
       document.referrer || document.location.href,
