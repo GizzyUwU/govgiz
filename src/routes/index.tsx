@@ -1,4 +1,5 @@
-import { onMount, onCleanup, createResource, Show, For } from "solid-js";
+import { onMount, onCleanup, createSignal, Show, For} from "solid-js";
+import { isServer } from "solid-js/web";
 import MakiArrow from "~icons/maki/arrow";
 import { posts } from "~/data/posts";
 import Typed from "typed.js";
@@ -48,11 +49,21 @@ const fetchStarsFrom100 = async (): Promise<number> => {
 };
 
 export default function Home() {
-  const [stats] = createResource(fetchStats);
-  const [github] = createResource(fetchGithub);
-  const [stars] = createResource(fetchStarsFrom100);
+  const [stats, setStats] = createSignal<Awaited<ReturnType<typeof fetchStats>> | null>(null);
+  const [github, setGithub] = createSignal<Awaited<ReturnType<typeof fetchGithub>> | null>(null);
+  const [stars, setStars] = createSignal(0);
 
   onMount(() => {
+    if (!isServer) {
+      void Promise.all([fetchStats(), fetchGithub(), fetchStarsFrom100()]).then(
+        ([statsData, githubData, starsData]) => {
+          setStats(statsData);
+          setGithub(githubData);
+          setStars(starsData);
+        },
+      );
+    }
+
     new Typed("#typed-list", {
       strings: ["programmer", "developer", "nerd", "maker"],
       typeSpeed: 50,
