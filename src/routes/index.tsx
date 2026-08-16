@@ -1,4 +1,11 @@
-import { onMount, onCleanup, createSignal, Show, For} from "solid-js";
+import {
+  onMount,
+  onCleanup,
+  createSignal,
+  createEffect,
+  Show,
+  For,
+} from "solid-js";
 import { isServer } from "solid-js/web";
 import MakiArrow from "~icons/maki/arrow";
 import { posts } from "~/data/posts";
@@ -52,26 +59,17 @@ export default function Home() {
   const [stats, setStats] = createSignal<Awaited<ReturnType<typeof fetchStats>> | null>(null);
   const [github, setGithub] = createSignal<Awaited<ReturnType<typeof fetchGithub>> | null>(null);
   const [stars, setStars] = createSignal(0);
+  let typedListEl: HTMLSpanElement | undefined;
+  let typedTimeEl: HTMLSpanElement | undefined;
+  let birthdayCountEl: HTMLSpanElement | undefined;
+  let ageEl: HTMLSpanElement | undefined;
 
-  onMount(() => {
-    if (!isServer) {
-      void Promise.all([fetchStats(), fetchGithub(), fetchStarsFrom100()]).then(
-        ([statsData, githubData, starsData]) => {
-          setStats(statsData);
-          setGithub(githubData);
-          setStars(starsData);
-        },
-      );
-    }
+  createEffect(() => {
+    const statsData = stats();
+    const container = typedTimeEl;
 
-    new Typed("#typed-list", {
-      strings: ["programmer", "developer", "nerd", "maker"],
-      typeSpeed: 50,
-      backSpeed: 70,
-      loop: true,
-    });
+    if (!statsData || !container) return;
 
-    const container = document.querySelector("#typed-time") as HTMLElement;
     let previousTime = new Date().toLocaleTimeString("en-GB", {
       timeZone: "Europe/London",
       hour: "2-digit",
@@ -79,7 +77,8 @@ export default function Home() {
     });
 
     container.innerHTML = `${previousTime.slice(0, -2)}<span id="changing">${previousTime.slice(-2)}</span>`;
-    const changingEl = document.querySelector("#changing") as HTMLElement;
+    const changingEl = container.querySelector("#changing") as HTMLElement | null;
+    if (!changingEl) return;
 
     let typed: Typed | null = null;
 
@@ -121,9 +120,35 @@ export default function Home() {
     };
 
     const interval = setInterval(updateTime, 1000);
-    onCleanup(() => clearInterval(interval));
+    onCleanup(() => {
+      clearInterval(interval);
+      if (typed) typed.destroy();
+    });
+  });
 
-    const birthdayEl = document.querySelector("#birthday-count") as HTMLElement;
+  onMount(() => {
+    if (!isServer) {
+      void Promise.all([fetchStats(), fetchGithub(), fetchStarsFrom100()]).then(
+        ([statsData, githubData, starsData]) => {
+          setStats(statsData);
+          setGithub(githubData);
+          setStars(starsData);
+        },
+      );
+    }
+
+    if (typedListEl) {
+      new Typed(typedListEl, {
+        strings: ["programmer", "developer", "nerd", "maker"],
+        typeSpeed: 50,
+        backSpeed: 70,
+        loop: true,
+      });
+    }
+
+    const birthdayEl = birthdayCountEl;
+    if (!birthdayEl) return;
+
     let previousBirthday = "";
 
     let typedBirthday: Typed | null = null;
@@ -141,11 +166,14 @@ export default function Home() {
       }
 
       let output: string = "";
-      const ageEl = document.querySelector("#age") as HTMLElement;
-      ageEl.textContent = `${years} years so far`;
+      if (ageEl) {
+        ageEl.textContent = `${years} years so far`;
+      }
 
       if (today.getMonth() === birth.getMonth()) {
-        ageEl.textContent = `${years} years so far, and I'm gonna have survived`;
+        if (ageEl) {
+          ageEl.textContent = `${years} years so far, and I'm gonna have survived`;
+        }
 
         const birthdayThisYear = new Date(
           today.getFullYear(),
@@ -199,15 +227,15 @@ export default function Home() {
         Hey! I'm Gizzy
       </h1>
       <p class="govuk-body govuk-!-margin-bottom-0">
-        I've survived <span id="age"></span> <span id="birthday-count"></span>
+        I've survived <span id="age" ref={ageEl}></span>{" "}<span id="birthday-count" ref={birthdayCountEl}></span>
       </p>
       <p class="govuk-body">
-        I'm a <span id="typed-list"></span>based in the United Kingdom!
+        I'm a <span id="typed-list" ref={typedListEl}></span>based in the United Kingdom!
       </p>
       <Show when={stats()}>
         <div class="govuk-inset-text govuk-!-margin-bottom-2 govuk-!-margin-top-0">
           <p class="govuk-body">
-            <span id="typed-time"></span> -{" "}
+            <span id="typed-time" ref={typedTimeEl}></span> -{" "}
             {stats().data?.human_readable_total
               ? stats().data.human_readable_total.replace(/\s*\d+s/, "")
               : "0m"}{" "}
