@@ -323,7 +323,7 @@ export default function Home() {
           >
             <MakiArrow font-size="16" />
             <a
-              data-track="redirect_88x31" 
+              data-track="redirect_art" 
               class="govuk-link"
               href="#"
               onClick={(e) => {
