@@ -1,4 +1,4 @@
-import { createSignal, For } from "solid-js";
+import { createSignal, For, Show } from "solid-js";
 import "../css/art.css";
 
 const slides = [
@@ -9,8 +9,8 @@ const slides = [
 export default function Art() {
   const [active, setActive] = createSignal(0);
 
-  const next = () => setActive((i) => (i + 1) % slides.length);
-  const prev = () => setActive((i) => (i - 1 + slides.length) % slides.length);
+  const next = () => setActive((i) => Math.min(i + 1, slides.length - 1));
+   const prev = () => setActive((i) => Math.max(i - 1, 0));
 
   return (
     <>
@@ -47,16 +47,21 @@ export default function Art() {
             </For>
           </div>
 
+           <Show when={active() > 0}>
           <button type="button" class="carousel-control carousel-control-prev" onClick={prev} aria-label="Previous slide">
             <svg class="control-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
-          </button>
+            </button>
+          </Show>
+          <Show when={active() < slides.length - 1}>
+
           <button type="button" class="carousel-control carousel-control-next" onClick={next} aria-label="Next slide">
             <svg class="control-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
             </svg>
-          </button>
+            </button>
+          </Show>
         </div>
       </div>
     </>
