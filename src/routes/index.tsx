@@ -287,7 +287,7 @@ export default function Home() {
             }}
           >
             <MakiArrow font-size="16" />
-            <A data-track="redirect_blog"  class="govuk-link" href="/blog">
+            <A data-track="redirect_blog" class="govuk-link" href="/blog">
               Blog Posts
             </A>
           </li>
@@ -322,17 +322,9 @@ export default function Home() {
             }}
           >
             <MakiArrow font-size="16" />
-            <a
-              data-track="redirect_art" 
-              class="govuk-link"
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.href = "/art";
-              }}
-            >
-              Art
-            </a>
+            <A data-track="redirect_blog" class="govuk-link" href="/art">
+              Art of Me
+            </A>
           </li>
         </ul>
       </div>
