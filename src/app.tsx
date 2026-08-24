@@ -80,11 +80,6 @@ export default function App() {
               as="style"
             />
             <Link
-              rel="preload"
-              href="/_build/assets/client-DIJl3Nsl.css"
-              as="style"
-            />
-            <Link
               rel="preconnect"
               href="https://wsrv.nl"
               crossorigin="anonymous"
