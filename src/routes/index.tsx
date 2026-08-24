@@ -313,6 +313,27 @@ export default function Home() {
               88x31
             </a>
           </li>
+          <li
+            class="govuk-grid-column-one-third"
+            style={{
+              display: "flex",
+              "align-items": "center",
+              gap: "0.6rem",
+            }}
+          >
+            <MakiArrow font-size="16" />
+            <a
+              data-track="redirect_88x31" 
+              class="govuk-link"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = "/art";
+              }}
+            >
+              Art
+            </a>
+          </li>
         </ul>
       </div>
       <Show
