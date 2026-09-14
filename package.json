@@ -1,5 +1,5 @@
 {
-  "name": "example-basic",
+  "name": "govgiz",
   "type": "module",
   "scripts": {
     "dev": "vinxi dev --host",

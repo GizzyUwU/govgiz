@@ -1,6 +1,7 @@
 ---
 title: Campfire Northampton (Perspective of an Organiser)
 description: This is a post about Campfire Northampton from the perspective of an organiser
+featuredImage: https://wsrv.nl/?url=https://blogimages.gizzy.tech/Campfire/_MG_6641.jpg?authuser=0&output=webp
 date: '2026-03-15'
 tags:
   - HackClub
