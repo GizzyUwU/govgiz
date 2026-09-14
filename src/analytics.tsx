@@ -27,7 +27,7 @@ export default function OpenPanel() {
     
     window.op("init", {
       apiUrl: "https://opapi.gizzy.gay",
-      clientId: "eb1c83ae-66f7-4402-9514-745232eff6da",
+      clientId: "4b06fce9-c2cb-4b96-b334-54f24309e342",
       trackScreenViews: true,
       trackOutgoingLinks: true,
       trackAttributes: true,
