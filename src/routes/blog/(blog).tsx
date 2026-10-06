@@ -86,7 +86,19 @@ export default function Blogs() {
                     background: post.featuredImageBGColor || "transparent",
                   }}
                 >
-                  <img src={post.featuredImage} alt={post.featuredImageDesc || ""} />
+                  <img
+                    src={post.featuredImage}
+                    alt={post.featuredImageDesc || ""}
+                    style={{
+                      "max-width": "100%",
+                      width: "100%",
+                      "max-height": "100px",
+                      height: "100px",
+                      "object-fit": "cover",
+                      "object-position": "center",
+                      display: "block",
+                    }}
+                  />
                   </div>
                 </Show>
                 <A

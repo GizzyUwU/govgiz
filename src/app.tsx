@@ -126,7 +126,7 @@ export default function App() {
             </ErrorBoundary>
             <div
               style={{
-                display: ready() ? "flex" : "none",
+                display: "flex",
                 "flex-direction": "column",
                 "min-height": "100vh",
                 width: "100%",

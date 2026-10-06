@@ -94,8 +94,13 @@ const TagId: Component<RouteSectionProps<{ params: { id: string } }>> = (
                     src={post.featuredImage}
                     alt={post.featuredImageDesc || ""}
                     style={{
-                      "object-fit": "contain",
-                      "max-height": "120px",
+                      "object-fit": "cover",
+                      "object-position": "center",
+                      "max-width": "100%",
+                      width: "100%",
+                      "max-height": "100px",
+                      height: "100px",
+                      display: "block",
                     }}
                   />
                 </div>

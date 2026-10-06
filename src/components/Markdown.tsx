@@ -6,6 +6,7 @@ import {
   createSignal,
   Show,
   onMount,
+  onCleanup,
   ComponentProps,
 } from "solid-js";
 import { A as Anchor } from "@solidjs/router";
@@ -170,14 +171,38 @@ const A: ParentComponent<{ href: string }> = (props) => {
 };
 
 function gridCellDimensions() {
-  const element = document.createElement("div");
-  element.style.position = "fixed";
-  element.style.height = "var(--line-height)";
-  element.style.width = "1ch";
-  document.body.appendChild(element);
-  const rect = element.getBoundingClientRect();
-  document.body.removeChild(element);
-  return { width: rect.width, height: rect.height };
+  const fallback = 24;
+  try {
+    const cs = getComputedStyle(document.body);
+    const lh = parseFloat(cs.lineHeight);
+    if (lh && isFinite(lh) && lh > 0) return { width: 8, height: lh };
+  } catch {}
+  try {
+    const element = document.createElement("div");
+    element.style.position = "fixed";
+    element.style.visibility = "hidden";
+    element.style.pointerEvents = "none";
+    element.style.height = "1lh";
+    element.style.width = "1ch";
+    document.body.appendChild(element);
+    const rect = element.getBoundingClientRect();
+    document.body.removeChild(element);
+    if (rect.height && rect.height > 4 && rect.height < 100) {
+      return { width: rect.width, height: rect.height };
+    }
+  } catch {}
+  try {
+    const element = document.createElement("div");
+    element.style.position = "fixed";
+    element.style.visibility = "hidden";
+    element.style.height = "var(--line-height, 24px)";
+    element.style.width = "1ch";
+    document.body.appendChild(element);
+    const rect = element.getBoundingClientRect();
+    document.body.removeChild(element);
+    if (rect.height && rect.height > 4) return { width: rect.width, height: rect.height };
+  } catch {}
+  return { width: 8, height: fallback };
 }
 
 export const PostImage: Component<{
@@ -188,29 +213,8 @@ export const PostImage: Component<{
   class?: string;
   bgColor?: string;
 }> = (props) => {
-  let ref!: HTMLImageElement;
-  onMount(() => {
-    if (props.src.includes("emoji.slack-edge.com")) return;
-    const cell = gridCellDimensions();
-    function setHeightFromRatio() {
-      const ratio = ref.naturalWidth / ref.naturalHeight;
-      const rect = ref.getBoundingClientRect();
-      const realHeight = rect.width / ratio;
-      const diff = cell.height - (realHeight % cell.height);
-      ref.style.setProperty("padding-bottom", `${diff}px`);
-      ref.style.backgroundColor = props.bgColor || "transparent";
-    }
-
-    if (ref.complete) {
-      setHeightFromRatio();
-    } else {
-      ref.addEventListener("load", () => {
-        setHeightFromRatio();
-      });
-    }
-  });
-
-  if (props.src.includes("emoji.slack-edge.com")) {
+  const isEmoji = () => props.src.includes("emoji.slack-edge.com");
+  if (isEmoji()) {
     return (
       <img
         {...props}
@@ -219,39 +223,59 @@ export const PostImage: Component<{
           "max-height": props.featuredImage ? "300px" : undefined,
           "object-fit": "contain",
         }}
-        loading="lazy"
+        loading="eager"
+        // @ts-ignore
+        decoding="async"
+        draggable={false}
       />
     );
-  } else {
-    return (
-      <>
-        <div
-          style={{
-            width: "100%",
-            position: "relative",
-            overflow: "hidden",
-            "max-height": props.featuredImage ? "300px" : undefined,
-            background: props.bgColor || "transparent",
-          }}
-        >
-          <img
-            ref={ref}
-            src={props.src}
-            alt={props.alt}
-            style={{
-              "max-width": "100%",
-              width: "100%",
-              "max-height": props.featuredImage ? "300px" : undefined,
-              "object-fit": "contain",
-            }}
-            classList={{ [props.class || ""]: !!props.class }}
-            loading="lazy"
-          />
-          {props.attr}
-        </div>
-      </>
-    );
   }
+
+  return (
+    <div
+      style={{
+        width: "100%",
+        position: "relative",
+        overflow: "hidden",
+        background: props.bgColor || "transparent",
+      }}
+    >
+      <img
+        src={props.src}
+        alt={props.alt}
+        style={{
+          "max-width": "100%",
+          width: "100%",
+          height: "auto",
+          display: "block",
+        }}
+        classList={{ [props.class || ""]: !!props.class }}
+        loading="eager"
+        // @ts-ignore
+        fetchPriority={props.featuredImage ? "high" : "auto"}
+        decoding="async"
+        draggable={false}
+        onError={(e) => {
+          const t = e.currentTarget as HTMLImageElement;
+          if ((t as any).dataset.retried) return;
+          (t as any).dataset.retried = "1";
+          if (t.src.includes("wsrv.nl")) {
+            try {
+              const u = new URL(t.src);
+              const direct = u.searchParams.get("url");
+              if (direct) {
+                t.src = decodeURIComponent(direct);
+                return;
+              }
+            } catch {}
+          }
+          const sep = t.src.includes("?") ? "&" : "?";
+          t.src = `${t.src}${sep}retry=1`;
+        }}
+      />
+      {props.attr}
+    </div>
+  );
 };
 
 export const Aside: ParentComponent = (props) => {
