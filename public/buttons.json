@@ -1,43 +1,43 @@
 [
-    {
-        "name": "Gizzy",
-        "image": "https://gizzy.gay/88x31.svg",
-        "site": "https://gizzy.gay/"
-    },
-    {
-        "name": "Matei",
-        "image": "https://mateishome.page/files/images/buttons/mateishomepage.png",
-        "site": "https://mateishome.page/"
-    },
-    {
-        "name": "Areg",
-        "image": "https://gizzy.gay/areg.png",
-        "site": "https://aregus.me/"
-    },
-    {
-        "name": "MilkCool",
-        "image": "https://milkcool.ru/buttons/mybutton.gif",
-        "site": "https://milkcool.ru/"
-    },
-    {
-        "name": "Estrogen",
-        "image": "https://alyx.sh/images/hrt-geocities-buttons/e2v2-88x31.gif",
-        "site": "https://alyx.sh/"
-    },
-    {
-        "name": "Addy",
-        "image": "https://www.addy10s.xyz/addy88x31.gif",
-        "ignoreCDN": true,
-        "site": "https://addy10s.xyz/"
-    },
-    {
-        "name": "Alexandar",
-        "image": "https://parakeet.yaoi.tech/button%20(3).gif",
-        "site": "https://yaoi.tech"
-    },
-    {
-      "name": "Nova",
-      "image": "https://novatea.dev/88x31.gif",
-      "site": "https://novatea.dev"
-    }
+  {
+    "name": "Gizzy",
+    "image": "https://gizzy.gay/88x31.svg",
+    "site": "https://gizzy.gay/"
+  },
+  {
+    "name": "Matei",
+    "image": "https://mateishome.page/files/images/buttons/mateishomepage.png",
+    "site": "https://mateishome.page/"
+  },
+  {
+    "name": "Areg",
+    "image": "https://gizzy.gay/areg.png",
+    "site": "https://aregus.me/"
+  },
+  {
+    "name": "MilkCool",
+    "image": "https://milkcool.ru/buttons/mybutton.gif",
+    "site": "https://milkcool.ru/"
+  },
+  {
+    "name": "Estrogen",
+    "image": "https://alyx.sh/images/hrt-geocities-buttons/e2v2-88x31.gif",
+    "site": "https://alyx.sh/"
+  },
+  {
+    "name": "Addy",
+    "image": "https://www.addy10s.xyz/addy88x31.gif",
+    "ignoreCDN": true,
+    "site": "https://addy10s.xyz/"
+  },
+  {
+    "name": "Alexandar",
+    "image": "https://parakeet.yaoi.tech/button%20(3).gif",
+    "site": "https://yaoi.tech"
+  },
+  {
+    "name": "Nova",
+    "image": "https://novatea.dev/88x31.gif",
+    "site": "https://novatea.dev"
+  }
 ]
