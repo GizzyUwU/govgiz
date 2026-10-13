@@ -12,7 +12,11 @@ export const Buttons: Component = () => {
   const [failedImgs, setFailedImgs] = createSignal(new Set<string>());
 
   const fetchButtons = async () => {
-    const res = await fetch("/buttons.json");
+    // Short TTL cache-buster: same `v` for 5 mins (browser + edge can cache),
+    // then rolls over and forces a fresh fetch. Tweak TTL as needed.
+    const CACHE_TTL = 5 * 60 * 1000;
+    const v = Math.floor(Date.now() / CACHE_TTL);
+    const res = await fetch(`/buttons.json?v=${v}`);
     if (!res.ok) return [];
     const data = await res.json();
     return Array.isArray(data) ? data : [];
