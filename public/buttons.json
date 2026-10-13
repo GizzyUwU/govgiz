@@ -39,5 +39,10 @@
     "name": "Nova",
     "image": "https://novatea.dev/88x31.gif",
     "site": "https://novatea.dev"
+  },
+  {
+    "name": "Freddie",
+    "image": "https://freddieyershon.co.uk/assets/buttons/freddie-v3.png",
+    "site": "https://freddieyershon.co.uk"
   }
 ]
