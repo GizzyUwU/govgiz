@@ -1,3 +1,29 @@
+:root {
+    color-scheme: dark light;
+}
+
+html {
+    background-color: #24273a;
+}
+
+@media screen and (prefers-color-scheme: light) {
+    html {
+        background-color: #eff1f5;
+    }
+}
+
+body,
+body.govuk-template__body {
+    background-color: #24273a;
+}
+
+@media screen and (prefers-color-scheme: light) {
+    body,
+    body.govuk-template__body {
+        background-color: #eff1f5;
+    }
+}
+
 * {
     font-family: arial, sans-serif !important;
 }
@@ -162,6 +188,10 @@ div.govuk-header__container {
     }
 }
 
+.govuk-label {
+    color: white !important;
+}
+
 @media screen and (prefers-color-scheme: light) {
     body.govuk-template__body {
         background-color: #eff1f5;
@@ -300,6 +330,10 @@ div.govuk-header__container {
     .govuk-pagination__next:hover,
     .govuk-pagination__prev:hover {
         background-color: inherit !important;
+    }
+
+    .govuk-label {
+        color: black !important;;
     }
 }
 

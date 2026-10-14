@@ -1,5 +1,23 @@
 [
   {
+    "title": "HCES (Hack Club Event Scraper)",
+    "description": "HCES (Hack Club Event Scraper) - Scrapes Hack Club Events (rn only stardance and flavortown) for data like devlogs, shop items and more",
+    "date": "2026-08-03",
+    "updatedAt": "2026-08-31",
+    "tags": [
+      "macondo",
+      "projects"
+    ],
+    "projects": [
+      {
+        "source": "macondo",
+        "id": "16007"
+      }
+    ],
+    "slug": "hces-hack-club-event-scraper",
+    "createdAt": "2026-08-03"
+  },
+  {
     "title": "Campfire Northampton (Perspective of an Organiser)",
     "description": "This is a post about Campfire Northampton from the perspective of an organiser",
     "featuredImage": "https://wsrv.nl/?url=https://blogimages.gizzy.tech/Campfire/_MG_6641.jpg?authuser=0&output=webp",
@@ -9,41 +27,72 @@
       "HackClub",
       "Campfire"
     ],
-    "slug": "cf-northampton"
+    "slug": "cf-northampton",
+    "createdAt": "2026-03-15",
+    "updatedAt": "2026-03-15"
   },
   {
     "title": "GovGiz",
     "description": "Literally remaking my personal site in solidjs with solid-start but using the uk govs styling components :3c",
     "date": "2026-01-28",
+    "updatedAt": "2026-02-04",
     "tags": [
       "flavourtown",
       "flavortown",
       "projects"
     ],
-    "slug": "govgiz"
+    "projects": [
+      {
+        "source": "flavortown",
+        "id": "10878"
+      }
+    ],
+    "slug": "govgiz",
+    "createdAt": "2026-01-28"
   },
   {
-    "title": "Logpheus",
     "featuredImage": "https://cdn.hackclub.com/019e7f4f-78da-7019-af62-5c880963529b/fempheus2.png",
     "featuredImageBGColor": "white",
+    "title": "Logpheus",
     "description": "Flavorpheus but actually useful! It's a generic flavortown bot used for automatic devlog posting to a channel, looking at projects shop items users and more! Check it out by using /logpheus-(commandName) in the Slack! You could also self host it if you want to.",
     "date": "2025-12-24",
+    "updatedAt": "2026-07-14",
     "tags": [
       "flavourtown",
       "flavortown",
-      "projects"
+      "projects",
+      "macondo"
     ],
-    "slug": "logpheus"
+    "projects": [
+      {
+        "source": "flavortown",
+        "id": "1865"
+      },
+      {
+        "source": "macondo",
+        "id": "5464"
+      }
+    ],
+    "slug": "logpheus",
+    "createdAt": "2025-12-24"
   },
   {
     "title": "Suri",
     "description": "Do you hate slack desktop? Is it really slow for you like it is for me? Well fuck it I hate slack desktop and it's lag so I'm making it myself. HACKCLUBS SLACK SERVER IS HACKCLUB.ENTERPRISE.SLACK.COM THE HACKCLUB.SLACK.COM IS PRE MIGRATION AND WILL NOT WORK IT NEEDS THE RIGHT SERVER also dropped support for macos it doesnt work for sum reason i dont got mac to fix so cope cwy",
     "date": "2025-12-18",
+    "updatedAt": "2026-05-01",
     "tags": [
       "flavourtown",
       "flavortown",
       "projects"
     ],
-    "slug": "suri"
+    "projects": [
+      {
+        "source": "flavortown",
+        "id": "184"
+      }
+    ],
+    "slug": "suri",
+    "createdAt": "2025-12-18"
   }
 ]

@@ -2,12 +2,15 @@
 title: GovGiz
 description: Literally remaking my personal site in solidjs with solid-start but using the uk govs styling components :3c
 date: '2026-01-28'
+updatedAt: '2026-02-04'
 tags:
   - flavourtown
   - flavortown
   - projects
+projects:
+  - source: flavortown
+    id: '10878'
 ---
-
 ## Devlog 19473 • 2026-02-04
 
 Woah an update? IN THIS FLAVORTOWN?! UNACCEPTABLE
@@ -26,7 +29,7 @@ Thats about it small change but bleh
 - [feat: 88x31 buttons :3c](https://github.com/GizzyUwU/govgiz/commit/1de14c7d4efb362d3fb26c566623155f96461e9a)
 
 
-1 likes • 1h 7m
+1 likes • 1h 7m • 1 comments
 
 ## Devlog 19153 • 2026-02-03
 
@@ -121,7 +124,7 @@ bleh i had to fix script and aciton that was painfal its 1 am im eepy but update
 - it prevents xss now from mdx bleh
 - IM TIRIED
 
-1 likes • 46m
+1 likes • 46m • 1 comments
 
 ## Devlog 18303 • 2026-02-01
 

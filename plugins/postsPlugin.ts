@@ -16,10 +16,18 @@ const processFiles = () => {
 		.map((file) => {
 			const f = readSync(resolve("src/routes/blog/posts", file));
 			matter(f);
+			const frontmatter = f.data.matter as {
+				date: string;
+				updatedAt?: string;
+			};
 			return {
-				...(f.data.matter as object),
+				...(frontmatter as object),
 				slug: file.replace(/\.mdx?$/, ""),
-			} as { date: string; slug: string };
+				createdAt: frontmatter.date,
+				// Hand-written posts opt in via an `updatedAt:` frontmatter
+				// field; the project sync stamps it from the newest devlog.
+				updatedAt: frontmatter.updatedAt ?? frontmatter.date,
+			} as { date: string; createdAt: string; updatedAt: string; slug: string };
 		})
 		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
@@ -31,11 +39,13 @@ const processFiles = () => {
 export default function postPlugin(): Plugin {
 	return {
 		name: "posts-gen",
-		buildEnd() {
+		// buildStart (not buildEnd): posts.json is imported by the bundle,
+		// so it must be fresh BEFORE bundling, or new posts miss the deploy.
+		buildStart() {
 			processFiles();
 		},
 		configureServer(server) {
-			server.watcher.on("change", (filePath) => {
+			const onFile = (filePath: string) => {
 				if (
 					!filePath.includes("/src/routes/blog/posts") &&
 					!filePath.includes("/src/plugins/postsPlugin.ts")
@@ -43,7 +53,11 @@ export default function postPlugin(): Plugin {
 					return;
 
 				processFiles();
-			});
+			};
+			// "change" alone misses new files ("add") and deletions ("unlink").
+			server.watcher.on("change", onFile);
+			server.watcher.on("add", onFile);
+			server.watcher.on("unlink", onFile);
 		},
 	};
 };

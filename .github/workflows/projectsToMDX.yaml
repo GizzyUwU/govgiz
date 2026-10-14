@@ -1,0 +1,64 @@
+name: Sync projects to blog
+
+# Syncs Flavortown + Macondo projects/devlogs into markdown posts
+# via the HCES API (https://hces.gizzy.gay).
+#
+# Required repo secrets:
+#   HCES-API-Key  -> HCES bearer key (always required)
+#   FT-API-Key    -> Flavortown key (required for Flavortown sync)
+#   MC-API-Key    -> Macondo key (required for Macondo sync)
+#   MC-Cookie     -> Macondo cookie (optional, only if Macondo calls 401 without it)
+#   GH_PAT        -> personal access token with contents:write, so the
+#                    auto-commit push triggers the deploy workflow
+#                    (GITHUB_TOKEN pushes do NOT trigger other workflows)
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+# Queued (not overlapping) runs: two pushes racing each other
+# corrupts posts.json / causes push conflicts.
+concurrency:
+  group: projects-mdx
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      HCES_API_KEY: ${{ secrets['HCES-API-Key'] }}
+      FT_API_KEY: ${{ secrets['FT-API-Key'] }}
+      MC_API_KEY: ${{ secrets['MC-API-Key'] }}
+      MC_COOKIE: ${{ secrets['MC-Cookie'] }}
+      # Optional overrides (comma-separated IDs). Unset = auto-discover
+      # all projects owned by the key via the API.
+      # FLAVORTOWN_PROJECT_IDS: "1, 2, 3"
+      # MACONDO_PROJECT_IDS: "abc, xyz"
+      # SKIP_PROJECT_IDS: "flavortown:123, macondo:abc"
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          # PAT (not GITHUB_TOKEN) so this push triggers the deploy workflow.
+          token: ${{ secrets.GH_PAT }}
+          persist-credentials: true
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Sync Flavortown + Macondo projects to markdown
+        run: bun src/automation/projectsToMDX.ts
+
+      - name: Commit updated posts
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "chore: sync projects to blog"
+          file_pattern: "src/routes/blog/posts/*.md src/data/posts.json"
+          # No --force: never rewrite history on an automated sync.

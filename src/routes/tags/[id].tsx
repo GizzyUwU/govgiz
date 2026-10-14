@@ -1,39 +1,69 @@
 import type { RouteSectionProps } from "@solidjs/router";
 import { type Component, Show, For, createMemo, createSignal } from "solid-js";
 import { posts } from "~/data/posts";
+import type { Post } from "~/types";
 import dayjs from "dayjs";
 import { tags } from "~/data/tags";
 import Fa7SolidMagnifyingGlass from "~icons/fa7-solid/magnifying-glass";
 import { A } from "@solidjs/router";
+
+type SortKey = "updated-desc" | "created-desc" | "updated-asc" | "created-asc";
+type Entry = { post: Post; created: number; updated: number; haystack: string };
+
+const toTime = (v: unknown): number => {
+  const t = new Date(v as string | Date).getTime();
+  return Number.isNaN(t) ? 0 : t;
+};
+
+const formatDate = (value: Date): string =>
+  new Date(value).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
 
 const TagId: Component<RouteSectionProps<{ params: { id: string } }>> = (
   props,
 ) => {
   const tag = () => (props.params.id ? tags[props.params.id] : undefined);
   const [searchInput, setSearchInput] = createSignal("");
-  const filteredPosts = createMemo(() => {
-    const q = searchInput().toLowerCase();
-    if (!q) return tag()?.posts.map((i) => posts[i]) ?? [];
-    const postsOnTag = tag()?.posts.map((i) => posts[i]) ?? [];
-    return postsOnTag.filter((post) => {
-      let dateString = "";
-      if (post.date) {
-        const d = new Date(post.date);
-        const options: Intl.DateTimeFormatOptions = {
-          day: "numeric",
-          month: "long",
-          year: "numeric",
-        };
-        dateString = d.toLocaleDateString("en-GB", options).toLowerCase();
-      }
+  const [sortKey, setSortKey] = createSignal<SortKey>("updated-desc");
 
-      return (
-        post.slug.toLowerCase().includes(q) ||
-        post.title.toLowerCase().includes(q) ||
-        post.description.toLowerCase().includes(q) ||
-        dateString.includes(q)
-      );
-    });
+  // Rebuilt only when the tag changes
+  const entries = createMemo<Entry[]>(() =>
+    (tag()?.posts ?? []).map((i) => {
+      const post = posts[i];
+      return {
+        post,
+        created: toTime(post.createdAt ?? post.date),
+        updated: toTime(post.updatedAt ?? post.createdAt ?? post.date),
+        haystack: [
+          post.slug,
+          post.title,
+          post.description,
+          post.date ? formatDate(post.date) : "",
+        ]
+          .join("\n")
+          .toLowerCase(),
+      };
+    }),
+  );
+
+  // Re-sorts only when the tag or sort option changes, not on keystrokes
+  const sortedPosts = createMemo(() => {
+    const [field, direction] = sortKey().split("-") as [
+      "created" | "updated",
+      "asc" | "desc",
+    ];
+    const m = direction === "asc" ? 1 : -1;
+    return [...entries()].sort((a, b) => m * (a[field] - b[field]));
+  });
+
+  // Filtering a pre-sorted list keeps its order
+  const filteredPosts = createMemo(() => {
+    const q = searchInput().trim().toLowerCase();
+    const list = sortedPosts();
+    return q ? list.filter((e) => e.haystack.includes(q)) : list;
   });
 
   return (
@@ -41,40 +71,77 @@ const TagId: Component<RouteSectionProps<{ params: { id: string } }>> = (
       when={tag()}
       fallback={<p class="govuk-body">No posts with that tag</p>}
     >
-      <h2 class="govuk-heading-m">Tag: {tag()?.id}</h2>
-      <div class="govuk-form-group">
-        <div class="govuk-input__wrapper">
-          <input
-            class="govuk-input"
-            type="text"
-            name="tagSearch"
-            spellcheck="false"
-            value={searchInput()}
-            placeholder="Project..."
-            onInput={(e) => setSearchInput(e.currentTarget.value)}
-          />
-          <div
-            class="govuk-input__suffix"
-            style={{
-              cursor: "pointer",
-              "background-color": "#080",
-            }}
-            onClick={() => {
-              setSearchInput(searchInput().toLowerCase().trim());
-            }}
-          >
-            <Fa7SolidMagnifyingGlass color="white" />
+      <h2
+        class="govuk-heading-m"
+        style={{
+          "margin-bottom": "-10px",
+        }}
+      >
+        Tag: {tag()?.id}
+      </h2>
+      <div
+        style={{
+          display: "flex",
+          "flex-wrap": "wrap",
+          "align-items": "flex-end",
+          gap: "20px",
+        }}
+      >
+        <div class="govuk-form-group" style={{ flex: "1 1 200px" }}>
+          <div class="govuk-input__wrapper">
+            <input
+              class="govuk-input"
+              type="text"
+              name="tagSearch"
+              aria-label="Search posts"
+              spellcheck="false"
+              value={searchInput()}
+              placeholder="Post..."
+              onInput={(e) => setSearchInput(e.currentTarget.value)}
+            />
+            <div
+              class="govuk-input__suffix"
+              style={{ cursor: "pointer", "background-color": "#080" }}
+              onClick={() => setSearchInput(searchInput().toLowerCase().trim())}
+            >
+              <Fa7SolidMagnifyingGlass color="white" />
+            </div>
           </div>
         </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Sort by
+          </label>
+          <select
+            class="govuk-select"
+            style={{
+              background: "white !important"
+            }}
+            id="sort"
+            name="sort"
+            value={sortKey()}
+            onChange={(e) => setSortKey(e.currentTarget.value as SortKey)}
+          >
+            <option value="updated-desc">Recently updated</option>
+            <option value="created-desc">Recently published</option>
+            <option value="updated-asc">Oldest updated</option>
+            <option value="created-asc">Oldest published</option>
+          </select>
+        </div>
       </div>
+      <Show when={filteredPosts().length === 0}>
+        <p class="govuk-body">
+          {searchInput().trim()
+            ? "No posts with that name!"
+            : "No posts have been made with this tag yet."}
+        </p>
+      </Show>
       <ul class="govuk-task-list">
         <For each={filteredPosts()}>
-          {(post) => (
+          {({ post }) => (
             <li
               class="govuk-task-list__item govuk-task-list__item--with-link"
-              style={{
-                "padding-top": "0",
-              }}
+              style={{ "padding-top": "0" }}
             >
               <Show when={post.featuredImage}>
                 <div

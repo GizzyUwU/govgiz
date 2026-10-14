@@ -22,11 +22,10 @@ export default function App() {
   const [vh, setVh] = createSignal(0);
 
   onMount(async () => {
-    document.body.className +=
-      "govuk-template__body js-enabled" +
-      ("noModule" in HTMLScriptElement.prototype
-        ? " govuk-frontend-supported"
-        : "");
+    document.body.classList.add("govuk-template__body", "js-enabled");
+    if ("noModule" in HTMLScriptElement.prototype) {
+      document.body.classList.add("govuk-frontend-supported");
+    }
     // @ts-ignore
     const govuk = await import("govuk-frontend");
     govuk.initAll();

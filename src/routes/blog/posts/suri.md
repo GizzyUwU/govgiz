@@ -2,17 +2,20 @@
 title: Suri
 description: Do you hate slack desktop? Is it really slow for you like it is for me? Well fuck it I hate slack desktop and it's lag so I'm making it myself. HACKCLUBS SLACK SERVER IS HACKCLUB.ENTERPRISE.SLACK.COM THE HACKCLUB.SLACK.COM IS PRE MIGRATION AND WILL NOT WORK IT NEEDS THE RIGHT SERVER also dropped support for macos it doesnt work for sum reason i dont got mac to fix so cope cwy
 date: '2025-12-18'
+updatedAt: '2026-05-01'
 tags:
   - flavourtown
   - flavortown
   - projects
+projects:
+  - source: flavortown
+    id: '184'
 ---
-
 ## Devlog 45763 • 2026-05-01
 
 I know ft has endded but wouldnt it be cute if i devlof after it ended
 
-7 likes • 1h 24m
+7 likes • 1h 24m • 7 comments
 
 ## Devlog 45037 • 2026-04-29
 
@@ -60,7 +63,7 @@ Yipeee sum changes ![3c](https://images.weserv.nl/?url=https%3A%2F%2Femoji.slack
 - Signin page is less ugly now i copied design from slacks page as it does look good but i want catppuuccin ;3c
 - Slight speed bump for load of channels by showing channels before loading unreads and mentions
 
-0 likes • 1h 27m
+0 likes • 1h 27m • 1 comments
 
 ## Devlog 42085 • 2026-04-19
 
@@ -148,7 +151,7 @@ Yeah my previous fix to shutup couldnt find callback id annoyed me so i spent th
 
 I forgor to make a devlog qwp. ANYWAY 10 days past and i did some stuff :3 I tried to get tauri to shutup about "couldnn't find callback id" because it sucks at cleaning up its own resources with its plugins that took a while until i just made console.warn filter it out of console to shut it up instead it aint my job to fix tauris shit,  I also made a bit of a ui for it and real time messages from the websocket and ability to post messages! (dont mind the random person on the right i stole the ui from flowbite :3c)
 
-0 likes • 5h 17m
+0 likes • 5h 17m • 1 comments
 
 ## Devlog 2160 • 2025-12-24
 
@@ -166,7 +169,7 @@ Well this was semi painful but WEBSOCKET mhm yes we got slack websocket in it no
 
 30 minutes later and it works mostly now! The webview window now closes once finished and you can view channels and message history again :3c
 
-0 likes • 30m
+0 likes • 30m • 1 comments
 
 ## Devlog 1029 • 2025-12-22
 

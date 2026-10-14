@@ -1,14 +1,222 @@
 ---
-title: Logpheus
 featuredImage: https://cdn.hackclub.com/019e7f4f-78da-7019-af62-5c880963529b/fempheus2.png
 featuredImageBGColor: white
+title: Logpheus
 description: Flavorpheus but actually useful! It's a generic flavortown bot used for automatic devlog posting to a channel, looking at projects shop items users and more! Check it out by using /logpheus-(commandName) in the Slack! You could also self host it if you want to.
 date: '2025-12-24'
+updatedAt: '2026-07-14'
 tags:
   - flavourtown
   - flavortown
   - projects
+  - macondo
+projects:
+  - source: flavortown
+    id: '1865'
+  - source: macondo
+    id: '5464'
 ---
+## Devlog 19290 • 2026-07-14
+
+Meow! I made some changes to logpheus to improve it and also add sum cool new stuff!
+- Fixed shop math to calculate prediced hours
+- Decreased shop interval check to 10s to check faster for changes!
+- I think I forgor make a post on shop suggestions but there is shop suggestions tracker in [#macondo-suggestions-tracker](https://hackclub.enterprise.slack.com/archives/C0BE47SPGJ0)
+- Custom intervals for jobs instead of forcing 60s!
+- Optional jobs and job configs to allow users to choose sum more jobs like mcStreak check job!
+- Use scalar instead of swagger cuz its more swagger then swagger
+- Probably more changes that I forgor abt!
+![image](https://cdn.hackclub.com/019f6088-2414-7116-9684-639a60cc4d8f/image.png)
+![image](https://cdn.hackclub.com/019f6088-5182-7c7f-8aa2-3bdd26dace30/image.png)
+![image](https://cdn.hackclub.com/019f6088-993c-7771-b351-50fc4f057931/image.png)
+![image](https://cdn.hackclub.com/019f6088-ba63-7e13-aafd-f4d61a11ee82/image.png)
+
+0 likes • 0m
+
+## Devlog 15428 • 2026-06-29
+
+I did some stuff :3c
+- Bugfixed some issues such as shop using nullable not nullish throwing error or it showing 0 gold on regional change and other issues
+- Setup relations between tables for user id so cascade deletion if you wish to go :(
+- Monitor DB Query timings in analytics so I can monitor how long they take
+- Env Scanner to keep .example.env up to date as I keep forgetting to update it
+- Improved stats command to show job users, projects subscribed and better formatting
+- Docker healthcheck goes unhealthy if more then or equal to 5 errors in past 5 mins so I get notified better
+- Improved readme to make more sense to humans
+- Added channel change to config not just /logpheus move
+Probably more changes to that I forget abt!
+![image](https://cdn.hackclub.com/019f1291-ab1d-707d-839e-ba2d98130b26/image.png)
+![image](https://cdn.hackclub.com/019f1291-ee35-79fa-b8e7-0f00d439386b/image.png)
+![image](https://cdn.hackclub.com/019f1292-e37d-72fa-b71e-62225b88bf88/image.png)
+
+0 likes • 0m
+
+## Devlog 14315 • 2026-06-24
+
+I did some things!
+- There is now a HC Mail Job to post mail changes to your DMs or a channel so you know when it changes instead of manually checking!
+- Bunch of bug fixes to stuff like shop track job
+- Paginated help commands
+- Decreased errors it stays to me because macondo/other ysws's went down
+- Shop Track watches for way more changes like modifiers, stock changes and more!
+![image](https://cdn.hackclub.com/019efac7-bcec-7e4a-9d6e-6dd366713ab5/image.png)
+![image](https://cdn.hackclub.com/019efac8-26cd-78ed-948d-50eb8d4da4a9/image.png)
+![image](https://cdn.hackclub.com/019efac8-72ab-7c0a-b25c-eac103dbc0c0/image.png)
+![image](https://cdn.hackclub.com/019efac8-96b7-7ff4-a237-b4627c6a8ab9/image.png)
+
+0 likes • 0m
+
+## Devlog 10112 • 2026-06-09
+
+I've been working on a shop tracker job to watch for changes in the shop! I also did some bug fixes
+- FT Already exists check kicked out non existing users
+- Shop tracker job!
+Heres the screenshots from testing!
+![image](https://cdn.hackclub.com/019eac9e-3145-76a4-a23c-e3eb13fd248c/image.png)
+![image](https://cdn.hackclub.com/019eac9f-2bfe-74da-9dbe-52b4c12da7c4/image.png)
+![image](https://cdn.hackclub.com/019eac9f-7bb8-73e8-8f48-6a3deb6a19af/image.png)
+
+0 likes • 0m
+
+## Devlog 9840 • 2026-06-08
+
+This log is mostly just BUGFIXES YUM :3c so HERE ARE THE BUGS THAT GOT FIXED
+- Used hardcoded ping group id instead of ping group in meta
+- Fixed exitting on channel not found on devlog post job
+- Used YSWS Id to find user id in devlog post job causing it to choose wrong issue
+- DB hit using project id only not yswsId causing an issue on db actions in multiplier api
+- updateFields writes in config wiped all meta in user
+- Moved YSWSId up a level into command/view handler to hopefully avoid using wrong ysws id in a command
+- Set projects table primary keys to ID and YSWSId
+![image](https://cdn.hackclub.com/019ea75c-3f6c-7a7c-a0cf-05d3d8758960/image.png)
+
+0 likes • 0m
+
+## Devlog 9538 • 2026-06-07
+
+In this time I did mostly just analytics adding
+- Pawsible wouldn't work for this so I setup OpenPanel on my server
+- Used It's SDK to add analytics
+- Cleaned up some parts of the code
+- Some other stuff I cant remeber
+MEOW BAII CUTIES :3c
+![image](https://cdn.hackclub.com/019ea21f-c723-7598-8567-947fc38984cf/image.png)
+![image](https://cdn.hackclub.com/019ea220-20e3-78b2-a1b5-974e3d7bc87a/image.png)
+
+0 likes • 0m
+
+## Devlog 7289 • 2026-05-31
+
+Wow I cooked today
+- Finished off all of the macondo commands i believe
+- Fixed sum of the api cuz it used ft specific stuff instead of the adapter
+- Added YSWS's to logpheus data command and dropped projects from it
+- Fixed migration as it broke in prod
+- Cleaned up sum of code
+- Added tsconfig to clone in dockerfile
+- Fixed all the bad queries that could potentially break whole bot
+LOGPHEUS V2 IS IN PROD NOW YIPEEEEE SO IMA SHIT
+![image](https://cdn.hackclub.com/019e7f4c-92a5-7804-884a-31d17dc00141/image.png)
+![image](https://cdn.hackclub.com/019e7f4c-d0c8-7544-b7a2-38b5ed4b7579/image.png)
+![image](https://cdn.hackclub.com/019e7f4d-5ee0-7c01-bcaf-df41f05d5201/image.png)
+
+0 likes • 0m
+
+## Devlog 6887 • 2026-05-30
+
+So another day, another hard lock in!
+- Reconfigured all api interactions so all go through adapters but commands use adapter.raw to hit api directly so compatability layer but for jobs they use the adapter to follow a strict format for each api
+- Modified YSWS config to include region's of the ysws, fixed job supported by ysws, added currencyName to config and adapter file location,
+- Moved region selection to YSWS specific as i didn't know macondo and ft vastly differed in region selection
+![image](https://cdn.hackclub.com/019e781f-27a7-7584-9961-ff25d3e02bcb/image.png)
+
+0 likes • 0m
+
+## Devlog 6593 • 2026-05-29
+
+So I locked in hard today!
+- Ported all FT commands to the new table so they work again yippeee!
+- Fixed Goals API to use new table system and clean it up code of it 
+- UwUified more api error msgs
+- Cleaned up FT commands so its less of a mess
+- Optimised FT apiKeyCheck so that you can pass through yswsData and it does check off that not wasting a db query
+- Do YSWS and User Check in the proxy of commands instead of commands directly to not redo same code multiple times plus allows me to pass these data to the commands themselves
+- Force use of user id in apiKeyCheck of ft instead of using apiKey itself to check so i dont gotta support both
+THATS ABOUT IT MEOW I LOCKED IN :3cccccccccccccccccccccccccccccccccccccccccccccc
+![image](https://cdn.hackclub.com/019e730e-e219-7e0d-a4ba-16e0dbe6a91b/image.png)
+![image](https://cdn.hackclub.com/019e730f-2ed0-79f0-910d-85c0ef579b1e/image.png)
+![image](https://cdn.hackclub.com/019e730f-6b10-7674-8a4c-221a0e735f25/image.png)
+
+0 likes • 0m
+
+## Devlog 6371 • 2026-05-28
+
+SO this time cuties i have been working on the API more
+- UwUifying all API Error Messages with some done already as it says to get well cooked version in macondo it has to be "extra fruity" so i'm taking it literally
+- Working on multiplier API first to port it to new table setup with creating new API key check for API to use logpheus_sk now
+Thats abt it I just wanteed to journal ngl okay bai cutie pants's :3c
+![image](https://cdn.hackclub.com/019e6f04-32f8-7bb4-b646-2a7c17ab6be3/image.png)
+
+0 likes • 0m
+
+## Devlog 6335 • 2026-05-28
+
+So QUACK :3 HAIIIIII ITS ME AGAYIAN
+- I updated documentation of API to one be easier to understand by providing an example and showing type needed and also add new api endpoints and require YSWSId on endpoints now and show what api key needed as multi ysws needs custom api key so logpheus_sk_ soon!
+- Starting to move goals out of meta into ysws db for user
+- Added YSWS endpoint to show supported YSWS's and what they need to register and one support is finished planning to expose how many users subbed to it for stats
+- Move reactivate to ft and make it so it reactivates your ft when ran
+- Some clean up of config
+THATS ABT IT BAIIIII CUTIES :3333CCC
+![image](https://cdn.hackclub.com/019e6e61-7da4-72f3-b8bc-3fabfaf92111/image.png)
+
+0 likes • 0m
+
+## Devlog 5980 • 2026-05-27
+
+This is mostly minor backend changes :3
+- I added ysws id to projects so i can easily hit projects table and know what projects belong to what ysws
+- Swap all console to logger that uses sentry (if exists) and console adapter
+- Configured it to hide console breadcrumbs and remove ansi in sentry
+- Made port stand out using color cyan and dropped prefix of [Logpheus] in every log as logtape specifies where it came from
+![image](https://cdn.hackclub.com/019e68ec-77aa-7a2d-87ec-b230652a2822/image.png)
+![image](https://cdn.hackclub.com/019e68ec-a6d7-7479-9f24-69900c59aa89/image.png)
+![image](https://cdn.hackclub.com/019e68ed-4500-7c88-9d3b-76052638a7a6/image.png)
+OKAY BAII CUTIES :3CCCCCCCCCCCCCCCCCCCCCCCC
+
+0 likes • 0m
+
+## Devlog 5659 • 2026-05-26
+
+So quackers I did some mainly backend things to the bot!
+- Instead of spamming ../../../ I swapped it to @/ that is an alias to src folder
+- Creatd a migration file and added YSWS table and YSWS field under users so its easier to get what YSWS's a user is part of and also to allow for multiple YSWS's
+- Created file for Macondo and created Macondo API Types!
+- Added Log Level to env so you can change it now!
+- It will now always post to console and will post to sentry too if sentry is provided because it is still a good idea to post to console too
+Thats basically it I think idk you gotta check the commit to know more :3c
+![image](https://cdn.hackclub.com/019e63b3-3914-725b-a06c-436c5d82dbd6/image.png)
+![image](https://cdn.hackclub.com/019e63b3-84e9-7ea3-9c64-9b2df2da470c/image.png)
+![image](https://cdn.hackclub.com/019e63b4-bee9-7dfb-a3b6-00662bc0ade0/image.png)
+
+0 likes • 0m
+
+## Devlog 5075 • 2026-05-24
+
+# QUACK! HAIIIIIIII.
+Before Logpheus made use of a commands/views folder at src so src/commands and src/views it worked for the need of flavortown which this was built for but since i'm trying to make it have multi ysws support I had to do something about it especially since I was at the limit of 25 commands which slack sets for bots you can't go over it so I swapped to a easier for user to use anyway system by using /logpheus for generic and more specific stuff like for flavortown its /logpheus-ft and for admin its /logpheus-admin so to get a ft user you run /logpheus-ft user and for generic you run something like /logpheus help
+![image](https://cdn.hackclub.com/019e5a27-58bb-7831-8d46-400774c20aa7/image.png)
+![image](https://cdn.hackclub.com/019e5a29-c1f9-7258-bb81-3fd29748b747/image.png)
+
+0 likes • 0m
+
+## Devlog 4779 • 2026-05-23
+
+Well well well... Logpheus getting worked on again. From Flavortown to Macondo. ANYWAY I WORKED ON THIS AFTER FT ENDED BEFORE MAKING MACONDO PROJECT SO THIS FEAT ALR FULLY BUILT SO I MIGHT ASWELL JOURNAL IT!!!
+HCB Transactions! Get a DM/Post to CHhannel on all public HCB transaction data made by your HCB account allowing you (or others) to see what transaction was made for, how much and when it occured. This requires the org that gave you the grant you spent money on to have transparency mode enabled! It only makes use of publically availabe information through HCBScan and the HCB API. To use it register to logpheus using /logpheus-register then add it with /logpheus-config!
+![image](https://cdn.hackclub.com/019e5467-1952-7a71-81c5-069fa3997d13/image.png)![image](https://cdn.hackclub.com/019e5a23-ce19-7cf1-b3d7-32d039c4965c/image.png)
+
+0 likes • 0m
 
 ## Devlog 43720 • 2026-04-25
 
@@ -441,14 +649,14 @@ uhm pushed to prod the changes i madeto table etc fixed sum stuff took down prod
 
 bleh more time for me! I did sum cleaning moving devlog check to sept file and no longer rely on loadApiKeys which is super overkill for 1 function using it since func was legacy code used a lot before changing to drizzle etc
 
-0 likes • 52m
+0 likes • 52m • 2 comments
 
 ## Devlog 15243 • 2026-01-24
 
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 I work on moving schema :3c and also cleaning up the codebase so its more readable as ts confusing also improved schema migration by learning how to actually use drizzle frfr
 
-0 likes • 1h 27m
+0 likes • 1h 27m • 1 comments
 
 ## Devlog 15051 • 2026-01-23
 
@@ -614,5 +822,5 @@ The past hour I have been debugging and making the bot worked implementing /logp
 
 I need a devlog to test so uhm past hour and half i well made lib file for ft its a class file so i can use it in other projects if i want to too then using that i made it pull projects then pull devlogs if no cache file exists it adds all devlogs of project id which is in apiKeys.json which stores project id as key then under it the api key and channel to post it to
 
-0 likes • 1h 38m
+0 likes • 1h 38m • 2 comments
 
