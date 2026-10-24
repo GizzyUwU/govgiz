@@ -7,7 +7,7 @@ import { Breadcrumb } from "./components/Breadcrumb";
 import { Buttons } from "./components/Buttons";
 import { A } from "@solidjs/router";
 import "./css/index.css";
-import OpenPanel from "./analytics";
+import Plausible from "./analytics";
 
 async function fetchWebring() {
   const res = await fetch("https://webring.hackclub.com/members.json");
@@ -121,7 +121,7 @@ export default function App() {
             />
             <Meta name="twitter:image" content="https://gizzy.gay/88x31.svg" />
             <ErrorBoundary fallback={() => null}>
-              <OpenPanel />
+              <Plausible />
             </ErrorBoundary>
             <div
               style={{

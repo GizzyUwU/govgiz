@@ -1,45 +1,28 @@
 import { onMount } from "solid-js";
 
-export default function OpenPanel() {
+declare global {
+  interface Window {
+    plausible: any;
+  }
+}
+
+export default function Plausible() {
   onMount(() => {
-    window.op =
-      window.op ||
-      (function () {
-        var n: any[][] = [];
-        return new Proxy(
-          function () {
-            arguments.length && n.push([].slice.call(arguments));
-          },
-          {
-            get: function (t, r) {
-              return "q" === r
-                ? n
-                : function () {
-                    n.push([r].concat([].slice.call(arguments)));
-                  };
-            },
-            has: function (t, r) {
-              return "q" === r;
-            },
-          },
-        );
-      })();
-    
-    window.op("init", {
-      apiUrl: "https://opapi.gizzy.gay",
-      clientId: "4b06fce9-c2cb-4b96-b334-54f24309e342",
-      trackScreenViews: true,
-      trackOutgoingLinks: true,
-      trackAttributes: true,
-      // sessionReplay: {
-      //   enabled: true,
-      // },
-    });
+    window.plausible =
+      window.plausible ||
+      function () {
+        (window.plausible.q = window.plausible.q || []).push(arguments);
+      };
+    window.plausible.init =
+      window.plausible.init ||
+      function (i: any) {
+        window.plausible.o = i || {};
+      };
+    window.plausible.init();
 
     const script = document.createElement("script");
-    script.src = "https://analytics.gizzy.gay/op1.js";
+    script.src = "https://pble.gizzy.gay/js/pa-l6FxS2q-0nk50JgRwnNVb.js";
     script.async = true;
-    script.defer = true;
 
     document.head.appendChild(script);
   });
