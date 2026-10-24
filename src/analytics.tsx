@@ -21,7 +21,7 @@ export default function Plausible() {
     window.plausible.init();
 
     const script = document.createElement("script");
-    script.src = "https://pble.gizzy.gay/js/pa-l6FxS2q-0nk50JgRwnNVb.js";
+    script.src = "https://pble.gizzy.gay/js/pa-3IJyHMz7Gcp3Zlmkm-xX-.js";
     script.async = true;
 
     document.head.appendChild(script);
