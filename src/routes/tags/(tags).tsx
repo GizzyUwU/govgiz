@@ -37,32 +37,29 @@ const Tags = () => {
 
   return (
     <>
-      <h1
-        class="govuk-heading-m"
-        style={{
-          "margin-bottom": "-10px",
-        }}
-      >
-        All tags:
-      </h1>
+      <h1 class="govuk-heading-m govuk-!-margin-bottom-4">All tags:</h1>
       <div
         style={{
           display: "flex",
-          "flex-wrap": "wrap",
-          "align-items": "flex-end",
-          gap: "20px",
+          "flex-direction": "column",
+          gap: "15px",
+          "margin-bottom": "30px",
         }}
       >
-        <div class="govuk-form-group" style={{ flex: "1 1 200px" }}>
-          <div class="govuk-input__wrapper">
+        <div class="govuk-form-group govuk-!-margin-bottom-0">
+          <label class="govuk-label" for="tagSearch">
+            Search
+          </label>
+          <div class="govuk-input__wrapper" style={{ "max-width": "100%" }}>
             <input
               class="govuk-input"
               type="text"
+              id="tagSearch"
               name="tagSearch"
               aria-label="Search tags"
               spellcheck="false"
               value={searchInput()}
-              placeholder="Projects"
+              placeholder="Search tags"
               onInput={(e) => setSearchInput(e.currentTarget.value)}
             />
             <div
@@ -74,7 +71,7 @@ const Tags = () => {
             </div>
           </div>
         </div>
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-!-margin-bottom-0">
           <label class="govuk-label" for="sort">
             Sort by
           </label>
@@ -82,6 +79,7 @@ const Tags = () => {
             class="govuk-select"
             style={{
               background: "white !important",
+              "max-width": "100%",
             }}
             id="sort"
             name="sort"

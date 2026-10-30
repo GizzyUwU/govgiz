@@ -71,32 +71,29 @@ const TagId: Component<RouteSectionProps<{ params: { id: string } }>> = (
       when={tag()}
       fallback={<p class="govuk-body">No posts with that tag</p>}
     >
-      <h2
-        class="govuk-heading-m"
-        style={{
-          "margin-bottom": "-10px",
-        }}
-      >
-        Tag: {tag()?.id}
-      </h2>
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-4">Tag: {tag()?.id}</h2>
       <div
         style={{
           display: "flex",
-          "flex-wrap": "wrap",
-          "align-items": "flex-end",
-          gap: "20px",
+          "flex-direction": "column",
+          gap: "15px",
+          "margin-bottom": "30px",
         }}
       >
-        <div class="govuk-form-group" style={{ flex: "1 1 200px" }}>
-          <div class="govuk-input__wrapper">
+        <div class="govuk-form-group govuk-!-margin-bottom-0">
+          <label class="govuk-label" for="tagSearch">
+            Search
+          </label>
+          <div class="govuk-input__wrapper" style={{ "max-width": "100%" }}>
             <input
               class="govuk-input"
               type="text"
+              id="tagSearch"
               name="tagSearch"
               aria-label="Search posts"
               spellcheck="false"
               value={searchInput()}
-              placeholder="Post..."
+              placeholder="Search posts"
               onInput={(e) => setSearchInput(e.currentTarget.value)}
             />
             <div
@@ -108,14 +105,15 @@ const TagId: Component<RouteSectionProps<{ params: { id: string } }>> = (
             </div>
           </div>
         </div>
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-!-margin-bottom-0">
           <label class="govuk-label" for="sort">
             Sort by
           </label>
           <select
             class="govuk-select"
             style={{
-              background: "white !important"
+              background: "white !important",
+              "max-width": "100%",
             }}
             id="sort"
             name="sort"

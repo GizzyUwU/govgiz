@@ -56,32 +56,31 @@ export default function Blogs() {
   return (
     <>
       <Title>All posts</Title>
-      <h1
-        class="govuk-heading-l"
-        style={{
-          "margin-bottom": "-8px",
-        }}
-      >
-        All Blog Posts
-      </h1>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-4">All Blog Posts</h1>
       <div
         style={{
           display: "flex",
           "flex-wrap": "wrap",
           "align-items": "flex-end",
-          gap: "20px",
+          "column-gap": "20px",
+          "row-gap": "15px",
+          "margin-bottom": "30px",
         }}
       >
-        <div class="govuk-form-group" style={{ flex: "1 1 200px" }}>
+        <div class="govuk-form-group govuk-!-margin-bottom-0" style={{ flex: "1 1 250px", "min-width": "0" }}>
+          <label class="govuk-label" for="projectSearch">
+            Search
+          </label>
           <div class="govuk-input__wrapper">
             <input
               class="govuk-input"
               type="text"
+              id="projectSearch"
               name="projectSearch"
               aria-label="Search posts"
               spellcheck="false"
               value={searchInput()}
-              placeholder="Project..."
+              placeholder="Search posts"
               onInput={(e) => setSearchInput(e.currentTarget.value)}
             />
             <div
@@ -98,7 +97,7 @@ export default function Blogs() {
             </div>
           </div>
         </div>
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-!-margin-bottom-0">
           <label class="govuk-label" for="sort">
             Sort by
           </label>
